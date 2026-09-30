@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search Engine Marketing | KeepClicks® Agency</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        fontFamily: { inter: ['Inter','sans-serif'] },
+        colors: { brand: { indigo:'#4f46e5', purple:'#8b5cf6', pink:'#ec4899', cyan:'#06b6d4', amber:'#f59e0b', emerald:'#10b981', navy:'#0a0d14', slate:'#0f172a' }},
+      }}
+    }
+  </script>
+  <style>
+    * { font-family: 'Inter', sans-serif; box-sizing: border-box; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0d14; }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(#4f46e5, #ec4899); border-radius: 3px; }
+    #page-loader { position:fixed; inset:0; background:#0a0d14; z-index:9999; display:flex; flex-direction:column; align-items:center; justify-content:center; transition:opacity 0.6s ease; }
+    #page-loader.hidden { opacity:0; pointer-events:none; }
+    .loader-dot { width:12px; height:12px; border-radius:50%; animation:loaderBounce 1.2s ease-in-out infinite; }
+    .loader-dot:nth-child(1){background:#4f46e5;animation-delay:0s}
+    .loader-dot:nth-child(2){background:#ec4899;animation-delay:.2s}
+    .loader-dot:nth-child(3){background:#f59e0b;animation-delay:.4s}
+    .loader-dot:nth-child(4){background:#10b981;animation-delay:.6s}
+    @keyframes loaderBounce{0%,80%,100%{transform:translateY(0)}40%{transform:translateY(-18px)}}
+    .grad-text{background:linear-gradient(135deg,#4f46e5,#8b5cf6,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .bg-grid{background-image:linear-gradient(rgba(99,102,241,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(99,102,241,.07) 1px,transparent 1px);background-size:44px 44px;}
+    .glass{background:rgba(255,255,255,.05);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.1);}
+    #main-header{transition:all .4s ease;}
+    #main-header.scrolled{background:rgba(10,13,20,.95)!important;backdrop-filter:blur(20px);border-bottom:1px solid rgba(99,102,241,.2);}
+    .nav-dropdown{display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);min-width:260px;z-index:200;}
+    .nav-item:hover .nav-dropdown{display:block;}
+    .faq-answer{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+    .faq-answer.open{max-height:400px;}
+    .faq-icon{transition:transform .3s;}
+    .faq-icon.open{transform:rotate(45deg);}
+    .marquee-track{display:flex;width:max-content;animation:marquee 35s linear infinite;}
+    @keyframes marquee{'0%'{transform:translateX(0%)}'100%'{transform:translateX(-50%)}}
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900 overflow-x-hidden">
+
+<div id="page-loader">
+  <div class="flex flex-col items-center gap-5">
+    <div class="w-16 h-16 rounded-2xl overflow-hidden shadow-2xl" style="box-shadow:0 0 40px rgba(79,70,229,.5)">
+      <svg viewBox="0 0 100 100" class="w-full h-full"><defs><linearGradient id="kc-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4f46e5"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ec4899"/></linearGradient><linearGradient id="kc-cyan" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#06b6d4"/><stop offset="100%" stop-color="#3b82f6"/></linearGradient></defs><rect x="6" y="6" width="88" height="88" rx="22" fill="#0f172a"/><rect x="24" y="24" width="13" height="52" rx="6.5" fill="url(#kc-cyan)"/><path d="M45 50 L68 27 C71 24 76 26 76 31 L76 41 L57 58 Z" fill="url(#kc-grad)"/><path d="M45 50 L57 42 L76 61 L76 71 C76 76 71 78 68 75 Z" fill="url(#kc-grad)"/><circle cx="76" cy="22" r="5" fill="#f43f5e"/></svg>
+    </div>
+    <div class="text-xl font-black"><span class="grad-text">KeepClicks</span><span class="text-white">®</span></div>
+    <div class="flex gap-2 mt-1"><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div></div>
+  </div>
+</div>
+
+<div class="overflow-hidden py-2" style="background:linear-gradient(90deg,#0f172a,#1e1b4b,#0f172a)">
+  <div class="marquee-track whitespace-nowrap">
+    <span class="inline-flex items-center gap-2 px-6 text-sm text-gray-300"><i class="fa-solid fa-rocket text-pink-400"></i> Agency Services: SEO · SMM · SMO · Website Dev · SEM · CRM · ERP</span>
+    <span class="text-indigo-400 px-3">✦</span>
+    <span class="inline-flex items-center gap-2 px-6 text-sm text-gray-300"><i class="fa-solid fa-graduation-cap text-indigo-400"></i> IT Courses: Digital Marketing · Full Stack · Java · Python · Data Science · AI/ML · Cloud</span>
+    <span class="text-amber-400 px-3">✦</span>
+    <span class="inline-flex items-center gap-2 px-6 text-sm text-gray-300"><i class="fa-solid fa-chart-line text-emerald-400"></i> 200+ Clients Served | 98% Client Retention | Proven ROI Results</span>
+    <span class="text-pink-400 px-3">✦</span>
+    <span class="inline-flex items-center gap-2 px-6 text-sm text-gray-300"><i class="fa-solid fa-rocket text-pink-400"></i> Agency Services: SEO · SMM · SMO · Website Dev · SEM · CRM · ERP</span>
+    <span class="text-indigo-400 px-3">✦</span>
+    <span class="inline-flex items-center gap-2 px-6 text-sm text-gray-300"><i class="fa-solid fa-graduation-cap text-indigo-400"></i> IT Courses: Digital Marketing · Full Stack · Java · Python · Data Science · AI/ML · Cloud</span>
+    <span class="text-amber-400 px-3">✦</span>
+    <span class="inline-flex items-center gap-2 px-6 text-sm text-gray-300"><i class="fa-solid fa-chart-line text-emerald-400"></i> 200+ Clients Served | 98% Client Retention | Proven ROI Results</span>
+  </div>
+</div>
+
+<header id="main-header" class="sticky top-0 z-50" style="background:rgba(10,13,20,.9);backdrop-filter:blur(16px);border-bottom:1px solid rgba(99,102,241,.15);">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between py-4">
+    <a href="../index.html" class="flex items-center gap-2.5">
+      <div class="w-10 h-10 rounded-xl overflow-hidden"><svg viewBox="0 0 100 100" class="w-full h-full"><defs><linearGradient id="hkc-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4f46e5"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ec4899"/></linearGradient><linearGradient id="hkc-cyan" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#06b6d4"/><stop offset="100%" stop-color="#3b82f6"/></linearGradient></defs><rect x="6" y="6" width="88" height="88" rx="22" fill="#0f172a"/><rect x="24" y="24" width="13" height="52" rx="6.5" fill="url(#hkc-cyan)"/><path d="M45 50 L68 27 C71 24 76 26 76 31 L76 41 L57 58 Z" fill="url(#hkc-grad)"/><path d="M45 50 L57 42 L76 61 L76 71 C76 76 71 78 68 75 Z" fill="url(#hkc-grad)"/><circle cx="76" cy="22" r="5" fill="#f43f5e"/></svg></div>
+      <span class="text-xl font-black tracking-tight text-white">keep<span class="text-indigo-400">clicks</span><span class="text-pink-400 text-xs align-top ml-0.5">®</span></span>
+    </a>
+    <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-gray-300">
+      <div class="nav-item relative">
+        <button class="flex items-center gap-1 hover:text-white transition-colors py-1">IT Courses <i class="fa-solid fa-chevron-down text-[10px]"></i></button>
+        <div class="nav-dropdown bg-gray-900 border border-gray-700 rounded-xl shadow-2xl p-2">
+          <a href="../courses/digital-marketing.html" class="block px-4 py-2 text-sm hover:bg-indigo-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-bullhorn mr-2 text-indigo-400"></i>Digital Marketing</a>
+          <a href="../courses/full-stack.html" class="block px-4 py-2 text-sm hover:bg-indigo-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-code mr-2 text-cyan-400"></i>Full Stack Dev</a>
+          <a href="../courses/java.html" class="block px-4 py-2 text-sm hover:bg-indigo-600 hover:text-white rounded-lg transition-colors"><i class="fa-brands fa-java mr-2 text-orange-400"></i>Java</a>
+          <a href="../courses/python.html" class="block px-4 py-2 text-sm hover:bg-indigo-600 hover:text-white rounded-lg transition-colors"><i class="fa-brands fa-python mr-2 text-blue-400"></i>Python</a>
+          <a href="../courses/data-science.html" class="block px-4 py-2 text-sm hover:bg-indigo-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-flask mr-2 text-purple-400"></i>Data Science</a>
+          <a href="../courses/data-analytics.html" class="block px-4 py-2 text-sm hover:bg-indigo-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-chart-bar mr-2 text-emerald-400"></i>Data Analytics</a>
+          <a href="../courses/cloud-computing.html" class="block px-4 py-2 text-sm hover:bg-indigo-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-cloud mr-2 text-sky-400"></i>Cloud Computing</a>
+          <a href="../courses/ai-ml.html" class="block px-4 py-2 text-sm hover:bg-indigo-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-robot mr-2 text-pink-400"></i>AI & ML</a>
+        </div>
+      </div>
+      <div class="nav-item relative">
+        <button class="flex items-center gap-1 hover:text-white transition-colors py-1">Agency Services <i class="fa-solid fa-chevron-down text-[10px]"></i></button>
+        <div class="nav-dropdown bg-gray-900 border border-gray-700 rounded-xl shadow-2xl p-2">
+          <a href="seo.html" class="block px-4 py-2 text-sm hover:bg-pink-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-magnifying-glass mr-2 text-emerald-400"></i>SEO</a>
+          <a href="smm.html" class="block px-4 py-2 text-sm hover:bg-pink-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-share-nodes mr-2 text-blue-400"></i>SMM</a>
+          <a href="smo.html" class="block px-4 py-2 text-sm hover:bg-pink-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-thumbs-up mr-2 text-indigo-400"></i>SMO</a>
+          <a href="website-development.html" class="block px-4 py-2 text-sm hover:bg-pink-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-laptop-code mr-2 text-cyan-400"></i>Website Dev</a>
+          <a href="sem.html" class="block px-4 py-2 text-sm hover:bg-pink-600 hover:text-white rounded-lg transition-colors"><i class="fa-brands fa-google mr-2 text-amber-400"></i>SEM</a>
+          <a href="crm.html" class="block px-4 py-2 text-sm hover:bg-pink-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-users-gear mr-2 text-purple-400"></i>CRM</a>
+          <a href="erp.html" class="block px-4 py-2 text-sm hover:bg-pink-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-sitemap mr-2 text-orange-400"></i>ERP</a>
+        </div>
+      </div>
+      <a href="../index.html" class="hover:text-white transition-colors">Home</a>
+      <a href="../index.html#contact" class="bg-gradient-to-r from-indigo-600 to-pink-600 text-white px-5 py-2 rounded-full font-bold hover:opacity-90 transition-all">Get Started</a>
+    </nav>
+    <button id="mob-toggle" class="md:hidden text-white text-xl"><i class="fa-solid fa-bars"></i></button>
+  </div>
+  <div id="mob-menu" class="hidden md:hidden border-t border-gray-800 bg-gray-900 px-4 py-4 space-y-2">
+    <p class="text-xs font-bold text-pink-400 uppercase tracking-widest mb-2">Agency Services</p>
+    <a href="seo.html" class="block py-2 text-gray-300 hover:text-white">SEO</a>
+    <a href="smm.html" class="block py-2 text-gray-300 hover:text-white">SMM</a>
+    <a href="smo.html" class="block py-2 text-gray-300 hover:text-white">SMO</a>
+    <a href="website-development.html" class="block py-2 text-gray-300 hover:text-white">Website Development</a>
+    <a href="sem.html" class="block py-2 text-gray-300 hover:text-white">SEM</a>
+    <a href="crm.html" class="block py-2 text-gray-300 hover:text-white">CRM</a>
+    <a href="erp.html" class="block py-2 text-gray-300 hover:text-white">ERP</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="relative bg-[#0a0d14] text-white pt-32 pb-24 lg:pt-40 lg:pb-32 overflow-hidden border-b border-gray-800">
+    <div class="absolute inset-0 bg-grid opacity-30"></div>
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-amber-600/20 rounded-full blur-[100px] pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-amber-400 text-sm font-semibold mb-6 mx-auto" data-aos="fade-down">
+            <i class="fa-brands fa-google"></i> KeepClicks® Agency Services
+        </div>
+        <h1 class="text-4xl md:text-6xl font-black mb-6 tracking-tight" data-aos="fade-up" data-aos-delay="100">
+            Professional <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">Search Engine Marketing</span>
+        </h1>
+        <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+            Drive exceptional growth, streamline operations, and dominate your market with our data-driven SEM solutions tailored for modern businesses.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4" data-aos="fade-up" data-aos-delay="300">
+            <a href="#pricing" class="px-8 py-3.5 rounded-full bg-amber-500 hover:bg-amber-600 text-white font-bold transition-colors">Get Free Audit</a>
+            <a href="../index.html#contact" class="px-8 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold transition-colors">Book a Call</a>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 max-w-4xl mx-auto">
+            <div class="glass p-4 rounded-xl text-center" data-aos="zoom-in"><p class="text-amber-400 font-black text-xl">500% Avg ROAS</p></div>
+            <div class="glass p-4 rounded-xl text-center" data-aos="zoom-in"><p class="text-amber-400 font-black text-xl">₹5Cr+ Ad Spend Managed</p></div>
+            <div class="glass p-4 rounded-xl text-center" data-aos="zoom-in"><p class="text-amber-400 font-black text-xl">300+ Campaigns</p></div>
+            <div class="glass p-4 rounded-xl text-center" data-aos="zoom-in"><p class="text-amber-400 font-black text-xl">Instant Traffic</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- BREADCRUMB -->
+<div class="bg-white border-b border-gray-200 py-3">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-sm text-gray-500 font-medium">
+        <a href="../index.html" class="hover:text-amber-600 transition-colors">Home</a> <span class="mx-2">/</span> <span class="text-gray-400">Agency</span> <span class="mx-2">/</span> <span class="text-amber-600">SEM</span>
+    </div>
+</div>
+
+<!-- WHAT IS -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <h2 class="text-3xl md:text-4xl font-black text-gray-900 mb-6">What is <span class="text-amber-500">Search Engine Marketing</span>?</h2>
+                <p class="text-gray-600 mb-4 leading-relaxed">At KeepClicks®, our SEM services give your business a competitive edge. We manage hyper-targeted paid advertising campaigns.</p>
+                <p class="text-gray-600 leading-relaxed">Whether it's Google Search Ads or Performance Max, our experts focus on maximizing your Return on Ad Spend (ROAS) and driving high-intent leads.</p>
+            </div>
+            <div class="relative" data-aos="fade-left">
+                <div class="absolute inset-0 bg-amber-100 rounded-3xl transform translate-x-4 translate-y-4"></div>
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" alt="SEM" class="relative rounded-3xl shadow-xl w-full object-cover h-80" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- OUR PROCESS -->
+<section class="py-24 bg-[#0a0d14] relative overflow-hidden">
+    <div class="absolute inset-0 bg-grid opacity-20"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-black text-white mb-4">Our Proven <span class="text-amber-500">Process</span></h2>
+            <p class="text-gray-400">We follow a systematic approach to ensure consistent success.</p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-4 relative">
+            <div class="hidden lg:block absolute top-12 left-0 w-full h-0.5 bg-amber-500/20 z-0"></div>
+            <div class="relative flex flex-col items-center text-center p-4 rounded-2xl glass hover:-translate-y-2 transition-transform" data-aos="fade-up"><div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-lg mb-4 border border-amber-500/30">1</div><h4 class="font-bold text-white text-sm">Goal Setting</h4></div>
+            <div class="relative flex flex-col items-center text-center p-4 rounded-2xl glass hover:-translate-y-2 transition-transform" data-aos="fade-up"><div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-lg mb-4 border border-amber-500/30">2</div><h4 class="font-bold text-white text-sm">Keyword Research</h4></div>
+            <div class="relative flex flex-col items-center text-center p-4 rounded-2xl glass hover:-translate-y-2 transition-transform" data-aos="fade-up"><div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-lg mb-4 border border-amber-500/30">3</div><h4 class="font-bold text-white text-sm">Ad Copy</h4></div>
+            <div class="relative flex flex-col items-center text-center p-4 rounded-2xl glass hover:-translate-y-2 transition-transform" data-aos="fade-up"><div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-lg mb-4 border border-amber-500/30">4</div><h4 class="font-bold text-white text-sm">Campaign Launch</h4></div>
+            <div class="relative flex flex-col items-center text-center p-4 rounded-2xl glass hover:-translate-y-2 transition-transform" data-aos="fade-up"><div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-lg mb-4 border border-amber-500/30">5</div><h4 class="font-bold text-white text-sm">A/B Testing</h4></div>
+            <div class="relative flex flex-col items-center text-center p-4 rounded-2xl glass hover:-translate-y-2 transition-transform" data-aos="fade-up"><div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-lg mb-4 border border-amber-500/30">6</div><h4 class="font-bold text-white text-sm">Optimization</h4></div>
+            <div class="relative flex flex-col items-center text-center p-4 rounded-2xl glass hover:-translate-y-2 transition-transform" data-aos="fade-up"><div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-lg mb-4 border border-amber-500/30">7</div><h4 class="font-bold text-white text-sm">Reporting</h4></div>
+        </div>
+    </div>
+</section>
+
+<!-- FEATURES -->
+<section class="py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-black text-gray-900 mb-4">What We <span class="text-amber-500">Offer</span></h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-amber-200 transition-all group" data-aos="fade-up"><div class="w-12 h-12 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform"><i class="fa-solid fa-check"></i></div><h4 class="font-bold text-gray-900 mb-2">Google Search Ads</h4><p class="text-sm text-gray-500">Capture high-intent search traffic.</p></div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-amber-200 transition-all group" data-aos="fade-up"><div class="w-12 h-12 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform"><i class="fa-solid fa-check"></i></div><h4 class="font-bold text-gray-900 mb-2">Google Display Ads</h4><p class="text-sm text-gray-500">Visual ads across Google's network.</p></div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-amber-200 transition-all group" data-aos="fade-up"><div class="w-12 h-12 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform"><i class="fa-solid fa-check"></i></div><h4 class="font-bold text-gray-900 mb-2">YouTube Ads</h4><p class="text-sm text-gray-500">Video campaigns that drive engagement.</p></div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-amber-200 transition-all group" data-aos="fade-up"><div class="w-12 h-12 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform"><i class="fa-solid fa-check"></i></div><h4 class="font-bold text-gray-900 mb-2">Shopping Ads</h4><p class="text-sm text-gray-500">Product listings to boost e-commerce.</p></div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-amber-200 transition-all group" data-aos="fade-up"><div class="w-12 h-12 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform"><i class="fa-solid fa-check"></i></div><h4 class="font-bold text-gray-900 mb-2">Meta Ads</h4><p class="text-sm text-gray-500">Facebook and Instagram campaigns.</p></div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-amber-200 transition-all group" data-aos="fade-up"><div class="w-12 h-12 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform"><i class="fa-solid fa-check"></i></div><h4 class="font-bold text-gray-900 mb-2">Performance Max</h4><p class="text-sm text-gray-500">AI-driven campaigns across all channels.</p></div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-amber-200 transition-all group" data-aos="fade-up"><div class="w-12 h-12 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform"><i class="fa-solid fa-check"></i></div><h4 class="font-bold text-gray-900 mb-2">Remarketing</h4><p class="text-sm text-gray-500">Re-engage past visitors effectively.</p></div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-amber-200 transition-all group" data-aos="fade-up"><div class="w-12 h-12 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform"><i class="fa-solid fa-check"></i></div><h4 class="font-bold text-gray-900 mb-2">Conversion Tracking</h4><p class="text-sm text-gray-500">Accurate measurement of ROI.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- WHY US -->
+<section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div data-aos="fade-right">
+                <h2 class="text-3xl md:text-4xl font-black text-gray-900 mb-6">Why Choose <span class="text-amber-500">KeepClicks?</span></h2>
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center shrink-0"><i class="fa-solid fa-star"></i></div>
+                        <div><h4 class="font-bold text-gray-900">Proven Expertise</h4><p class="text-sm text-gray-600 mt-1">Years of industry experience delivering top-tier solutions.</p></div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center shrink-0"><i class="fa-solid fa-chart-line"></i></div>
+                        <div><h4 class="font-bold text-gray-900">Data-Driven Strategy</h4><p class="text-sm text-gray-600 mt-1">Decisions backed by analytics, not guesswork.</p></div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center shrink-0"><i class="fa-solid fa-headset"></i></div>
+                        <div><h4 class="font-bold text-gray-900">Dedicated Support</h4><p class="text-sm text-gray-600 mt-1">24/7 client support and dedicated account managers.</p></div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-[#0a0d14] rounded-3xl p-10 text-white relative overflow-hidden shadow-2xl" data-aos="fade-left">
+                <div class="absolute inset-0 bg-grid opacity-20"></div>
+                <div class="relative z-10 space-y-8">
+                    <div><p class="text-sm text-amber-400 font-bold uppercase tracking-widest mb-1">Impact</p><h3 class="text-5xl font-black">500% Avg ROAS</h3></div>
+                    <div class="h-px bg-white/10"></div>
+                    <div><p class="text-sm text-amber-400 font-bold uppercase tracking-widest mb-1">Scale</p><h3 class="text-4xl font-black">₹5Cr+ Ad Spend Managed</h3></div>
+                    <div class="h-px bg-white/10"></div>
+                    <div><p class="text-sm text-amber-400 font-bold uppercase tracking-widest mb-1">Experience</p><h3 class="text-4xl font-black">300+ Campaigns</h3></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TOOLS -->
+<section class="py-20 bg-gray-50 border-y border-gray-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h3 class="text-2xl font-bold text-gray-900 mb-8">Premium Tools & Technologies We Use</h3>
+        <div class="flex flex-wrap justify-center gap-3">
+            <div class="bg-white px-6 py-3 rounded-full border border-gray-200 font-medium shadow-sm hover:border-amber-400 hover:text-amber-600">Google Ads</div>
+            <div class="bg-white px-6 py-3 rounded-full border border-gray-200 font-medium shadow-sm hover:border-amber-400 hover:text-amber-600">Meta Ads Manager</div>
+            <div class="bg-white px-6 py-3 rounded-full border border-gray-200 font-medium shadow-sm hover:border-amber-400 hover:text-amber-600">Google Analytics 4</div>
+            <div class="bg-white px-6 py-3 rounded-full border border-gray-200 font-medium shadow-sm hover:border-amber-400 hover:text-amber-600">Google Tag Manager</div>
+            <div class="bg-white px-6 py-3 rounded-full border border-gray-200 font-medium shadow-sm hover:border-amber-400 hover:text-amber-600">Semrush</div>
+            <div class="bg-white px-6 py-3 rounded-full border border-gray-200 font-medium shadow-sm hover:border-amber-400 hover:text-amber-600">Optmyzr</div>
+        </div>
+    </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-black text-gray-900 mb-4">Transparent <span class="text-amber-500">Pricing</span></h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div class="border border-gray-200 rounded-3xl p-8 bg-white shadow-sm" data-aos="fade-up">
+                <h4 class="text-lg font-bold text-gray-900">Starter</h4>
+                <div class="mt-4 text-3xl font-black text-amber-600">₹8,000/mo</div><p class="text-sm text-gray-500 mt-2 mb-6">Management fee</p>
+                <a href="#contact" class="block w-full py-3 text-center rounded-xl border border-amber-200 text-amber-600 font-bold hover:bg-amber-50">Choose Starter</a>
+            </div>
+            <div class="border-2 border-amber-500 rounded-3xl p-8 bg-white shadow-xl relative transform md:-translate-y-4" data-aos="fade-up">
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-amber-500 text-white px-4 py-1 rounded-full text-xs font-bold uppercase">Most Popular</div>
+                <h4 class="text-lg font-bold text-gray-900">Growth</h4>
+                <div class="mt-4 text-3xl font-black text-amber-600">₹15,000/mo</div><p class="text-sm text-gray-500 mt-2 mb-6">Management fee</p>
+                <a href="#contact" class="block w-full py-3 text-center rounded-xl bg-amber-500 text-white font-bold hover:bg-amber-600">Choose Growth</a>
+            </div>
+            <div class="border border-gray-200 rounded-3xl p-8 bg-white shadow-sm" data-aos="fade-up">
+                <h4 class="text-lg font-bold text-gray-900">Enterprise</h4>
+                <div class="mt-4 text-3xl font-black text-amber-600">₹25,000/mo</div><p class="text-sm text-gray-500 mt-2 mb-6">Management fee</p>
+                <a href="#contact" class="block w-full py-3 text-center rounded-xl border border-amber-200 text-amber-600 font-bold hover:bg-amber-50">Choose Enterprise</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="py-24 bg-gray-50">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12"><h2 class="text-3xl font-black text-gray-900">Frequently Asked Questions</h2></div>
+        <div class="space-y-4">
+            <div class="border border-gray-200 rounded-xl bg-white overflow-hidden">
+                <button class="faq-btn w-full px-6 py-4 flex justify-between font-semibold text-gray-900 hover:bg-gray-50">SEM vs SEO? <i class="fa-solid fa-plus faq-icon text-amber-500"></i></button>
+                <div class="faq-answer px-6 text-gray-600 text-sm"><div class="pb-4">SEM involves paid ads to appear instantly, whereas SEO is the slow, organic process of ranking.</div></div>
+            </div>
+            <div class="border border-gray-200 rounded-xl bg-white overflow-hidden">
+                <button class="faq-btn w-full px-6 py-4 flex justify-between font-semibold text-gray-900 hover:bg-gray-50">How much ad spend is required? <i class="fa-solid fa-plus faq-icon text-amber-500"></i></button>
+                <div class="faq-answer px-6 text-gray-600 text-sm"><div class="pb-4">We recommend a minimum ad budget of ₹10,000/month to ensure enough data for optimization.</div></div>
+            </div>
+            <div class="border border-gray-200 rounded-xl bg-white overflow-hidden">
+                <button class="faq-btn w-full px-6 py-4 flex justify-between font-semibold text-gray-900 hover:bg-gray-50">How fast are results? <i class="fa-solid fa-plus faq-icon text-amber-500"></i></button>
+                <div class="faq-answer px-6 text-gray-600 text-sm"><div class="pb-4">With SEM, traffic and leads can start flowing within 24-48 hours of launching campaigns.</div></div>
+            </div>
+            <div class="border border-gray-200 rounded-xl bg-white overflow-hidden">
+                <button class="faq-btn w-full px-6 py-4 flex justify-between font-semibold text-gray-900 hover:bg-gray-50">Do you track conversions? <i class="fa-solid fa-plus faq-icon text-amber-500"></i></button>
+                <div class="faq-answer px-6 text-gray-600 text-sm"><div class="pb-4">Yes, we implement advanced tracking via Google Tag Manager to accurately measure leads.</div></div>
+            </div>
+            <div class="border border-gray-200 rounded-xl bg-white overflow-hidden">
+                <button class="faq-btn w-full px-6 py-4 flex justify-between font-semibold text-gray-900 hover:bg-gray-50">Are ad costs included? <i class="fa-solid fa-plus faq-icon text-amber-500"></i></button>
+                <div class="faq-answer px-6 text-gray-600 text-sm"><div class="pb-4">No, our pricing reflects the agency management fee. Ad spend is billed directly by Google/Meta.</div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section id="contact" class="py-24 bg-gradient-to-r from-[#4f46e5] to-[#ec4899] text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="zoom-in">
+        <h2 class="text-4xl md:text-5xl font-black mb-6">Ready to Transform Your Business?</h2>
+        <div class="flex justify-center gap-4 mt-8">
+            <a href="tel:+916379427852" class="px-8 py-4 rounded-full bg-white text-gray-900 font-bold hover:bg-gray-100 shadow-xl"><i class="fa-solid fa-phone mr-2"></i> Call +91 63794 27852</a>
+            <a href="mailto:info@keepclicks.com" class="px-8 py-4 rounded-full bg-white/20 hover:bg-white/30 font-bold backdrop-blur-md"><i class="fa-solid fa-envelope mr-2"></i> Email Us</a>
+        </div>
+    </div>
+</section>
+
+<footer style="background:#0a0d14;border-top:1px solid rgba(99,102,241,.2);" class="pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+      <div>
+        <a href="../index.html" class="flex items-center gap-2.5 mb-4">
+          <div class="w-10 h-10 rounded-xl overflow-hidden"><svg viewBox="0 0 100 100" class="w-full h-full"><defs><linearGradient id="fkc-g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4f46e5"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ec4899"/></linearGradient><linearGradient id="fkc-c" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#06b6d4"/><stop offset="100%" stop-color="#3b82f6"/></linearGradient></defs><rect x="6" y="6" width="88" height="88" rx="22" fill="#0f172a"/><rect x="24" y="24" width="13" height="52" rx="6.5" fill="url(#fkc-c)"/><path d="M45 50 L68 27 C71 24 76 26 76 31 L76 41 L57 58 Z" fill="url(#fkc-g)"/><path d="M45 50 L57 42 L76 61 L76 71 C76 76 71 78 68 75 Z" fill="url(#fkc-g)"/><circle cx="76" cy="22" r="5" fill="#f43f5e"/></svg></div>
+          <span class="text-xl font-black text-white">keep<span class="text-indigo-400">clicks</span><span class="text-pink-400 text-xs">®</span></span>
+        </a>
+        <p class="text-gray-400 text-sm leading-relaxed">Your gateway to tech careers & digital growth.</p>
+        <div class="flex gap-3 mt-4">
+          <a href="#" class="w-9 h-9 rounded-full bg-gray-800 hover:bg-indigo-600 flex items-center justify-center text-gray-400 hover:text-white transition-all"><i class="fa-brands fa-instagram text-sm"></i></a>
+          <a href="#" class="w-9 h-9 rounded-full bg-gray-800 hover:bg-blue-700 flex items-center justify-center text-gray-400 hover:text-white transition-all"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+          <a href="#" class="w-9 h-9 rounded-full bg-gray-800 hover:bg-red-600 flex items-center justify-center text-gray-400 hover:text-white transition-all"><i class="fa-brands fa-youtube text-sm"></i></a>
+          <a href="#" class="w-9 h-9 rounded-full bg-gray-800 hover:bg-sky-500 flex items-center justify-center text-gray-400 hover:text-white transition-all"><i class="fa-brands fa-twitter text-sm"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="text-white font-bold text-sm uppercase tracking-widest mb-4">Agency Services</h4>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li><a href="seo.html" class="hover:text-pink-400 transition-colors">SEO</a></li>
+          <li><a href="smm.html" class="hover:text-pink-400 transition-colors">SMM</a></li>
+          <li><a href="smo.html" class="hover:text-pink-400 transition-colors">SMO</a></li>
+          <li><a href="website-development.html" class="hover:text-pink-400 transition-colors">Website Development</a></li>
+          <li><a href="sem.html" class="hover:text-pink-400 transition-colors">SEM</a></li>
+          <li><a href="crm.html" class="hover:text-pink-400 transition-colors">CRM</a></li>
+          <li><a href="erp.html" class="hover:text-pink-400 transition-colors">ERP</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold text-sm uppercase tracking-widest mb-4">IT Courses</h4>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li><a href="../courses/digital-marketing.html" class="hover:text-indigo-400 transition-colors">Digital Marketing</a></li>
+          <li><a href="../courses/full-stack.html" class="hover:text-indigo-400 transition-colors">Full Stack Dev</a></li>
+          <li><a href="../courses/java.html" class="hover:text-indigo-400 transition-colors">Java</a></li>
+          <li><a href="../courses/python.html" class="hover:text-indigo-400 transition-colors">Python</a></li>
+          <li><a href="../courses/data-science.html" class="hover:text-indigo-400 transition-colors">Data Science</a></li>
+          <li><a href="../courses/data-analytics.html" class="hover:text-indigo-400 transition-colors">Data Analytics</a></li>
+          <li><a href="../courses/cloud-computing.html" class="hover:text-indigo-400 transition-colors">Cloud Computing</a></li>
+          <li><a href="../courses/ai-ml.html" class="hover:text-indigo-400 transition-colors">AI & ML</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold text-sm uppercase tracking-widest mb-4">Contact</h4>
+        <ul class="space-y-3 text-sm text-gray-400">
+          <li class="flex items-start gap-2"><i class="fa-solid fa-envelope text-indigo-400 mt-0.5"></i> info@keepclicks.com</li>
+          <li class="flex items-start gap-2"><i class="fa-solid fa-phone text-indigo-400 mt-0.5"></i> +91 63794 27852</li>
+          <li class="flex items-start gap-2"><i class="fa-solid fa-location-dot text-indigo-400 mt-0.5"></i> Chennai, Tamil Nadu, India</li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
+      <p class="text-gray-500 text-sm">© 2026 KeepClicks®. All rights reserved.</p>
+      <p class="text-gray-600 text-xs">IT Academy & Digital Marketing Agency</p>
+    </div>
+  </div>
+</footer>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 700, once: true, offset: 60 });
+  window.addEventListener('load', () => { setTimeout(() => { document.getElementById('page-loader').classList.add('hidden'); }, 800); });
+  window.addEventListener('scroll', () => { document.getElementById('main-header').classList.toggle('scrolled', window.scrollY > 50); });
+  document.getElementById('mob-toggle').addEventListener('click', () => { document.getElementById('mob-menu').classList.toggle('hidden'); });
+  document.querySelectorAll('.faq-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const ans = btn.nextElementSibling;
+      const icon = btn.querySelector('.faq-icon');
+      ans.classList.toggle('open');
+      icon.classList.toggle('open');
+    });
+  });
+</script>
+</body></html>

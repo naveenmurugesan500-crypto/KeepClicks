@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Marketing | KeepClicks® Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        fontFamily: { inter: ['Inter','sans-serif'] },
+        colors: { brand: { indigo:'#4f46e5', purple:'#8b5cf6', pink:'#ec4899', cyan:'#06b6d4', amber:'#f59e0b', emerald:'#10b981', navy:'#0a0d14', slate:'#0f172a' }},
+      }}
+    }
+  </script>
+  <style>
+    * { font-family: 'Inter', sans-serif; box-sizing: border-box; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0d14; }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(#4f46e5, #ec4899); border-radius: 3px; }
+    #page-loader { position:fixed; inset:0; background:#0a0d14; z-index:9999; display:flex; flex-direction:column; align-items:center; justify-content:center; transition:opacity 0.6s ease; }
+    #page-loader.hidden { opacity:0; pointer-events:none; }
+    .loader-dot { width:12px; height:12px; border-radius:50%; animation:loaderBounce 1.2s ease-in-out infinite; }
+    .loader-dot:nth-child(1){background:#4f46e5;animation-delay:0s}
+    .loader-dot:nth-child(2){background:#ec4899;animation-delay:.2s}
+    .loader-dot:nth-child(3){background:#f59e0b;animation-delay:.4s}
+    .loader-dot:nth-child(4){background:#10b981;animation-delay:.6s}
+    @keyframes loaderBounce{0%,80%,100%{transform:translateY(0)}40%{transform:translateY(-18px)}}
+    .grad-text{background:linear-gradient(135deg,#4f46e5,#8b5cf6,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .bg-grid{background-image:linear-gradient(rgba(99,102,241,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(99,102,241,.07) 1px,transparent 1px);background-size:44px 44px;}
+    .glass{background:rgba(255,255,255,.05);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.1);}
+    #main-header{transition:all .4s ease;}
+    #main-header.scrolled{background:rgba(10,13,20,.95)!important;backdrop-filter:blur(20px);border-bottom:1px solid rgba(99,102,241,.2);}
+    .nav-dropdown{display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);min-width:260px;z-index:200;}
+    .nav-item:hover .nav-dropdown{display:block;}
+    .faq-answer{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+    .faq-answer.open{max-height:400px;}
+    .faq-icon{transition:transform .3s;}
+    .faq-icon.open{transform:rotate(45deg);}
+    .marquee-track{display:flex;width:max-content;animation:marquee 35s linear infinite;}
+    @keyframes marquee{'0%'{transform:translateX(0%)}'100%'{transform:translateX(-50%)}}
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900 overflow-x-hidden">
+
+<!-- PAGE LOADER -->
+<div id="page-loader">
+  <div class="flex flex-col items-center gap-5">
+    <div class="w-16 h-16 rounded-2xl overflow-hidden shadow-2xl" style="box-shadow:0 0 40px rgba(79,70,229,.5)">
+      <svg viewBox="0 0 100 100" class="w-full h-full">
+        <defs>
+          <linearGradient id="kc-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4f46e5"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ec4899"/></linearGradient>
+          <linearGradient id="kc-cyan" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#06b6d4"/><stop offset="100%" stop-color="#3b82f6"/></linearGradient>
+        </defs>
+        <rect x="6" y="6" width="88" height="88" rx="22" fill="#0f172a"/>
+        <rect x="24" y="24" width="13" height="52" rx="6.5" fill="url(#kc-cyan)"/>
+        <path d="M45 50 L68 27 C71 24 76 26 76 31 L76 41 L57 58 Z" fill="url(#kc-grad)"/>
+        <path d="M45 50 L57 42 L76 61 L76 71 C76 76 71 78 68 75 Z" fill="url(#kc-grad)"/>
+        <circle cx="76" cy="22" r="5" fill="#f43f5e"/>
+      </svg>
+    </div>
+    <div class="text-xl font-black"><span class="grad-text">KeepClicks</span><span class="text-white">®</span></div>
+    <div class="flex gap-2 mt-1"><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div></div>
+  </div>
+</div>
+
+<!-- MARQUEE -->
+<div class="overflow-hidden py-2" style="background:linear-gradient(90deg,#0f172a,#1e1b4b,#0f172a)">
+  <div class="marquee-track whitespace-nowrap">
+    <span class="inline-flex items-center gap-2 px-6 text-sm text-gray-300"><i class="fa-solid fa-graduation-cap text-indigo-400"></i> IT Courses: Digital Marketing · Full Stack · Java · Python · Data Science · AI/ML · Cloud · Data Analytics</span>
+    <span class="text-pink-400 px-3">✦</span>
+    <span class="inline-flex items-center gap-2 px-6 text-sm text-gray-300"><i class="fa-solid fa-rocket text-cyan-400"></i> Agency Services: SEO · SMM · SMO · Website Dev · SEM · CRM · ERP</span>
+    <span class="text-amber-400 px-3">✦</span>
+    <span class="inline-flex items-center gap-2 px-6 text-sm text-gray-300"><i class="fa-solid fa-trophy text-amber-400"></i> 500+ Students Trained | 98% Placement | 200+ Clients</span>
+    <span class="text-emerald-400 px-3">✦</span>
+    <!-- repeat for seamless loop -->
+    <span class="inline-flex items-center gap-2 px-6 text-sm text-gray-300"><i class="fa-solid fa-graduation-cap text-indigo-400"></i> IT Courses: Digital Marketing · Full Stack · Java · Python · Data Science · AI/ML · Cloud · Data Analytics</span>
+    <span class="text-pink-400 px-3">✦</span>
+    <span class="inline-flex items-center gap-2 px-6 text-sm text-gray-300"><i class="fa-solid fa-rocket text-cyan-400"></i> Agency Services: SEO · SMM · SMO · Website Dev · SEM · CRM · ERP</span>
+    <span class="text-amber-400 px-3">✦</span>
+    <span class="inline-flex items-center gap-2 px-6 text-sm text-gray-300"><i class="fa-solid fa-trophy text-amber-400"></i> 500+ Students Trained | 98% Placement | 200+ Clients</span>
+  </div>
+</div>
+
+<!-- HEADER (dark theme) -->
+<header id="main-header" class="sticky top-0 z-50" style="background:rgba(10,13,20,.9);backdrop-filter:blur(16px);border-bottom:1px solid rgba(99,102,241,.15);">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between py-4">
+    <!-- Logo -->
+    <a href="../index.html" class="flex items-center gap-2.5">
+      <div class="w-10 h-10 rounded-xl overflow-hidden">
+        <svg viewBox="0 0 100 100" class="w-full h-full">
+          <defs><linearGradient id="hkc-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4f46e5"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ec4899"/></linearGradient><linearGradient id="hkc-cyan" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#06b6d4"/><stop offset="100%" stop-color="#3b82f6"/></linearGradient></defs>
+          <rect x="6" y="6" width="88" height="88" rx="22" fill="#0f172a"/>
+          <rect x="24" y="24" width="13" height="52" rx="6.5" fill="url(#hkc-cyan)"/>
+          <path d="M45 50 L68 27 C71 24 76 26 76 31 L76 41 L57 58 Z" fill="url(#hkc-grad)"/>
+          <path d="M45 50 L57 42 L76 61 L76 71 C76 76 71 78 68 75 Z" fill="url(#hkc-grad)"/>
+          <circle cx="76" cy="22" r="5" fill="#f43f5e"/>
+        </svg>
+      </div>
+      <span class="text-xl font-black tracking-tight text-white">keep<span class="text-indigo-400">clicks</span><span class="text-pink-400 text-xs align-top ml-0.5">®</span></span>
+    </a>
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-gray-300">
+      <div class="nav-item relative">
+        <button class="flex items-center gap-1 hover:text-white transition-colors py-1">IT Courses <i class="fa-solid fa-chevron-down text-[10px]"></i></button>
+        <div class="nav-dropdown bg-gray-900 border border-gray-700 rounded-xl shadow-2xl p-2">
+          <a href="digital-marketing.html" class="block px-4 py-2 text-sm hover:bg-indigo-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-bullhorn mr-2 text-indigo-400"></i>Digital Marketing</a>
+          <a href="full-stack.html" class="block px-4 py-2 text-sm hover:bg-indigo-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-code mr-2 text-cyan-400"></i>Full Stack Dev</a>
+          <a href="java.html" class="block px-4 py-2 text-sm hover:bg-indigo-600 hover:text-white rounded-lg transition-colors"><i class="fa-brands fa-java mr-2 text-orange-400"></i>Java</a>
+          <a href="python.html" class="block px-4 py-2 text-sm hover:bg-indigo-600 hover:text-white rounded-lg transition-colors"><i class="fa-brands fa-python mr-2 text-blue-400"></i>Python</a>
+          <a href="data-science.html" class="block px-4 py-2 text-sm hover:bg-indigo-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-flask mr-2 text-purple-400"></i>Data Science</a>
+          <a href="data-analytics.html" class="block px-4 py-2 text-sm hover:bg-indigo-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-chart-bar mr-2 text-emerald-400"></i>Data Analytics</a>
+          <a href="cloud-computing.html" class="block px-4 py-2 text-sm hover:bg-indigo-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-cloud mr-2 text-sky-400"></i>Cloud Computing</a>
+          <a href="ai-ml.html" class="block px-4 py-2 text-sm hover:bg-indigo-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-robot mr-2 text-pink-400"></i>AI & ML</a>
+        </div>
+      </div>
+      <div class="nav-item relative">
+        <button class="flex items-center gap-1 hover:text-white transition-colors py-1">Agency Services <i class="fa-solid fa-chevron-down text-[10px]"></i></button>
+        <div class="nav-dropdown bg-gray-900 border border-gray-700 rounded-xl shadow-2xl p-2">
+          <a href="../services/seo.html" class="block px-4 py-2 text-sm hover:bg-pink-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-magnifying-glass mr-2 text-emerald-400"></i>SEO</a>
+          <a href="../services/smm.html" class="block px-4 py-2 text-sm hover:bg-pink-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-share-nodes mr-2 text-blue-400"></i>SMM</a>
+          <a href="../services/smo.html" class="block px-4 py-2 text-sm hover:bg-pink-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-thumbs-up mr-2 text-indigo-400"></i>SMO</a>
+          <a href="../services/website-development.html" class="block px-4 py-2 text-sm hover:bg-pink-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-laptop-code mr-2 text-cyan-400"></i>Website Dev</a>
+          <a href="../services/sem.html" class="block px-4 py-2 text-sm hover:bg-pink-600 hover:text-white rounded-lg transition-colors"><i class="fa-brands fa-google mr-2 text-amber-400"></i>SEM</a>
+          <a href="../services/crm.html" class="block px-4 py-2 text-sm hover:bg-pink-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-users-gear mr-2 text-purple-400"></i>CRM</a>
+          <a href="../services/erp.html" class="block px-4 py-2 text-sm hover:bg-pink-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-sitemap mr-2 text-orange-400"></i>ERP</a>
+        </div>
+      </div>
+      <a href="../index.html#about" class="hover:text-white transition-colors">About</a>
+      <a href="../index.html#contact" class="bg-gradient-to-r from-indigo-600 to-pink-600 text-white px-5 py-2 rounded-full font-bold hover:opacity-90 transition-all">Contact Us</a>
+    </nav>
+    <!-- Mobile Menu Button -->
+    <button id="mob-toggle" class="md:hidden text-white text-xl"><i class="fa-solid fa-bars"></i></button>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mob-menu" class="hidden md:hidden border-t border-gray-800 bg-gray-900 px-4 py-4 space-y-2">
+    <p class="text-xs font-bold text-indigo-400 uppercase tracking-widest mb-2">IT Courses</p>
+    <a href="digital-marketing.html" class="block py-2 text-gray-300 hover:text-white">Digital Marketing</a>
+    <a href="full-stack.html" class="block py-2 text-gray-300 hover:text-white">Full Stack Dev</a>
+    <a href="java.html" class="block py-2 text-gray-300 hover:text-white">Java</a>
+    <a href="python.html" class="block py-2 text-gray-300 hover:text-white">Python</a>
+    <a href="data-science.html" class="block py-2 text-gray-300 hover:text-white">Data Science</a>
+    <a href="data-analytics.html" class="block py-2 text-gray-300 hover:text-white">Data Analytics</a>
+    <a href="cloud-computing.html" class="block py-2 text-gray-300 hover:text-white">Cloud Computing</a>
+    <a href="ai-ml.html" class="block py-2 text-gray-300 hover:text-white">AI & ML</a>
+    <p class="text-xs font-bold text-pink-400 uppercase tracking-widest mt-4 mb-2">Agency Services</p>
+    <a href="../services/seo.html" class="block py-2 text-gray-300 hover:text-white">SEO</a>
+    <a href="../services/smm.html" class="block py-2 text-gray-300 hover:text-white">SMM</a>
+    <a href="../services/smo.html" class="block py-2 text-gray-300 hover:text-white">SMO</a>
+    <a href="../services/website-development.html" class="block py-2 text-gray-300 hover:text-white">Website Development</a>
+    <a href="../services/sem.html" class="block py-2 text-gray-300 hover:text-white">SEM</a>
+    <a href="../services/crm.html" class="block py-2 text-gray-300 hover:text-white">CRM</a>
+    <a href="../services/erp.html" class="block py-2 text-gray-300 hover:text-white">ERP</a>
+  </div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="relative pt-24 pb-20 bg-brand-navy overflow-hidden bg-grid">
+  <div class="absolute inset-0 bg-gradient-to-b from-transparent to-brand-navy z-0"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+    <div class="text-sm font-semibold text-brand-indigo uppercase tracking-widest mb-4 flex items-center justify-center gap-2" data-aos="fade-down">
+      <a href="../index.html" class="hover:text-white">Home</a> <i class="fa-solid fa-chevron-right text-[10px]"></i> <span>Courses</span> <i class="fa-solid fa-chevron-right text-[10px]"></i> <span class="text-white">Digital Marketing</span>
+    </div>
+    <div class="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-indigo-500/10 text-brand-indigo mb-6" data-aos="zoom-in">
+      <i class="fa-solid fa-bullhorn text-4xl"></i>
+    </div>
+    <h1 class="text-5xl md:text-7xl font-black text-white mb-6" data-aos="fade-up">Master <span class="grad-text">Digital Marketing</span></h1>
+    <p class="text-xl text-gray-400 max-w-3xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="100">Become a full-stack digital marketer. Learn SEO, SEM, Social Media, and Analytics with hands-on projects and agency-style training.</p>
+    
+    <div class="flex flex-wrap justify-center gap-4 mb-16" data-aos="fade-up" data-aos-delay="200">
+      <a href="#enroll" class="px-8 py-4 rounded-full bg-brand-indigo text-white font-bold hover:bg-indigo-500 transition shadow-[0_0_20px_rgba(79,70,229,0.4)]">Enroll Now</a>
+      <a href="#" class="px-8 py-4 rounded-full glass text-white font-bold hover:bg-white/10 transition flex items-center gap-2"><i class="fa-solid fa-download"></i> Download Syllabus</a>
+    </div>
+    
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="300">
+      <div class="glass p-4 rounded-2xl flex flex-col items-center justify-center">
+        <i class="fa-regular fa-clock text-brand-indigo text-2xl mb-2"></i>
+        <div class="text-white font-bold text-lg">3 Months</div>
+        <div class="text-gray-400 text-sm">Duration</div>
+      </div>
+      <div class="glass p-4 rounded-2xl flex flex-col items-center justify-center">
+        <i class="fa-solid fa-laptop text-brand-purple text-2xl mb-2"></i>
+        <div class="text-white font-bold text-lg">Online & Offline</div>
+        <div class="text-gray-400 text-sm">Mode of Training</div>
+      </div>
+      <div class="glass p-4 rounded-2xl flex flex-col items-center justify-center">
+        <i class="fa-solid fa-certificate text-brand-pink text-2xl mb-2"></i>
+        <div class="text-white font-bold text-lg">Guaranteed</div>
+        <div class="text-gray-400 text-sm">Certification</div>
+      </div>
+      <div class="glass p-4 rounded-2xl flex flex-col items-center justify-center">
+        <i class="fa-solid fa-briefcase text-brand-cyan text-2xl mb-2"></i>
+        <div class="text-white font-bold text-lg">100%</div>
+        <div class="text-gray-400 text-sm">Placement Assistance</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div data-aos="fade-right">
+        <h2 class="text-3xl md:text-4xl font-black text-gray-900 mb-6">Course <span class="text-brand-indigo">Overview</span></h2>
+        <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+          The KeepClicks Digital Marketing course is designed for beginners and professionals wanting to excel in the digital landscape. Taught by industry experts, this comprehensive program covers everything from search engine optimization to advanced paid advertising strategies.
+        </p>
+        <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+          You won't just learn theory; you will work on live agency projects, manage real ad budgets, and build portfolios that showcase your ability to drive tangible business growth.
+        </p>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3"><i class="fa-solid fa-check-circle text-brand-emerald mt-1 text-xl"></i> <span class="text-gray-700 font-medium">Hands-on experience with premium marketing tools.</span></li>
+          <li class="flex items-start gap-3"><i class="fa-solid fa-check-circle text-brand-emerald mt-1 text-xl"></i> <span class="text-gray-700 font-medium">Mentorship from seasoned agency professionals.</span></li>
+          <li class="flex items-start gap-3"><i class="fa-solid fa-check-circle text-brand-emerald mt-1 text-xl"></i> <span class="text-gray-700 font-medium">Mock interviews and resume building sessions.</span></li>
+        </ul>
+      </div>
+      <div class="grid grid-cols-2 gap-6" data-aos="fade-left">
+        <div class="bg-indigo-50 p-6 rounded-3xl border border-indigo-100">
+          <div class="w-12 h-12 bg-white rounded-xl shadow flex items-center justify-center text-brand-indigo text-xl mb-4"><i class="fa-solid fa-users"></i></div>
+          <h4 class="font-bold text-gray-900 mb-2">Live Projects</h4>
+          <p class="text-sm text-gray-600">Work on real client campaigns for practical exposure.</p>
+        </div>
+        <div class="bg-purple-50 p-6 rounded-3xl border border-purple-100 mt-8">
+          <div class="w-12 h-12 bg-white rounded-xl shadow flex items-center justify-center text-brand-purple text-xl mb-4"><i class="fa-solid fa-chart-line"></i></div>
+          <h4 class="font-bold text-gray-900 mb-2">ROI Focused</h4>
+          <p class="text-sm text-gray-600">Learn to optimize campaigns for maximum return on investment.</p>
+        </div>
+        <div class="bg-pink-50 p-6 rounded-3xl border border-pink-100">
+          <div class="w-12 h-12 bg-white rounded-xl shadow flex items-center justify-center text-brand-pink text-xl mb-4"><i class="fa-solid fa-bullseye"></i></div>
+          <h4 class="font-bold text-gray-900 mb-2">Strategy Building</h4>
+          <p class="text-sm text-gray-600">Master the art of creating 360-degree marketing plans.</p>
+        </div>
+        <div class="bg-cyan-50 p-6 rounded-3xl border border-cyan-100 mt-8">
+          <div class="w-12 h-12 bg-white rounded-xl shadow flex items-center justify-center text-brand-cyan text-xl mb-4"><i class="fa-solid fa-handshake"></i></div>
+          <h4 class="font-bold text-gray-900 mb-2">Agency Ready</h4>
+          <p class="text-sm text-gray-600">Step out fully prepared to join top digital agencies.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRICULUM -->
+<section class="py-20 bg-gray-50 border-y border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-3xl md:text-4xl font-black text-gray-900 mb-4">Course <span class="text-brand-indigo">Curriculum</span></h2>
+      <p class="text-gray-600 text-lg">A structured learning path designed for success.</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Modules -->
+      <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100" data-aos="fade-up">
+        <span class="text-xs font-bold bg-indigo-100 text-brand-indigo px-2 py-1 rounded mb-3 inline-block">Module 1</span>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">SEO Fundamentals & Advanced</h3>
+        <p class="text-gray-600 text-sm">On-page, Off-page, Technical SEO, Keyword Research, Local SEO, Algorithm Updates.</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100" data-aos="fade-up" data-aos-delay="100">
+        <span class="text-xs font-bold bg-indigo-100 text-brand-indigo px-2 py-1 rounded mb-3 inline-block">Module 2</span>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">Google Ads (SEM/PPC)</h3>
+        <p class="text-gray-600 text-sm">Search Network, Display Network, Video Ads, Shopping Ads, Bidding Strategies.</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100" data-aos="fade-up">
+        <span class="text-xs font-bold bg-indigo-100 text-brand-indigo px-2 py-1 rounded mb-3 inline-block">Module 3</span>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">Social Media Marketing (SMM)</h3>
+        <p class="text-gray-600 text-sm">Organic growth strategies on Facebook, Instagram, LinkedIn, Twitter, Pinterest.</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100" data-aos="fade-up" data-aos-delay="100">
+        <span class="text-xs font-bold bg-indigo-100 text-brand-indigo px-2 py-1 rounded mb-3 inline-block">Module 4</span>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">Meta Ads (Facebook & IG)</h3>
+        <p class="text-gray-600 text-sm">Campaign structure, Audience targeting, Pixel setup, Retargeting, ROAS optimization.</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100" data-aos="fade-up">
+        <span class="text-xs font-bold bg-indigo-100 text-brand-indigo px-2 py-1 rounded mb-3 inline-block">Module 5</span>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">Content & Email Marketing</h3>
+        <p class="text-gray-600 text-sm">Content strategy, Copywriting techniques, Email campaigns, Automation workflows.</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100" data-aos="fade-up" data-aos-delay="100">
+        <span class="text-xs font-bold bg-indigo-100 text-brand-indigo px-2 py-1 rounded mb-3 inline-block">Module 6</span>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">Analytics & Affiliate Marketing</h3>
+        <p class="text-gray-600 text-sm">Google Analytics 4, Tag Manager, Report creation, Affiliate networks.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section class="py-20 bg-brand-navy">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl md:text-4xl font-black text-white mb-12" data-aos="fade-up">Tools You Will <span class="grad-text">Master</span></h2>
+    <div class="flex flex-wrap justify-center gap-4 md:gap-8" data-aos="fade-up" data-aos-delay="100">
+      <!-- Tool Badges -->
+      <div class="glass px-6 py-4 rounded-xl flex flex-col items-center justify-center gap-2 w-32 md:w-40 hover:-translate-y-2 transition-transform">
+        <i class="fa-brands fa-google text-3xl text-brand-cyan"></i>
+        <span class="text-white font-medium text-sm">Google Analytics</span>
+      </div>
+      <div class="glass px-6 py-4 rounded-xl flex flex-col items-center justify-center gap-2 w-32 md:w-40 hover:-translate-y-2 transition-transform">
+        <i class="fa-solid fa-magnifying-glass-chart text-3xl text-orange-500"></i>
+        <span class="text-white font-medium text-sm">Semrush</span>
+      </div>
+      <div class="glass px-6 py-4 rounded-xl flex flex-col items-center justify-center gap-2 w-32 md:w-40 hover:-translate-y-2 transition-transform">
+        <i class="fa-solid fa-palette text-3xl text-brand-purple"></i>
+        <span class="text-white font-medium text-sm">Canva</span>
+      </div>
+      <div class="glass px-6 py-4 rounded-xl flex flex-col items-center justify-center gap-2 w-32 md:w-40 hover:-translate-y-2 transition-transform">
+        <i class="fa-brands fa-meta text-3xl text-blue-500"></i>
+        <span class="text-white font-medium text-sm">Meta Suite</span>
+      </div>
+      <div class="glass px-6 py-4 rounded-xl flex flex-col items-center justify-center gap-2 w-32 md:w-40 hover:-translate-y-2 transition-transform">
+        <i class="fa-solid fa-envelope-open-text text-3xl text-yellow-500"></i>
+        <span class="text-white font-medium text-sm">Mailchimp</span>
+      </div>
+      <div class="glass px-6 py-4 rounded-xl flex flex-col items-center justify-center gap-2 w-32 md:w-40 hover:-translate-y-2 transition-transform">
+        <i class="fa-solid fa-chart-pie text-3xl text-brand-emerald"></i>
+        <span class="text-white font-medium text-sm">Ahrefs</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAREER -->
+<section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-3xl md:text-4xl font-black text-gray-900 mb-4">Career <span class="text-brand-indigo">Outcomes</span></h2>
+      <p class="text-gray-600 text-lg">Kickstart your career with top-paying roles in the industry.</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white p-8 rounded-3xl shadow-xl shadow-gray-200/50 border border-gray-100" data-aos="fade-up">
+        <h3 class="text-xl font-bold text-gray-900 mb-4">Digital Marketing Executive</h3>
+        <p class="text-gray-600 mb-6 text-sm">Manage day-to-day marketing activities across various digital channels to boost brand presence.</p>
+        <div class="bg-indigo-50 rounded-xl p-4 flex items-center justify-between">
+          <span class="text-sm font-semibold text-gray-700">Salary Range</span>
+          <span class="font-bold text-brand-indigo">₹3–5 LPA</span>
+        </div>
+      </div>
+      <div class="bg-white p-8 rounded-3xl shadow-xl shadow-gray-200/50 border border-gray-100" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="text-xl font-bold text-gray-900 mb-4">SEO Specialist</h3>
+        <p class="text-gray-600 mb-6 text-sm">Focus on driving organic traffic by optimizing website structure, content, and building authoritative links.</p>
+        <div class="bg-indigo-50 rounded-xl p-4 flex items-center justify-between">
+          <span class="text-sm font-semibold text-gray-700">Salary Range</span>
+          <span class="font-bold text-brand-indigo">₹4–7 LPA</span>
+        </div>
+      </div>
+      <div class="bg-white p-8 rounded-3xl shadow-xl shadow-gray-200/50 border border-gray-100" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="text-xl font-bold text-gray-900 mb-4">PPC Manager</h3>
+        <p class="text-gray-600 mb-6 text-sm">Handle paid campaigns on Google and Social Media to generate high-quality leads and drive conversions.</p>
+        <div class="bg-indigo-50 rounded-xl p-4 flex items-center justify-between">
+          <span class="text-sm font-semibold text-gray-700">Salary Range</span>
+          <span class="font-bold text-brand-indigo">₹5–8 LPA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="py-20 bg-white border-t border-gray-200">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12" data-aos="fade-up">
+      <h2 class="text-3xl font-black text-gray-900 mb-4">Frequently Asked <span class="text-brand-indigo">Questions</span></h2>
+    </div>
+    <div class="space-y-4" data-aos="fade-up" data-aos-delay="100">
+      <div class="border border-gray-200 rounded-2xl overflow-hidden">
+        <button class="faq-btn w-full px-6 py-4 flex items-center justify-between bg-gray-50 hover:bg-gray-100 transition-colors text-left font-bold text-gray-900">
+          Do I need a technical background? <i class="fa-solid fa-plus faq-icon text-brand-indigo"></i>
+        </button>
+        <div class="faq-answer bg-white px-6">
+          <div class="py-4 text-gray-600 text-sm">No, this course is designed from scratch. Anyone with basic internet knowledge can learn and succeed in digital marketing.</div>
+        </div>
+      </div>
+      <div class="border border-gray-200 rounded-2xl overflow-hidden">
+        <button class="faq-btn w-full px-6 py-4 flex items-center justify-between bg-gray-50 hover:bg-gray-100 transition-colors text-left font-bold text-gray-900">
+          Will I get placement assistance? <i class="fa-solid fa-plus faq-icon text-brand-indigo"></i>
+        </button>
+        <div class="faq-answer bg-white px-6">
+          <div class="py-4 text-gray-600 text-sm">Yes! We provide 100% placement assistance, resume building, and mock interviews to prepare you for top agency roles.</div>
+        </div>
+      </div>
+      <div class="border border-gray-200 rounded-2xl overflow-hidden">
+        <button class="faq-btn w-full px-6 py-4 flex items-center justify-between bg-gray-50 hover:bg-gray-100 transition-colors text-left font-bold text-gray-900">
+          Is the certification recognized? <i class="fa-solid fa-plus faq-icon text-brand-indigo"></i>
+        </button>
+        <div class="faq-answer bg-white px-6">
+          <div class="py-4 text-gray-600 text-sm">Absolutely. KeepClicks is a recognized IT Academy and Agency. Our certificate holds significant value in the industry.</div>
+        </div>
+      </div>
+      <div class="border border-gray-200 rounded-2xl overflow-hidden">
+        <button class="faq-btn w-full px-6 py-4 flex items-center justify-between bg-gray-50 hover:bg-gray-100 transition-colors text-left font-bold text-gray-900">
+          Are there live projects included? <i class="fa-solid fa-plus faq-icon text-brand-indigo"></i>
+        </button>
+        <div class="faq-answer bg-white px-6">
+          <div class="py-4 text-gray-600 text-sm">Yes, practical application is a key focus. You will work on real client data and budgets provided by our agency arm.</div>
+        </div>
+      </div>
+      <div class="border border-gray-200 rounded-2xl overflow-hidden">
+        <button class="faq-btn w-full px-6 py-4 flex items-center justify-between bg-gray-50 hover:bg-gray-100 transition-colors text-left font-bold text-gray-900">
+          What is the duration and mode? <i class="fa-solid fa-plus faq-icon text-brand-indigo"></i>
+        </button>
+        <div class="faq-answer bg-white px-6">
+          <div class="py-4 text-gray-600 text-sm">The course lasts for 3 months and is available in both online and offline (classroom) modes.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="enroll" class="py-20 relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-r from-brand-indigo to-brand-purple"></div>
+  <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xKSIvPjwvc3ZnPg==')]"></div>
+  <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
+    <h2 class="text-4xl md:text-5xl font-black text-white mb-6">Ready to start your journey?</h2>
+    <p class="text-indigo-100 text-xl mb-10">Join 500+ students who have successfully transformed their careers with KeepClicks Academy.</p>
+    <a href="../index.html#contact" class="inline-block px-10 py-5 rounded-full bg-white text-brand-indigo font-black text-lg hover:shadow-2xl hover:scale-105 transition-all">Enroll Now - Limited Seats</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#0a0d14;border-top:1px solid rgba(99,102,241,.2);" class="pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+      <div class="md:col-span-1">
+        <a href="../index.html" class="flex items-center gap-2.5 mb-4">
+          <div class="w-10 h-10 rounded-xl overflow-hidden"><svg viewBox="0 0 100 100" class="w-full h-full"><defs><linearGradient id="fkc-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4f46e5"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ec4899"/></linearGradient><linearGradient id="fkc-cyan" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#06b6d4"/><stop offset="100%" stop-color="#3b82f6"/></linearGradient></defs><rect x="6" y="6" width="88" height="88" rx="22" fill="#0f172a"/><rect x="24" y="24" width="13" height="52" rx="6.5" fill="url(#fkc-cyan)"/><path d="M45 50 L68 27 C71 24 76 26 76 31 L76 41 L57 58 Z" fill="url(#fkc-grad)"/><path d="M45 50 L57 42 L76 61 L76 71 C76 76 71 78 68 75 Z" fill="url(#fkc-grad)"/><circle cx="76" cy="22" r="5" fill="#f43f5e"/></svg></div>
+          <span class="text-xl font-black text-white">keep<span class="text-indigo-400">clicks</span><span class="text-pink-400 text-xs">®</span></span>
+        </a>
+        <p class="text-gray-400 text-sm leading-relaxed">Your gateway to tech careers & digital growth. IT Academy + Digital Marketing Agency.</p>
+        <div class="flex gap-3 mt-4">
+          <a href="#" class="w-9 h-9 rounded-full bg-gray-800 hover:bg-indigo-600 flex items-center justify-center text-gray-400 hover:text-white transition-all"><i class="fa-brands fa-instagram text-sm"></i></a>
+          <a href="#" class="w-9 h-9 rounded-full bg-gray-800 hover:bg-blue-700 flex items-center justify-center text-gray-400 hover:text-white transition-all"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+          <a href="#" class="w-9 h-9 rounded-full bg-gray-800 hover:bg-red-600 flex items-center justify-center text-gray-400 hover:text-white transition-all"><i class="fa-brands fa-youtube text-sm"></i></a>
+          <a href="#" class="w-9 h-9 rounded-full bg-gray-800 hover:bg-sky-500 flex items-center justify-center text-gray-400 hover:text-white transition-all"><i class="fa-brands fa-twitter text-sm"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="text-white font-bold text-sm uppercase tracking-widest mb-4">IT Courses</h4>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li><a href="digital-marketing.html" class="hover:text-indigo-400 transition-colors">Digital Marketing</a></li>
+          <li><a href="full-stack.html" class="hover:text-indigo-400 transition-colors">Full Stack Dev</a></li>
+          <li><a href="java.html" class="hover:text-indigo-400 transition-colors">Java Programming</a></li>
+          <li><a href="python.html" class="hover:text-indigo-400 transition-colors">Python Programming</a></li>
+          <li><a href="data-science.html" class="hover:text-indigo-400 transition-colors">Data Science</a></li>
+          <li><a href="data-analytics.html" class="hover:text-indigo-400 transition-colors">Data Analytics</a></li>
+          <li><a href="cloud-computing.html" class="hover:text-indigo-400 transition-colors">Cloud Computing</a></li>
+          <li><a href="ai-ml.html" class="hover:text-indigo-400 transition-colors">AI & ML</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold text-sm uppercase tracking-widest mb-4">Agency Services</h4>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li><a href="../services/seo.html" class="hover:text-pink-400 transition-colors">SEO</a></li>
+          <li><a href="../services/smm.html" class="hover:text-pink-400 transition-colors">SMM</a></li>
+          <li><a href="../services/smo.html" class="hover:text-pink-400 transition-colors">SMO</a></li>
+          <li><a href="../services/website-development.html" class="hover:text-pink-400 transition-colors">Website Development</a></li>
+          <li><a href="../services/sem.html" class="hover:text-pink-400 transition-colors">SEM</a></li>
+          <li><a href="../services/crm.html" class="hover:text-pink-400 transition-colors">CRM</a></li>
+          <li><a href="../services/erp.html" class="hover:text-pink-400 transition-colors">ERP</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold text-sm uppercase tracking-widest mb-4">Contact</h4>
+        <ul class="space-y-3 text-sm text-gray-400">
+          <li class="flex items-start gap-2"><i class="fa-solid fa-envelope text-indigo-400 mt-0.5"></i> info@keepclicks.com</li>
+          <li class="flex items-start gap-2"><i class="fa-solid fa-phone text-indigo-400 mt-0.5"></i> +91 63794 27852</li>
+          <li class="flex items-start gap-2"><i class="fa-solid fa-location-dot text-indigo-400 mt-0.5"></i> Chennai, Tamil Nadu, India</li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
+      <p class="text-gray-500 text-sm">© 2026 KeepClicks®. All rights reserved.</p>
+      <p class="text-gray-600 text-xs">IT Academy & Digital Marketing Agency</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 700, once: true, offset: 60 });
+  window.addEventListener('load', () => { setTimeout(() => { document.getElementById('page-loader').classList.add('hidden'); }, 800); });
+  window.addEventListener('scroll', () => { document.getElementById('main-header').classList.toggle('scrolled', window.scrollY > 50); });
+  document.getElementById('mob-toggle').addEventListener('click', () => { document.getElementById('mob-menu').classList.toggle('hidden'); });
+  document.querySelectorAll('.faq-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const ans = btn.nextElementSibling;
+      const icon = btn.querySelector('.faq-icon');
+      ans.classList.toggle('open');
+      icon.classList.toggle('open');
+    });
+  });
+</script>
+</body>
+</html>
