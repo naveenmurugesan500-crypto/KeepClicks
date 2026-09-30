@@ -1,85 +1,434 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cloud Computing | KeepClicks® Academy</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cloud Computing & DevOps Course | KeepClicks® Academy</title>
+  <meta name="description" content="Master AWS, Microsoft Azure, Docker, Kubernetes, Terraform, and CI/CD pipelines at KeepClicks® Academy. 100% placement support."/>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { inter: ['Inter','sans-serif'] },
+          colors: {
+            brand: {
+              indigo: '#4f46e5',
+              purple: '#8b5cf6',
+              pink: '#ec4899',
+              cyan: '#06b6d4',
+              amber: '#f59e0b',
+              emerald: '#10b981',
+              navy: '#0a0d14',
+              slate: '#0f172a'
+            }
+          }
+        }
+      }
+    }
+  </script>
   <style>
-    * { font-family: 'Inter', sans-serif; }
-    .bg-grid{background-image:linear-gradient(rgba(56,189,248,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(56,189,248,.07) 1px,transparent 1px);background-size:44px 44px;}
-    .glass{background:rgba(255,255,255,.05);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.1);}
-    #main-header.scrolled{background:rgba(10,13,20,.95)!important;backdrop-filter:blur(20px);border-bottom:1px solid rgba(56,189,248,.2);}
-    .faq-answer{max-height:0;overflow:hidden;transition:max-height .4s ease;}
-    .faq-answer.open{max-height:400px;}
-    .faq-icon{transition:transform .3s;}
-    .faq-icon.open{transform:rotate(45deg);}
+    * { font-family: 'Inter', sans-serif; box-sizing: border-box; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0d14; }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(#0284c7, #4f46e5); border-radius: 3px; }
+    #page-loader { position: fixed; inset: 0; background: #0a0d14; z-index: 9999; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity .6s ease; }
+    #page-loader.hidden { opacity: 0; pointer-events: none; }
+    .loader-dot { width: 12px; height: 12px; border-radius: 50%; animation: lb 1.2s ease-in-out infinite; }
+    .loader-dot:nth-child(1){ background: #4f46e5; animation-delay: 0s; }
+    .loader-dot:nth-child(2){ background: #ec4899; animation-delay: .2s; }
+    .loader-dot:nth-child(3){ background: #f59e0b; animation-delay: .4s; }
+    .loader-dot:nth-child(4){ background: #10b981; animation-delay: .6s; }
+    @keyframes lb { 0%,80%,100%{ transform: translateY(0); } 40%{ transform: translateY(-18px); } }
+    .grad-text { background: linear-gradient(135deg, #0284c7, #4f46e5, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .bg-grid { background-image: linear-gradient(rgba(2,132,199,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(2,132,199,.07) 1px, transparent 1px); background-size: 44px 44px; }
+    .glass { background: rgba(255,255,255,.05); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,.1); }
+    #main-header { transition: all .4s ease; }
+    #main-header.scrolled { background: rgba(10,13,20,.98)!important; backdrop-filter: blur(20px); border-bottom: 1px solid rgba(2,132,199,.2); }
+    .nav-dropdown { display: none; position: absolute; top: calc(100% + 8px); left: 50%; transform: translateX(-50%); min-width: 260px; z-index: 200; }
+    .nav-item:hover .nav-dropdown { display: block; }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height .4s ease; }
+    .faq-answer.open { max-height: 500px; }
+    .faq-icon { transition: transform .3s; }
+    .faq-icon.open { transform: rotate(45deg); }
+    .marquee-track { display: flex; width: max-content; animation: marquee 35s linear infinite; }
+    @keyframes marquee { 0%{ transform: translateX(0%); } 100%{ transform: translateX(-50%); } }
   </style>
 </head>
-<body class="bg-gray-50">
+<body class="bg-gray-50 text-gray-900 overflow-x-hidden">
+
+<!-- PAGE LOADER -->
+<div id="page-loader">
+  <div class="flex flex-col items-center gap-5">
+    <div class="w-16 h-16 rounded-2xl overflow-hidden shadow-2xl" style="box-shadow:0 0 40px rgba(2,132,199,.5)">
+      <svg viewBox="0 0 100 100" class="w-full h-full">
+        <defs>
+          <linearGradient id="kg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4f46e5"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ec4899"/></linearGradient>
+          <linearGradient id="kc" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#06b6d4"/><stop offset="100%" stop-color="#3b82f6"/></linearGradient>
+        </defs>
+        <rect x="6" y="6" width="88" height="88" rx="22" fill="#0f172a"/>
+        <rect x="24" y="24" width="13" height="52" rx="6.5" fill="url(#kc)"/>
+        <path d="M45 50 L68 27 C71 24 76 26 76 31 L76 41 L57 58 Z" fill="url(#kg)"/>
+        <path d="M45 50 L57 42 L76 61 L76 71 C76 76 71 78 68 75 Z" fill="url(#kg)"/>
+        <circle cx="76" cy="22" r="5" fill="#f43f5e"/>
+      </svg>
+    </div>
+    <div class="text-xl font-black"><span class="grad-text">KeepClicks</span><span class="text-white">®</span></div>
+    <div class="flex gap-2 mt-1"><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div></div>
+  </div>
+</div>
+
+<!-- MARQUEE TICKER -->
+<div class="overflow-hidden py-2" style="background:linear-gradient(90deg,#0f172a,#1e1b4b,#0f172a)">
+  <div class="marquee-track whitespace-nowrap">
+    <span class="inline-flex items-center gap-2 px-6 text-sm text-gray-300"><i class="fa-solid fa-cloud text-sky-400"></i> Cloud Computing & DevOps: AWS Solutions Architect, Azure, Docker, Kubernetes & Terraform</span>
+    <span class="text-indigo-400 px-3">✦</span>
+    <span class="inline-flex items-center gap-2 px-6 text-sm text-gray-300"><i class="fa-solid fa-graduation-cap text-indigo-400"></i> Weekend & Weekday Live Batches · 100% Placement Support</span>
+    <span class="text-amber-400 px-3">✦</span>
+    <span class="inline-flex items-center gap-2 px-6 text-sm text-gray-300"><i class="fa-solid fa-trophy text-amber-400"></i> Average Package ₹8.5 LPA · Real AWS Production Architectures</span>
+  </div>
+</div>
+
 <!-- HEADER -->
-<header id="main-header" class="sticky top-0 z-50 transition-all duration-300" style="background:rgba(10,13,20,.9);">
-  <div class="max-w-7xl mx-auto px-4 h-18 flex items-center justify-between py-4">
+<header id="main-header" class="sticky top-0 z-50" style="background:rgba(10,13,20,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(99,102,241,.15)">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between py-4">
     <a href="../index.html" class="flex items-center gap-2.5">
-      <span class="text-xl font-black text-white">keep<span class="text-indigo-400">clicks</span><span class="text-pink-400 text-xs">®</span></span>
+      <div class="w-10 h-10 rounded-xl overflow-hidden">
+        <svg viewBox="0 0 100 100" class="w-full h-full">
+          <defs><linearGradient id="hg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4f46e5"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ec4899"/></linearGradient><linearGradient id="hc" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#06b6d4"/><stop offset="100%" stop-color="#3b82f6"/></linearGradient></defs>
+          <rect x="6" y="6" width="88" height="88" rx="22" fill="#0f172a"/>
+          <rect x="24" y="24" width="13" height="52" rx="6.5" fill="url(#hc)"/>
+          <path d="M45 50 L68 27 C71 24 76 26 76 31 L76 41 L57 58 Z" fill="url(#hg)"/>
+          <path d="M45 50 L57 42 L76 61 L76 71 C76 76 71 78 68 75 Z" fill="url(#hg)"/>
+          <circle cx="76" cy="22" r="5" fill="#f43f5e"/>
+        </svg>
+      </div>
+      <span class="text-xl font-black text-white">keep<span class="text-indigo-400">clicks</span><span class="text-pink-400 text-xs align-top ml-0.5">®</span></span>
     </a>
-    <a href="../index.html#contact" class="bg-sky-500 text-white px-5 py-2 rounded-full font-bold">Contact Us</a>
+    
+    <nav class="hidden lg:flex items-center gap-1 text-sm font-semibold text-gray-300">
+      <a href="../index.html" class="px-3 py-2 rounded-lg hover:bg-white/5 hover:text-white transition-all">Home</a>
+      <a href="../about.html" class="px-3 py-2 rounded-lg hover:bg-white/5 hover:text-white transition-all">About Us</a>
+      
+      <!-- Courses Dropdown -->
+      <div class="nav-item relative">
+        <a href="../courses.html" class="flex items-center gap-1 px-3 py-2 rounded-lg bg-white/10 text-white transition-all">
+          Courses <i class="fa-solid fa-chevron-down text-[10px] ml-1"></i>
+        </a>
+        <div class="nav-dropdown">
+          <div class="bg-gray-900 border border-gray-700 rounded-xl shadow-2xl p-2" style="min-width:260px">
+            <a href="digital-marketing.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-indigo-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-bullhorn text-indigo-400 w-4"></i>Digital Marketing</a>
+            <a href="full-stack.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-indigo-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-code text-cyan-400 w-4"></i>Full Stack Dev</a>
+            <a href="ai-ml.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-indigo-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-robot text-pink-400 w-4"></i>AI & ML</a>
+            <a href="data-science.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-indigo-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-flask text-purple-400 w-4"></i>Data Science</a>
+            <a href="data-analytics.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-indigo-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-chart-bar text-emerald-400 w-4"></i>Data Analytics</a>
+            <a href="cloud-computing.html" class="flex items-center gap-2 px-3 py-2 text-sm bg-sky-600 text-white rounded-lg transition-colors"><i class="fa-solid fa-cloud text-white w-4"></i>Cloud Computing</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Services Dropdown -->
+      <div class="nav-item relative">
+        <a href="../services.html" class="flex items-center gap-1 px-3 py-2 rounded-lg hover:bg-white/5 hover:text-white transition-all">
+          Services <i class="fa-solid fa-chevron-down text-[10px] ml-1"></i>
+        </a>
+        <div class="nav-dropdown">
+          <div class="bg-gray-900 border border-gray-700 rounded-xl shadow-2xl p-2" style="min-width:240px">
+            <a href="../services/seo.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-pink-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-magnifying-glass text-emerald-400 w-4"></i>SEO</a>
+            <a href="../services/sem.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-pink-600 hover:text-white rounded-lg transition-colors"><i class="fa-brands fa-google text-amber-400 w-4"></i>SEM</a>
+            <a href="../services/smm.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-pink-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-share-nodes text-blue-400 w-4"></i>SMM</a>
+            <a href="../services/smo.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-pink-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-thumbs-up text-indigo-400 w-4"></i>SMO</a>
+            <a href="../services/video-shoot.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-pink-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-camera text-rose-400 w-4"></i>Video Shoot</a>
+            <a href="../services/video-edit.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-pink-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-film text-violet-400 w-4"></i>Video Edit</a>
+            <a href="../services/website-development.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-pink-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-laptop-code text-cyan-400 w-4"></i>Website Dev</a>
+            <a href="../services/crm.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-pink-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-users-gear text-purple-400 w-4"></i>CRM</a>
+            <a href="../services/erp.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-pink-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-sitemap text-orange-400 w-4"></i>ERP</a>
+          </div>
+        </div>
+      </div>
+      
+      <a href="../blog.html" class="px-3 py-2 rounded-lg hover:bg-white/5 hover:text-white transition-all">Blog</a>
+      <a href="../contact.html" class="ml-2 px-5 py-2 rounded-full font-bold text-white transition-all hover:opacity-90" style="background:linear-gradient(135deg,#4f46e5,#ec4899)">Contact Us</a>
+    </nav>
+    <button id="mob-toggle" class="lg:hidden text-white text-xl p-2"><i class="fa-solid fa-bars"></i></button>
+  </div>
+  
+  <div id="mob-menu" class="hidden lg:hidden border-t border-gray-800 bg-gray-900 px-4 py-4 space-y-1">
+    <a href="../index.html" class="block py-2 text-gray-300 hover:text-white text-sm">Home</a>
+    <a href="../about.html" class="block py-2 text-gray-300 hover:text-white text-sm">About Us</a>
+    <a href="../courses.html" class="block py-2 text-indigo-400 font-bold text-sm">All Courses</a>
+    <a href="../services.html" class="block py-2 text-pink-400 font-bold text-sm">All Services</a>
+    <a href="../blog.html" class="block py-2 text-gray-300 hover:text-white text-sm">Blog</a>
+    <a href="../contact.html" class="block mt-3 py-2.5 rounded-xl text-center font-bold text-white text-sm" style="background:linear-gradient(135deg,#4f46e5,#ec4899)">Contact Us</a>
   </div>
 </header>
 
-<section class="relative pt-24 pb-20 bg-[#0a0d14] overflow-hidden bg-grid">
-  <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
-    <div class="inline-flex w-20 h-20 rounded-2xl bg-sky-500/10 text-sky-400 items-center justify-center mb-6"><i class="fa-solid fa-cloud text-4xl"></i></div>
-    <h1 class="text-5xl font-black text-white mb-6">Cloud <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500">Computing & DevOps</span></h1>
-    <p class="text-gray-400 text-xl mb-10 max-w-2xl mx-auto">Master AWS, Azure, GCP, Docker, Kubernetes and CI/CD pipelines.</p>
-    <div class="flex justify-center gap-4 mb-10">
-      <a href="#enroll" class="px-8 py-4 rounded-full bg-sky-500 text-white font-bold">Enroll Now</a>
+<!-- HERO SECTION -->
+<section class="relative pt-24 pb-20 bg-brand-navy overflow-hidden bg-grid">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+    <div class="text-sm font-semibold text-sky-400 uppercase tracking-widest mb-4 flex items-center justify-center gap-2" data-aos="fade-down">
+      <a href="../index.html" class="hover:text-white">Home</a> <i class="fa-solid fa-chevron-right text-[10px]"></i> <a href="../courses.html" class="hover:text-white">Courses</a> <i class="fa-solid fa-chevron-right text-[10px]"></i> <span class="text-white">Cloud Computing</span>
     </div>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-      <div class="glass p-4 rounded-xl"><div class="text-white font-bold">4 Months</div><div class="text-gray-400 text-sm">Duration</div></div>
-      <div class="glass p-4 rounded-xl"><div class="text-white font-bold">Online/Offline</div><div class="text-gray-400 text-sm">Mode</div></div>
-      <div class="glass p-4 rounded-xl"><div class="text-white font-bold">Certifications</div><div class="text-gray-400 text-sm">Prep Included</div></div>
-      <div class="glass p-4 rounded-xl"><div class="text-white font-bold">100%</div><div class="text-gray-400 text-sm">Placement</div></div>
+    <div class="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-sky-500/10 text-sky-400 mb-6 shadow-lg shadow-sky-500/20" data-aos="zoom-in">
+      <i class="fa-solid fa-cloud text-4xl"></i>
+    </div>
+    <h1 class="text-4xl sm:text-6xl font-black text-white mb-6" data-aos="fade-up">
+      Cloud Computing & <br/><span class="grad-text">DevOps Engineering</span>
+    </h1>
+    <p class="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto mb-10 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+      Master multi-cloud architecture on AWS and Azure. Automate containerized infrastructure with Docker, Kubernetes, Terraform (IaC), and automated CI/CD pipelines.
+    </p>
+    
+    <div class="flex flex-wrap justify-center gap-4 mb-16" data-aos="fade-up" data-aos-delay="200">
+      <a href="../contact.html" class="px-8 py-4 rounded-full font-bold text-white shadow-lg shadow-sky-500/30 hover:scale-105 transition-all" style="background:linear-gradient(135deg,#0284c7,#4f46e5)">
+        Enroll in Upcoming Batch <i class="fa-solid fa-arrow-right ml-2"></i>
+      </a>
+      <a href="#syllabus" class="px-8 py-4 rounded-full glass text-white font-bold hover:bg-white/10 transition flex items-center gap-2">
+        <i class="fa-solid fa-book-open"></i> Explore Syllabus
+      </a>
+    </div>
+    
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="300">
+      <div class="glass p-4 rounded-2xl text-center">
+        <i class="fa-regular fa-clock text-sky-400 text-2xl mb-2"></i>
+        <div class="text-white font-bold text-lg">4 Months</div>
+        <div class="text-gray-400 text-xs">Hands-on Labs</div>
+      </div>
+      <div class="glass p-4 rounded-2xl text-center">
+        <i class="fa-solid fa-server text-indigo-400 text-2xl mb-2"></i>
+        <div class="text-white font-bold text-lg">AWS & Azure</div>
+        <div class="text-gray-400 text-xs">Multi-Cloud Ready</div>
+      </div>
+      <div class="glass p-4 rounded-2xl text-center">
+        <i class="fa-solid fa-award text-amber-400 text-2xl mb-2"></i>
+        <div class="text-white font-bold text-lg">AWS SAA-C03</div>
+        <div class="text-gray-400 text-xs">Exam Certified</div>
+      </div>
+      <div class="glass p-4 rounded-2xl text-center">
+        <i class="fa-solid fa-briefcase text-emerald-400 text-2xl mb-2"></i>
+        <div class="text-white font-bold text-lg">100%</div>
+        <div class="text-gray-400 text-xs">Placement Support</div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- CURRICULUM -->
+<!-- OVERVIEW -->
 <section class="py-20 bg-white">
-  <div class="max-w-7xl mx-auto px-4">
-    <h2 class="text-3xl font-black mb-10 text-center">Curriculum</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="p-6 border rounded-xl"><h3 class="font-bold text-sky-500">AWS Core Services</h3><p class="text-sm mt-2">EC2, S3, RDS, Lambda, IAM, VPC setups.</p></div>
-      <div class="p-6 border rounded-xl"><h3 class="font-bold text-sky-500">Azure & GCP</h3><p class="text-sm mt-2">Multi-cloud concepts and fundamental services.</p></div>
-      <div class="p-6 border rounded-xl"><h3 class="font-bold text-sky-500">DevOps & Containers</h3><p class="text-sm mt-2">Docker, Kubernetes, CI/CD pipelines with GitHub Actions.</p></div>
-      <div class="p-6 border rounded-xl"><h3 class="font-bold text-sky-500">Infrastructure as Code</h3><p class="text-sm mt-2">Terraform, CloudFormation, Automating provisioning.</p></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div data-aos="fade-right">
+        <span class="text-xs font-bold uppercase tracking-widest text-sky-600 bg-sky-50 px-3 py-1 rounded-full border border-sky-100">Enterprise Infrastructure</span>
+        <h2 class="text-3xl md:text-4xl font-black text-slate-900 mt-4 mb-6">Program <span class="text-sky-600">Overview</span></h2>
+        <p class="text-slate-600 text-base leading-relaxed mb-4">
+          Every modern enterprise relies on cloud scalability and resilient DevOps deployment workflows. At KeepClicks Academy, you don't merely read AWS slide decks — you provision real production VPCs, deploy microservices in Kubernetes clusters, and automate cloud provisioning with code.
+        </p>
+        <p class="text-slate-600 text-base leading-relaxed mb-6">
+          You will learn serverless execution with AWS Lambda, database replication with Amazon RDS and DynamoDB, container orchestration with Kubernetes, and enterprise security policies.
+        </p>
+        <div class="space-y-3">
+          <div class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-emerald-500 text-lg"></i> <span class="text-slate-800 font-semibold text-sm">Deep coverage of AWS core services (EC2, S3, RDS, IAM, VPC, Route53)</span></div>
+          <div class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-emerald-500 text-lg"></i> <span class="text-slate-800 font-semibold text-sm">Containerization with Docker & multi-node orchestration via Kubernetes (EKS)</span></div>
+          <div class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-emerald-500 text-lg"></i> <span class="text-slate-800 font-semibold text-sm">Infrastructure as Code (IaC) with HashiCorp Terraform & GitHub Actions CI/CD</span></div>
+        </div>
+      </div>
+      
+      <div class="bg-slate-50 border border-slate-200 rounded-2xl p-8 shadow-sm" data-aos="fade-left">
+        <h3 class="text-xl font-bold text-slate-900 mb-6">Cloud Industry Metrics</h3>
+        <div class="grid grid-cols-2 gap-6">
+          <div class="border-b border-slate-200 pb-4">
+            <div class="text-2xl font-black text-sky-600">AWS + Azure</div>
+            <div class="text-xs text-slate-500 mt-1 uppercase font-semibold">Dual Stack</div>
+          </div>
+          <div class="border-b border-slate-200 pb-4">
+            <div class="text-2xl font-black text-indigo-600">₹6–19 LPA</div>
+            <div class="text-xs text-slate-500 mt-1 uppercase font-semibold">Average Package</div>
+          </div>
+          <div>
+            <div class="text-2xl font-black text-emerald-600">100%</div>
+            <div class="text-xs text-slate-500 mt-1 uppercase font-semibold">Real Cloud Labs</div>
+          </div>
+          <div>
+            <div class="text-2xl font-black text-amber-500">SAA-C03</div>
+            <div class="text-xs text-slate-500 mt-1 uppercase font-semibold">Exam Vouchers</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- CAREERS -->
-<section class="py-20 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-4 text-center">
-    <h2 class="text-3xl font-black mb-10">Careers</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="bg-white p-6 border rounded-xl"><h3 class="font-bold">Cloud Engineer</h3><p class="text-sky-500 font-bold mt-2">₹5–12 LPA</p></div>
-      <div class="bg-white p-6 border rounded-xl"><h3 class="font-bold">DevOps Engineer</h3><p class="text-sky-500 font-bold mt-2">₹7–18 LPA</p></div>
-      <div class="bg-white p-6 border rounded-xl"><h3 class="font-bold">Solutions Architect</h3><p class="text-sky-500 font-bold mt-2">₹10–25 LPA</p></div>
+<!-- SYLLABUS -->
+<section id="syllabus" class="py-20 bg-slate-50">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <span class="text-xs font-bold uppercase tracking-widest text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">Syllabus</span>
+      <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3">4-Month Intensive Curriculum</h2>
+    </div>
+
+    <div class="space-y-4">
+      <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-bold uppercase text-sky-600">Module 1 · Weeks 1–3</span>
+          <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded">Fundamentals</span>
+        </div>
+        <h4 class="text-lg font-bold text-slate-900">Linux Administration, Networking & Shell Scripting</h4>
+        <p class="text-slate-600 text-sm mt-2">Linux filesystem, permissions, process management, TCP/IP, DNS, SSH key management, Bash automation scripts, and Git version control.</p>
+      </div>
+
+      <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-bold uppercase text-indigo-600">Module 2 · Weeks 4–9</span>
+          <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded">AWS Architecture</span>
+        </div>
+        <h4 class="text-lg font-bold text-slate-900">Amazon Web Services (AWS) Deep Dive</h4>
+        <p class="text-slate-600 text-sm mt-2">VPC subnetting, Security Groups, EC2 auto-scaling & load balancing (ALB), S3 lifecycle policies, RDS Multi-AZ, DynamoDB, Route 53, CloudWatch monitoring, and IAM roles.</p>
+      </div>
+
+      <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-bold uppercase text-cyan-600">Module 3 · Weeks 10–13</span>
+          <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded">Containers</span>
+        </div>
+        <h4 class="text-lg font-bold text-slate-900">Docker & Kubernetes Container Orchestration</h4>
+        <p class="text-slate-600 text-sm mt-2">Writing Dockerfiles, multi-stage builds, Docker Compose, Kubernetes Pods, Deployments, Services, ConfigMaps, Secrets, Ingress Controllers, and AWS EKS cluster deployment.</p>
+      </div>
+
+      <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-bold uppercase text-emerald-600">Module 4 · Weeks 14–16</span>
+          <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded">DevOps Automation</span>
+        </div>
+        <h4 class="text-lg font-bold text-slate-900">Terraform (IaC) & CI/CD Pipelines</h4>
+        <p class="text-slate-600 text-sm mt-2">Writing modular HashiCorp Terraform configuration, state management, automated CI/CD deployment pipelines with GitHub Actions, Jenkins, and zero-downtime blue-green releases.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="enroll" class="py-20 bg-sky-600 text-center">
-  <h2 class="text-4xl font-black text-white mb-6">Build on the Cloud</h2>
-  <a href="../index.html#contact" class="inline-block px-10 py-4 bg-white text-sky-700 font-black rounded-full">Enroll Now</a>
+<!-- TOOLS -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl font-black text-slate-900 mb-12">Cloud & DevOps Tools You Will Master</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-4">
+      <div class="p-4 border rounded-xl bg-slate-50"><i class="fa-brands fa-aws text-3xl text-amber-500 mb-2"></i><div class="text-xs font-bold">AWS</div></div>
+      <div class="p-4 border rounded-xl bg-slate-50"><i class="fa-brands fa-docker text-3xl text-cyan-500 mb-2"></i><div class="text-xs font-bold">Docker</div></div>
+      <div class="p-4 border rounded-xl bg-slate-50"><i class="fa-solid fa-dharmachakra text-3xl text-blue-600 mb-2"></i><div class="text-xs font-bold">Kubernetes</div></div>
+      <div class="p-4 border rounded-xl bg-slate-50"><i class="fa-solid fa-layer-group text-3xl text-purple-600 mb-2"></i><div class="text-xs font-bold">Terraform</div></div>
+      <div class="p-4 border rounded-xl bg-slate-50"><i class="fa-brands fa-github text-3xl text-slate-800 mb-2"></i><div class="text-xs font-bold">GitHub Actions</div></div>
+      <div class="p-4 border rounded-xl bg-slate-50"><i class="fa-brands fa-linux text-3xl text-yellow-600 mb-2"></i><div class="text-xs font-bold">Linux / Bash</div></div>
+    </div>
+  </div>
 </section>
 
+<!-- FAQ -->
+<section class="py-20 bg-slate-50">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-black text-slate-900">Frequently Asked Questions</h2>
+    </div>
+    <div class="space-y-4">
+      <div class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+        <button class="faq-btn w-full p-5 text-left font-bold text-slate-900 flex justify-between items-center">
+          <span>Does this course prepare for the AWS Certified Solutions Architect exam?</span>
+          <i class="faq-icon fa-solid fa-plus text-sky-600"></i>
+        </button>
+        <div class="faq-answer px-5 pb-5 text-slate-600 text-sm">
+          Yes! The curriculum is 100% aligned with the AWS Certified Solutions Architect - Associate (SAA-C03) exam blueprint, with official practice tests and architect scenario design questions.
+        </div>
+      </div>
+      <div class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+        <button class="faq-btn w-full p-5 text-left font-bold text-slate-900 flex justify-between items-center">
+          <span>Do you provide actual AWS Cloud account access for practice?</span>
+          <i class="faq-icon fa-solid fa-plus text-sky-600"></i>
+        </button>
+        <div class="faq-answer px-5 pb-5 text-slate-600 text-sm">
+          Yes! We guide you through activating AWS Free Tier with budget alarms, plus provide sponsored sandbox accounts for deploying multi-node Kubernetes clusters and large load tests.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-20 text-white text-center relative" style="background:linear-gradient(135deg,#0284c7,#4f46e5,#06b6d4)">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-3xl sm:text-5xl font-black mb-6">Become a High-Earning Cloud & DevOps Architect</h2>
+    <p class="text-white/80 text-lg mb-8">Join the upcoming batch in Chennai or online. Guaranteed placement support with top cloud infrastructure firms.</p>
+    <a href="../contact.html" class="inline-block px-10 py-4 bg-white text-slate-950 font-black rounded-full shadow-2xl hover:scale-105 transition-all">
+      Apply For Admission <i class="fa-solid fa-arrow-right ml-2 text-sky-600"></i>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#0a0d14;border-top:1px solid rgba(99,102,241,.2)" class="pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+      <div class="lg:col-span-2">
+        <a href="../index.html" class="flex items-center gap-2.5 mb-4">
+          <div class="w-10 h-10 rounded-xl overflow-hidden"><svg viewBox="0 0 100 100" class="w-full h-full"><defs><linearGradient id="fg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4f46e5"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ec4899"/></linearGradient><linearGradient id="fc" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#06b6d4"/><stop offset="100%" stop-color="#3b82f6"/></linearGradient></defs><rect x="6" y="6" width="88" height="88" rx="22" fill="#0f172a"/><rect x="24" y="24" width="13" height="52" rx="6.5" fill="url(#fc)"/><path d="M45 50 L68 27 C71 24 76 26 76 31 L76 41 L57 58 Z" fill="url(#fg)"/><path d="M45 50 L57 42 L76 61 L76 71 C76 76 71 78 68 75 Z" fill="url(#fg)"/><circle cx="76" cy="22" r="5" fill="#f43f5e"/></svg></div>
+          <span class="text-xl font-black text-white">keep<span class="text-indigo-400">clicks</span><span class="text-pink-400 text-xs">®</span></span>
+        </a>
+        <p class="text-gray-400 text-sm leading-relaxed mb-4">Your gateway to tech careers & digital growth.</p>
+      </div>
+      <div>
+        <h4 class="text-white font-bold text-sm uppercase tracking-widest mb-4">IT Courses</h4>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li><a href="digital-marketing.html" class="hover:text-indigo-400">Digital Marketing</a></li>
+          <li><a href="full-stack.html" class="hover:text-indigo-400">Full Stack Dev</a></li>
+          <li><a href="ai-ml.html" class="hover:text-indigo-400">AI & ML</a></li>
+          <li><a href="data-science.html" class="hover:text-indigo-400">Data Science</a></li>
+          <li><a href="data-analytics.html" class="hover:text-indigo-400">Data Analytics</a></li>
+          <li><a href="cloud-computing.html" class="text-sky-400 font-bold">Cloud Computing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold text-sm uppercase tracking-widest mb-4">Agency Services</h4>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li><a href="../services/seo.html" class="hover:text-pink-400">SEO</a></li>
+          <li><a href="../services/sem.html" class="hover:text-pink-400">SEM</a></li>
+          <li><a href="../services/smm.html" class="hover:text-pink-400">SMM</a></li>
+          <li><a href="../services/website-development.html" class="hover:text-pink-400">Website Dev</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold text-sm uppercase tracking-widest mb-4">Quick Links</h4>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li><a href="../about.html" class="hover:text-white">About Us</a></li>
+          <li><a href="../courses.html" class="hover:text-white">All Courses</a></li>
+          <li><a href="../services.html" class="hover:text-white">All Services</a></li>
+          <li><a href="../blog.html" class="hover:text-white">Blog</a></li>
+          <li><a href="../contact.html" class="hover:text-white">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-gray-800 pt-6 text-center text-gray-500 text-sm">
+      © 2026 KeepClicks®. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
+  AOS.init({ duration: 700, once: true, offset: 60 });
+  window.addEventListener('load', () => { setTimeout(() => { document.getElementById('page-loader').classList.add('hidden'); }, 800); });
   window.addEventListener('scroll', () => { document.getElementById('main-header').classList.toggle('scrolled', window.scrollY > 50); });
+  document.getElementById('mob-toggle').addEventListener('click', () => { document.getElementById('mob-menu').classList.toggle('hidden'); });
+  document.querySelectorAll('.faq-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const ans = btn.nextElementSibling;
+      const icon = btn.querySelector('.faq-icon');
+      ans.classList.toggle('open');
+      icon.classList.toggle('open');
+    });
+  });
 </script>
 </body>
 </html>

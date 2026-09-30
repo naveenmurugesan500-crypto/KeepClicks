@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Video Editing | KeepClicks® Agency</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{fontFamily:{inter:['Inter','sans-serif']},colors:{brand:{indigo:'#4f46e5',purple:'#8b5cf6',pink:'#ec4899',cyan:'#06b6d4',amber:'#f59e0b',emerald:'#10b981',navy:'#0a0d14',slate:'#0f172a'}}}}}</script>
+  <style>
+    *{font-family:'Inter',sans-serif;box-sizing:border-box}
+    ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#0a0d14}::-webkit-scrollbar-thumb{background:linear-gradient(#4f46e5,#ec4899);border-radius:3px}
+    #page-loader{position:fixed;inset:0;background:#0a0d14;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .6s ease}
+    #page-loader.hidden{opacity:0;pointer-events:none}
+    .loader-dot{width:12px;height:12px;border-radius:50%;animation:lb 1.2s ease-in-out infinite}
+    .loader-dot:nth-child(1){background:#4f46e5;animation-delay:0s}.loader-dot:nth-child(2){background:#ec4899;animation-delay:.2s}.loader-dot:nth-child(3){background:#f59e0b;animation-delay:.4s}.loader-dot:nth-child(4){background:#10b981;animation-delay:.6s}
+    @keyframes lb{0%,80%,100%{transform:translateY(0)}40%{transform:translateY(-18px)}}
+    .grad-text{background:linear-gradient(135deg,#4f46e5,#8b5cf6,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .bg-grid{background-image:linear-gradient(rgba(99,102,241,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(99,102,241,.07) 1px,transparent 1px);background-size:44px 44px}
+    .glass{background:rgba(255,255,255,.05);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.1)}
+    #main-header{transition:all .4s ease}
+    #main-header.scrolled{background:rgba(10,13,20,.98)!important;backdrop-filter:blur(20px);border-bottom:1px solid rgba(99,102,241,.2)}
+    .nav-dropdown{display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);min-width:240px;z-index:200}
+    .nav-item:hover .nav-dropdown{display:block}
+    .faq-answer{max-height:0;overflow:hidden;transition:max-height .4s ease}
+    .faq-answer.open{max-height:500px}
+    .faq-icon{transition:transform .3s}
+    .faq-icon.open{transform:rotate(45deg)}
+    .marquee-track{display:flex;width:max-content;animation:marquee 35s linear infinite}
+    @keyframes marquee{0%{transform:translateX(0%)}100%{transform:translateX(-50%)}}
+    
+    .grad-accent { background: linear-gradient(135deg, #7c3aed, #4f46e5); }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900 overflow-x-hidden">
+<div id="page-loader"><div class="flex flex-col items-center gap-5"><div class="w-16 h-16 rounded-2xl overflow-hidden" style="box-shadow:0 0 40px rgba(79,70,229,.5)"><svg viewBox="0 0 100 100" class="w-full h-full"><defs><linearGradient id="kg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4f46e5"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ec4899"/></linearGradient><linearGradient id="kc" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#06b6d4"/><stop offset="100%" stop-color="#3b82f6"/></linearGradient></defs><rect x="6" y="6" width="88" height="88" rx="22" fill="#0f172a"/><rect x="24" y="24" width="13" height="52" rx="6.5" fill="url(#kc)"/><path d="M45 50 L68 27 C71 24 76 26 76 31 L76 41 L57 58 Z" fill="url(#kg)"/><path d="M45 50 L57 42 L76 61 L76 71 C76 76 71 78 68 75 Z" fill="url(#kg)"/><circle cx="76" cy="22" r="5" fill="#f43f5e"/></svg></div><div class="text-xl font-black"><span class="grad-text">KeepClicks</span><span class="text-white">®</span></div><div class="flex gap-2 mt-1"><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div></div></div></div>
+<div class="overflow-hidden py-2" style="background:linear-gradient(90deg,#0f172a,#1e1b4b,#0f172a)"><div class="marquee-track whitespace-nowrap"><span class="inline-flex items-center gap-2 px-6 text-sm text-gray-300"><i class="fa-solid fa-rocket text-pink-400"></i> Agency: SEO · SEM · SMM · SMO · Video Shoot · Video Edit · Web Dev · CRM · ERP</span><span class="text-indigo-400 px-3">✦</span><span class="inline-flex items-center gap-2 px-6 text-sm text-gray-300"><i class="fa-solid fa-graduation-cap text-indigo-400"></i> IT Courses: Digital Marketing · Full Stack · AI/ML · Data Science · Data Analytics · Cloud</span><span class="text-amber-400 px-3">✦</span><span class="inline-flex items-center gap-2 px-6 text-sm text-gray-300"><i class="fa-solid fa-trophy text-amber-400"></i> 200+ Clients · 98% Retention · Proven ROI</span><span class="text-pink-400 px-3">✦</span><span class="inline-flex items-center gap-2 px-6 text-sm text-gray-300"><i class="fa-solid fa-rocket text-pink-400"></i> Agency: SEO · SEM · SMM · SMO · Video Shoot · Video Edit · Web Dev · CRM · ERP</span><span class="text-indigo-400 px-3">✦</span><span class="inline-flex items-center gap-2 px-6 text-sm text-gray-300"><i class="fa-solid fa-graduation-cap text-indigo-400"></i> IT Courses: Digital Marketing · Full Stack · AI/ML · Data Science · Data Analytics · Cloud</span><span class="text-amber-400 px-3">✦</span><span class="inline-flex items-center gap-2 px-6 text-sm text-gray-300"><i class="fa-solid fa-trophy text-amber-400"></i> 200+ Clients · 98% Retention · Proven ROI</span></div></div>
+<header id="main-header" class="sticky top-0 z-50" style="background:rgba(10,13,20,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(99,102,241,.15)">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between py-4">
+    <a href="../index.html" class="flex items-center gap-2.5"><div class="w-10 h-10 rounded-xl overflow-hidden"><svg viewBox="0 0 100 100" class="w-full h-full"><defs><linearGradient id="hg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4f46e5"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ec4899"/></linearGradient><linearGradient id="hc" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#06b6d4"/><stop offset="100%" stop-color="#3b82f6"/></linearGradient></defs><rect x="6" y="6" width="88" height="88" rx="22" fill="#0f172a"/><rect x="24" y="24" width="13" height="52" rx="6.5" fill="url(#hc)"/><path d="M45 50 L68 27 C71 24 76 26 76 31 L76 41 L57 58 Z" fill="url(#hg)"/><path d="M45 50 L57 42 L76 61 L76 71 C76 76 71 78 68 75 Z" fill="url(#hg)"/><circle cx="76" cy="22" r="5" fill="#f43f5e"/></svg></div><span class="text-xl font-black text-white">keep<span class="text-indigo-400">clicks</span><span class="text-pink-400 text-xs align-top ml-0.5">®</span></span></a>
+    <nav class="hidden lg:flex items-center gap-1 text-sm font-semibold text-gray-300">
+      <a href="../index.html" class="px-3 py-2 rounded-lg hover:bg-white/5 hover:text-white transition-all">Home</a>
+      <div class="nav-item relative"><button class="flex items-center gap-1 px-3 py-2 rounded-lg hover:bg-white/5 hover:text-white transition-all">Courses <i class="fa-solid fa-chevron-down text-[10px] ml-1"></i></button><div class="nav-dropdown"><div class="bg-gray-900 border border-gray-700 rounded-xl shadow-2xl p-2"><a href="../courses/digital-marketing.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-indigo-600 hover:text-white rounded-lg"><i class="fa-solid fa-bullhorn text-indigo-400 w-4"></i>Digital Marketing</a><a href="../courses/full-stack.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-indigo-600 hover:text-white rounded-lg"><i class="fa-solid fa-code text-cyan-400 w-4"></i>Full Stack Dev</a><a href="../courses/ai-ml.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-indigo-600 hover:text-white rounded-lg"><i class="fa-solid fa-robot text-pink-400 w-4"></i>AI & ML</a><a href="../courses/data-science.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-indigo-600 hover:text-white rounded-lg"><i class="fa-solid fa-flask text-purple-400 w-4"></i>Data Science</a><a href="../courses/data-analytics.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-indigo-600 hover:text-white rounded-lg"><i class="fa-solid fa-chart-bar text-emerald-400 w-4"></i>Data Analytics</a><a href="../courses/cloud-computing.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-indigo-600 hover:text-white rounded-lg"><i class="fa-solid fa-cloud text-sky-400 w-4"></i>Cloud Computing</a></div></div></div>
+      <div class="nav-item relative"><button class="flex items-center gap-1 px-3 py-2 rounded-lg hover:bg-white/5 hover:text-white transition-all text-white bg-white/10">Services <i class="fa-solid fa-chevron-down text-[10px] ml-1"></i></button><div class="nav-dropdown"><div class="bg-gray-900 border border-gray-700 rounded-xl shadow-2xl p-2" style="min-width:220px"><a href="seo.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-pink-600 hover:text-white rounded-lg"><i class="fa-solid fa-magnifying-glass text-emerald-400 w-4"></i>SEO</a><a href="sem.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-pink-600 hover:text-white rounded-lg"><i class="fa-brands fa-google text-amber-400 w-4"></i>SEM</a><a href="smm.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-pink-600 hover:text-white rounded-lg"><i class="fa-solid fa-share-nodes text-blue-400 w-4"></i>SMM</a><a href="smo.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-pink-600 hover:text-white rounded-lg"><i class="fa-solid fa-thumbs-up text-indigo-400 w-4"></i>SMO</a><a href="video-shoot.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-pink-600 hover:text-white rounded-lg"><i class="fa-solid fa-camera text-rose-400 w-4"></i>Video Shoot</a><a href="video-edit.html" class="flex items-center gap-2 px-3 py-2 text-sm bg-pink-600 text-white rounded-lg"><i class="fa-solid fa-film text-white w-4"></i>Video Edit</a><a href="website-development.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-pink-600 hover:text-white rounded-lg"><i class="fa-solid fa-laptop-code text-cyan-400 w-4"></i>Website Dev</a><a href="crm.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-pink-600 hover:text-white rounded-lg"><i class="fa-solid fa-users-gear text-purple-400 w-4"></i>CRM</a><a href="erp.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-pink-600 hover:text-white rounded-lg"><i class="fa-solid fa-sitemap text-orange-400 w-4"></i>ERP</a></div></div></div>
+      <a href="../about.html" class="px-3 py-2 rounded-lg hover:bg-white/5 hover:text-white transition-all">About Us</a>
+      <a href="../blog.html" class="px-3 py-2 rounded-lg hover:bg-white/5 hover:text-white transition-all">Blog</a>
+      <a href="../contact.html" class="ml-2 px-5 py-2 rounded-full font-bold text-white transition-all hover:opacity-90" style="background:linear-gradient(135deg,#4f46e5,#ec4899)">Contact Us</a>
+    </nav>
+    <button id="mob-toggle" class="lg:hidden text-white text-xl p-2"><i class="fa-solid fa-bars"></i></button>
+  </div>
+  <div id="mob-menu" class="hidden lg:hidden border-t border-gray-800 bg-gray-900 px-4 py-4">
+    <a href="../index.html" class="block py-2 text-gray-300 hover:text-white text-sm">Home</a>
+    <p class="text-xs font-bold text-pink-400 uppercase tracking-widest mt-3 mb-1">Services</p>
+    <a href="seo.html" class="block py-2 pl-3 text-gray-300 hover:text-white text-sm">SEO</a><a href="sem.html" class="block py-2 pl-3 text-gray-300 hover:text-white text-sm">SEM</a><a href="smm.html" class="block py-2 pl-3 text-gray-300 hover:text-white text-sm">SMM</a><a href="smo.html" class="block py-2 pl-3 text-gray-300 hover:text-white text-sm">SMO</a><a href="video-shoot.html" class="block py-2 pl-3 text-gray-300 hover:text-white text-sm">Video Shoot</a><a href="video-edit.html" class="block py-2 pl-3 text-white font-semibold text-sm">Video Edit</a><a href="website-development.html" class="block py-2 pl-3 text-gray-300 hover:text-white text-sm">Website Dev</a><a href="crm.html" class="block py-2 pl-3 text-gray-300 hover:text-white text-sm">CRM</a><a href="erp.html" class="block py-2 pl-3 text-gray-300 hover:text-white text-sm">ERP</a>
+    <p class="text-xs font-bold text-indigo-400 uppercase tracking-widest mt-3 mb-1">IT Courses</p>
+    <a href="../courses/digital-marketing.html" class="block py-2 pl-3 text-gray-300 hover:text-white text-sm">Digital Marketing</a><a href="../courses/full-stack.html" class="block py-2 pl-3 text-gray-300 hover:text-white text-sm">Full Stack Dev</a><a href="../courses/ai-ml.html" class="block py-2 pl-3 text-gray-300 hover:text-white text-sm">AI & ML</a><a href="../courses/data-science.html" class="block py-2 pl-3 text-gray-300 hover:text-white text-sm">Data Science</a><a href="../courses/data-analytics.html" class="block py-2 pl-3 text-gray-300 hover:text-white text-sm">Data Analytics</a><a href="../courses/cloud-computing.html" class="block py-2 pl-3 text-gray-300 hover:text-white text-sm">Cloud Computing</a>
+    <div class="mt-3 pt-3 border-t border-gray-800"><a href="../about.html" class="block py-2 text-gray-300 hover:text-white text-sm">About Us</a><a href="../blog.html" class="block py-2 text-gray-300 hover:text-white text-sm">Blog</a><a href="../contact.html" class="block mt-2 py-3 rounded-xl text-center text-sm font-bold text-white" style="background:linear-gradient(135deg,#4f46e5,#ec4899)">Contact Us</a></div>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="relative pt-24 pb-32 overflow-hidden bg-[#0a0d14] bg-grid">
+  <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#0a0d14]/90"></div>
+  <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-violet-600/20 rounded-full blur-[100px] pointer-events-none"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+    <div data-aos="fade-up" class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-violet-400 text-sm font-bold mb-6 tracking-wide uppercase border-violet-500/30">
+      <i class="fa-solid fa-film"></i> Professional Video Editing
+    </div>
+    <h1 data-aos="fade-up" data-aos-delay="100" class="text-5xl md:text-7xl font-black text-white mb-6 leading-tight">
+      Professional <span class="bg-clip-text text-transparent bg-gradient-to-r from-violet-400 to-indigo-500">Video Editing</span> Services
+    </h1>
+    <p data-aos="fade-up" data-aos-delay="200" class="text-xl text-gray-400 max-w-3xl mx-auto mb-10 leading-relaxed">
+      Transform Raw Footage into Compelling Visual Stories. Expert color grading, motion graphics, and sound design.
+    </p>
+    
+    <div data-aos="fade-up" data-aos-delay="300" class="flex flex-wrap justify-center gap-4 mb-16">
+      <a href="#pricing" class="px-8 py-4 rounded-full font-bold text-white transition-all hover:scale-105 grad-accent shadow-[0_0_20px_rgba(124,58,237,0.4)]">
+        Get a Quote
+      </a>
+      <a href="#portfolio" class="px-8 py-4 rounded-full font-bold text-white glass hover:bg-white/10 transition-all">
+        See Samples
+      </a>
+    </div>
+
+    <div data-aos="fade-up" data-aos-delay="400" class="flex flex-wrap justify-center gap-6 md:gap-12 text-sm text-gray-300">
+      <div class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-violet-500"></i> 500+ Videos Edited</div>
+      <div class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-violet-500"></i> Motion Graphics</div>
+      <div class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-violet-500"></i> Color Grading</div>
+      <div class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-violet-500"></i> 24hr Delivery</div>
+    </div>
+  </div>
+</section>
+
+<!-- Breadcrumbs & Intro -->
+<section class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-sm text-gray-500 font-medium mb-12">
+      <a href="../index.html" class="hover:text-violet-600">Home</a> <i class="fa-solid fa-chevron-right text-[10px] mx-2"></i> 
+      <span class="text-gray-400">Services</span> <i class="fa-solid fa-chevron-right text-[10px] mx-2"></i>
+      <span class="text-gray-900">Video Edit</span>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div data-aos="fade-right">
+        <h2 class="text-3xl md:text-4xl font-black text-gray-900 mb-6">Polishing your vision to perfection.</h2>
+        <p class="text-gray-600 mb-6 leading-relaxed text-lg">
+          Raw footage is just the beginning. Our expert video editing team brings your vision to life through meticulous cutting, pacing, color grading, and sound design. 
+        </p>
+        <p class="text-gray-600 leading-relaxed">
+          From fast-paced social media reels to long-form documentaries and corporate videos, we have the post-production expertise to captivate your audience and deliver results.
+        </p>
+      </div>
+      <div data-aos="fade-left" class="grid sm:grid-cols-2 gap-6">
+        <div class="p-6 bg-gray-50 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 bg-violet-100 rounded-xl flex items-center justify-center text-violet-600 text-xl mb-4"><i class="fa-solid fa-scissors"></i></div>
+          <h3 class="font-bold text-gray-900 mb-2">Precision Editing</h3>
+          <p class="text-sm text-gray-600">Perfect pacing and seamless transitions.</p>
+        </div>
+        <div class="p-6 bg-gray-50 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 text-xl mb-4"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+          <h3 class="font-bold text-gray-900 mb-2">Color Grading</h3>
+          <p class="text-sm text-gray-600">Cinematic looks tailored to your mood.</p>
+        </div>
+        <div class="p-6 bg-gray-50 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center text-indigo-600 text-xl mb-4"><i class="fa-solid fa-shapes"></i></div>
+          <h3 class="font-bold text-gray-900 mb-2">Motion Graphics</h3>
+          <p class="text-sm text-gray-600">Engaging text and visual effects.</p>
+        </div>
+        <div class="p-6 bg-gray-50 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 bg-sky-100 rounded-xl flex items-center justify-center text-sky-600 text-xl mb-4"><i class="fa-solid fa-headphones"></i></div>
+          <h3 class="font-bold text-gray-900 mb-2">Sound Design</h3>
+          <p class="text-sm text-gray-600">Crystal clear audio and mixed SFX.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Grid -->
+<section class="py-24 bg-gray-50 border-y border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 data-aos="fade-up" class="text-3xl md:text-5xl font-black text-gray-900 mb-6">Our Editing <span class="text-violet-600">Services</span></h2>
+      <p data-aos="fade-up" data-aos-delay="100" class="text-gray-600 text-lg">Specialized post-production for every platform and format.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- 1 -->
+      <div data-aos="fade-up" data-aos-delay="100" class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100 hover:-translate-y-2 transition-transform duration-300">
+        <div class="text-4xl mb-6">✂️</div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Short-form Reels</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">High-retention editing for Instagram Reels, YouTube Shorts, and TikTok with dynamic captions.</p>
+      </div>
+      <!-- 2 -->
+      <div data-aos="fade-up" data-aos-delay="200" class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100 hover:-translate-y-2 transition-transform duration-300">
+        <div class="text-4xl mb-6">🎬</div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Long-form YouTube</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Full video editing with engaging pacing, B-roll insertion, background music, and thumbnail design.</p>
+      </div>
+      <!-- 3 -->
+      <div data-aos="fade-up" data-aos-delay="300" class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100 hover:-translate-y-2 transition-transform duration-300">
+        <div class="text-4xl mb-6">🏷️</div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Motion Graphics & Titles</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Animated text, slick lower thirds, logo intros, and visual effects to enhance your story.</p>
+      </div>
+      <!-- 4 -->
+      <div data-aos="fade-up" data-aos-delay="400" class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100 hover:-translate-y-2 transition-transform duration-300">
+        <div class="text-4xl mb-6">🎨</div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Color Grading</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Cinematic color correction and stylistic grading to give your footage a premium, professional look.</p>
+      </div>
+      <!-- 5 -->
+      <div data-aos="fade-up" data-aos-delay="500" class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100 hover:-translate-y-2 transition-transform duration-300">
+        <div class="text-4xl mb-6">🔊</div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Sound Design & Mixing</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Audio cleanup, background noise removal, music selection, and sound effects integration.</p>
+      </div>
+      <!-- 6 -->
+      <div data-aos="fade-up" data-aos-delay="600" class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100 hover:-translate-y-2 transition-transform duration-300">
+        <div class="text-4xl mb-6">📝</div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Subtitles & Captions</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Accurate transcription and multi-language subtitle embedding for maximum accessibility.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Process -->
+<section class="py-24 bg-[#0a0d14] relative overflow-hidden">
+  <div class="absolute inset-0 bg-grid opacity-30"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="text-center mb-16">
+      <h2 data-aos="fade-up" class="text-3xl md:text-5xl font-black text-white mb-6">Post-Production <span class="text-violet-500">Workflow</span></h2>
+      <p data-aos="fade-up" data-aos-delay="100" class="text-gray-400 text-lg">A structured approach for flawless delivery.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div data-aos="fade-up" data-aos-delay="100" class="glass p-8 rounded-2xl relative">
+        <div class="absolute -top-5 -left-5 w-12 h-12 bg-violet-600 rounded-full flex items-center justify-center text-xl font-black text-white shadow-lg shadow-violet-600/30">1</div>
+        <h4 class="text-xl font-bold text-white mb-3 mt-2">Receive Footage</h4>
+        <p class="text-gray-400 text-sm">Secure file transfer and organization of all media assets.</p>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="200" class="glass p-8 rounded-2xl relative">
+        <div class="absolute -top-5 -left-5 w-12 h-12 bg-violet-600 rounded-full flex items-center justify-center text-xl font-black text-white shadow-lg shadow-violet-600/30">2</div>
+        <h4 class="text-xl font-bold text-white mb-3 mt-2">Script Review</h4>
+        <p class="text-gray-400 text-sm">Aligning with the brief, storyboard, or provided script.</p>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="300" class="glass p-8 rounded-2xl relative">
+        <div class="absolute -top-5 -left-5 w-12 h-12 bg-violet-600 rounded-full flex items-center justify-center text-xl font-black text-white shadow-lg shadow-violet-600/30">3</div>
+        <h4 class="text-xl font-bold text-white mb-3 mt-2">Rough Cut</h4>
+        <p class="text-gray-400 text-sm">Initial assembly of clips to establish flow and pacing.</p>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="400" class="glass p-8 rounded-2xl relative">
+        <div class="absolute -top-5 -left-5 w-12 h-12 bg-violet-600 rounded-full flex items-center justify-center text-xl font-black text-white shadow-lg shadow-violet-600/30">4</div>
+        <h4 class="text-xl font-bold text-white mb-3 mt-2">Motion Graphics</h4>
+        <p class="text-gray-400 text-sm">Adding text, animations, intros, and visual effects.</p>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="500" class="glass p-8 rounded-2xl relative">
+        <div class="absolute -top-5 -left-5 w-12 h-12 bg-violet-600 rounded-full flex items-center justify-center text-xl font-black text-white shadow-lg shadow-violet-600/30">5</div>
+        <h4 class="text-xl font-bold text-white mb-3 mt-2">Color & Audio</h4>
+        <p class="text-gray-400 text-sm">Finalizing color grade, sound mixing, and music.</p>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="600" class="glass p-8 rounded-2xl relative">
+        <div class="absolute -top-5 -left-5 w-12 h-12 bg-violet-600 rounded-full flex items-center justify-center text-xl font-black text-white shadow-lg shadow-violet-600/30">6</div>
+        <h4 class="text-xl font-bold text-white mb-3 mt-2">Final Delivery</h4>
+        <p class="text-gray-400 text-sm">Exporting in required formats and providing revisions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tools -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 data-aos="fade-up" class="text-2xl md:text-4xl font-black text-gray-900 mb-10">Tools We <span class="text-violet-600">Use</span></h2>
+    <div data-aos="fade-up" data-aos-delay="100" class="flex flex-wrap justify-center gap-4">
+      <span class="px-6 py-3 bg-gray-100 rounded-full text-gray-800 font-semibold shadow-sm border border-gray-200">Adobe Premiere Pro</span>
+      <span class="px-6 py-3 bg-gray-100 rounded-full text-gray-800 font-semibold shadow-sm border border-gray-200">After Effects</span>
+      <span class="px-6 py-3 bg-gray-100 rounded-full text-gray-800 font-semibold shadow-sm border border-gray-200">DaVinci Resolve</span>
+      <span class="px-6 py-3 bg-gray-100 rounded-full text-gray-800 font-semibold shadow-sm border border-gray-200">Final Cut Pro</span>
+      <span class="px-6 py-3 bg-gray-100 rounded-full text-gray-800 font-semibold shadow-sm border border-gray-200">Adobe Audition</span>
+      <span class="px-6 py-3 bg-gray-100 rounded-full text-gray-800 font-semibold shadow-sm border border-gray-200">Canva</span>
+      <span class="px-6 py-3 bg-gray-100 rounded-full text-gray-800 font-semibold shadow-sm border border-gray-200">CapCut</span>
+      <span class="px-6 py-3 bg-gray-100 rounded-full text-gray-800 font-semibold shadow-sm border border-gray-200">Adobe Photoshop</span>
+    </div>
+  </div>
+</section>
+
+<!-- Results -->
+<section class="py-20 bg-[#0a0d14] relative text-center">
+  <div class="max-w-5xl mx-auto px-4 relative z-10 grid md:grid-cols-3 gap-8">
+    <div data-aos="zoom-in" class="p-8 glass rounded-3xl">
+      <div class="text-5xl font-black text-violet-500 mb-2">500+</div>
+      <div class="text-gray-300 font-medium">Videos Edited</div>
+    </div>
+    <div data-aos="zoom-in" data-aos-delay="100" class="p-8 glass rounded-3xl">
+      <div class="text-5xl font-black text-violet-500 mb-2">24<span class="text-2xl">hr</span></div>
+      <div class="text-gray-300 font-medium">Rush Delivery</div>
+    </div>
+    <div data-aos="zoom-in" data-aos-delay="200" class="p-8 glass rounded-3xl">
+      <div class="text-5xl font-black text-violet-500 mb-2">4.9<i class="fa-solid fa-star text-2xl text-amber-400"></i></div>
+      <div class="text-gray-300 font-medium">Client Rating</div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section id="pricing" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 data-aos="fade-up" class="text-3xl md:text-5xl font-black text-gray-900 mb-6">Editing <span class="text-violet-600">Packages</span></h2>
+      <p data-aos="fade-up" data-aos-delay="100" class="text-gray-600 text-lg">Professional post-production that fits your budget.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <!-- Basic -->
+      <div data-aos="fade-up" data-aos-delay="100" class="bg-gray-50 border border-gray-200 rounded-3xl p-8 hover:shadow-xl transition-shadow">
+        <h3 class="text-2xl font-bold text-gray-900 mb-2">Basic</h3>
+        <p class="text-gray-500 text-sm mb-6">Clean cuts and straightforward editing.</p>
+        <div class="text-4xl font-black text-gray-900 mb-6">₹3,000</div>
+        <ul class="space-y-4 mb-8">
+          <li class="flex items-center gap-3 text-gray-700"><i class="fa-solid fa-check text-violet-500"></i> Up to 5 Min Video</li>
+          <li class="flex items-center gap-3 text-gray-700"><i class="fa-solid fa-check text-violet-500"></i> Basic Cuts & Trims</li>
+          <li class="flex items-center gap-3 text-gray-700"><i class="fa-solid fa-check text-violet-500"></i> 1 Revision</li>
+          <li class="flex items-center gap-3 text-gray-700"><i class="fa-solid fa-times text-gray-300"></i> No Graphics</li>
+        </ul>
+        <a href="#" class="block w-full text-center py-3 rounded-xl border-2 border-violet-600 text-violet-700 font-bold hover:bg-violet-50 transition-colors">Select Basic</a>
+      </div>
+      <!-- Standard -->
+      <div data-aos="fade-up" data-aos-delay="200" class="bg-white border-2 border-violet-600 rounded-3xl p-8 shadow-2xl relative transform lg:-translate-y-4">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-violet-600 text-white px-4 py-1 rounded-full text-sm font-bold tracking-wide">MOST POPULAR</div>
+        <h3 class="text-2xl font-bold text-gray-900 mb-2">Standard</h3>
+        <p class="text-gray-500 text-sm mb-6">Perfect for YouTube and social media.</p>
+        <div class="text-4xl font-black text-violet-600 mb-6">₹8,000</div>
+        <ul class="space-y-4 mb-8">
+          <li class="flex items-center gap-3 text-gray-700"><i class="fa-solid fa-check text-violet-500"></i> Up to 15 Min Video</li>
+          <li class="flex items-center gap-3 text-gray-700"><i class="fa-solid fa-check text-violet-500"></i> Motion Graphics & Text</li>
+          <li class="flex items-center gap-3 text-gray-700"><i class="fa-solid fa-check text-violet-500"></i> Color Grading</li>
+          <li class="flex items-center gap-3 text-gray-700"><i class="fa-solid fa-check text-violet-500"></i> 3 Revisions</li>
+        </ul>
+        <a href="#" class="block w-full text-center py-3 rounded-xl bg-violet-600 text-white font-bold hover:bg-violet-700 transition-colors">Select Standard</a>
+      </div>
+      <!-- Premium -->
+      <div data-aos="fade-up" data-aos-delay="300" class="bg-gray-50 border border-gray-200 rounded-3xl p-8 hover:shadow-xl transition-shadow">
+        <h3 class="text-2xl font-bold text-gray-900 mb-2">Premium</h3>
+        <p class="text-gray-500 text-sm mb-6">Full production for long-form content.</p>
+        <div class="text-4xl font-black text-gray-900 mb-6">₹18,000+</div>
+        <ul class="space-y-4 mb-8">
+          <li class="flex items-center gap-3 text-gray-700"><i class="fa-solid fa-check text-violet-500"></i> Long-form Content</li>
+          <li class="flex items-center gap-3 text-gray-700"><i class="fa-solid fa-check text-violet-500"></i> Advanced VFX & Sound</li>
+          <li class="flex items-center gap-3 text-gray-700"><i class="fa-solid fa-check text-violet-500"></i> Cinematic Grading</li>
+          <li class="flex items-center gap-3 text-gray-700"><i class="fa-solid fa-check text-violet-500"></i> Unlimited Revisions</li>
+        </ul>
+        <a href="#" class="block w-full text-center py-3 rounded-xl border-2 border-violet-600 text-violet-700 font-bold hover:bg-violet-50 transition-colors">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="py-24 bg-[#0a0d14]">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 data-aos="fade-up" class="text-3xl md:text-5xl font-black text-white mb-6">Frequently Asked <span class="text-violet-500">Questions</span></h2>
+    </div>
+
+    <div class="space-y-4">
+      <div data-aos="fade-up" class="glass rounded-2xl overflow-hidden border border-gray-800">
+        <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between focus:outline-none">
+          <span class="font-bold text-white text-lg">What file formats do you accept?</span>
+          <i class="fa-solid fa-plus faq-icon text-violet-500"></i>
+        </button>
+        <div class="faq-answer px-6 bg-white/5">
+          <p class="py-4 text-gray-400">We accept all major formats including MP4, MOV, RAW, ProRes, and BRAW. We provide secure cloud folders for you to upload your files easily.</p>
+        </div>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="100" class="glass rounded-2xl overflow-hidden border border-gray-800">
+        <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between focus:outline-none">
+          <span class="font-bold text-white text-lg">How many revisions are included?</span>
+          <i class="fa-solid fa-plus faq-icon text-violet-500"></i>
+        </button>
+        <div class="faq-answer px-6 bg-white/5">
+          <p class="py-4 text-gray-400">Revisions depend on the package you choose. Basic includes 1 round, Standard includes 3 rounds, and Premium offers unlimited revisions until you are completely satisfied.</p>
+        </div>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="200" class="glass rounded-2xl overflow-hidden border border-gray-800">
+        <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between focus:outline-none">
+          <span class="font-bold text-white text-lg">Do you provide thumbnail design?</span>
+          <i class="fa-solid fa-plus faq-icon text-violet-500"></i>
+        </button>
+        <div class="faq-answer px-6 bg-white/5">
+          <p class="py-4 text-gray-400">Yes! Custom YouTube and social media thumbnail design can be added to any package and is often included in our Long-form YouTube editing services.</p>
+        </div>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="300" class="glass rounded-2xl overflow-hidden border border-gray-800">
+        <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between focus:outline-none">
+          <span class="font-bold text-white text-lg">What's the typical turnaround time?</span>
+          <i class="fa-solid fa-plus faq-icon text-violet-500"></i>
+        </button>
+        <div class="faq-answer px-6 bg-white/5">
+          <p class="py-4 text-gray-400">Standard delivery is 3-5 business days. However, we also offer 24-48 hour rush delivery for short-form content and urgent projects at an additional fee.</p>
+        </div>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="400" class="glass rounded-2xl overflow-hidden border border-gray-800">
+        <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between focus:outline-none">
+          <span class="font-bold text-white text-lg">Can you add custom branding/watermarks?</span>
+          <i class="fa-solid fa-plus faq-icon text-violet-500"></i>
+        </button>
+        <div class="faq-answer px-6 bg-white/5">
+          <p class="py-4 text-gray-400">Absolutely. Just provide your brand guidelines, logo files, and color codes, and we will ensure the video is fully branded to match your identity.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-24 relative overflow-hidden">
+  <div class="absolute inset-0 grad-accent"></div>
+  <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIi8+PC9zdmc+')]"></div>
+  <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
+    <h2 data-aos="zoom-in" class="text-4xl md:text-5xl font-black text-white mb-6">Let's turn your footage into a masterpiece</h2>
+    <p data-aos="zoom-in" data-aos-delay="100" class="text-white/80 text-xl mb-10">Fast, professional, and captivating video editing.</p>
+    <a data-aos="zoom-in" data-aos-delay="200" href="../contact.html" class="inline-block px-10 py-5 bg-white text-violet-700 font-bold rounded-full text-lg shadow-2xl hover:scale-105 transition-transform">
+      Get a Quote
+    </a>
+  </div>
+</section>
+
+<footer style="background:#0a0d14;border-top:1px solid rgba(99,102,241,.2)" class="pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+      <div class="lg:col-span-2">
+        <a href="../index.html" class="flex items-center gap-2.5 mb-4"><div class="w-10 h-10 rounded-xl overflow-hidden"><svg viewBox="0 0 100 100" class="w-full h-full"><defs><linearGradient id="fg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4f46e5"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ec4899"/></linearGradient><linearGradient id="fc" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#06b6d4"/><stop offset="100%" stop-color="#3b82f6"/></linearGradient></defs><rect x="6" y="6" width="88" height="88" rx="22" fill="#0f172a"/><rect x="24" y="24" width="13" height="52" rx="6.5" fill="url(#fc)"/><path d="M45 50 L68 27 C71 24 76 26 76 31 L76 41 L57 58 Z" fill="url(#fg)"/><path d="M45 50 L57 42 L76 61 L76 71 C76 76 71 78 68 75 Z" fill="url(#fg)"/><circle cx="76" cy="22" r="5" fill="#f43f5e"/></svg></div><span class="text-xl font-black text-white">keep<span class="text-indigo-400">clicks</span><span class="text-pink-400 text-xs">®</span></span></a>
+        <p class="text-gray-400 text-sm leading-relaxed mb-4">Your gateway to tech careers & digital growth.</p>
+        <div class="flex gap-3"><a href="#" class="w-9 h-9 rounded-full bg-gray-800 hover:bg-indigo-600 flex items-center justify-center text-gray-400 hover:text-white transition-all"><i class="fa-brands fa-instagram text-sm"></i></a><a href="#" class="w-9 h-9 rounded-full bg-gray-800 hover:bg-blue-700 flex items-center justify-center text-gray-400 hover:text-white transition-all"><i class="fa-brands fa-linkedin-in text-sm"></i></a><a href="#" class="w-9 h-9 rounded-full bg-gray-800 hover:bg-red-600 flex items-center justify-center text-gray-400 hover:text-white transition-all"><i class="fa-brands fa-youtube text-sm"></i></a><a href="#" class="w-9 h-9 rounded-full bg-gray-800 hover:bg-sky-500 flex items-center justify-center text-gray-400 hover:text-white transition-all"><i class="fa-brands fa-twitter text-sm"></i></a></div>
+      </div>
+      <div><h4 class="text-white font-bold text-sm uppercase tracking-widest mb-4">Agency Services</h4><ul class="space-y-2 text-sm text-gray-400"><li><a href="seo.html" class="hover:text-pink-400">SEO</a></li><li><a href="sem.html" class="hover:text-pink-400">SEM</a></li><li><a href="smm.html" class="hover:text-pink-400">SMM</a></li><li><a href="smo.html" class="hover:text-pink-400">SMO</a></li><li><a href="video-shoot.html" class="hover:text-pink-400">Video Shoot</a></li><li><a href="video-edit.html" class="hover:text-pink-400">Video Edit</a></li><li><a href="website-development.html" class="hover:text-pink-400">Website Dev</a></li><li><a href="crm.html" class="hover:text-pink-400">CRM</a></li><li><a href="erp.html" class="hover:text-pink-400">ERP</a></li></ul></div>
+      <div><h4 class="text-white font-bold text-sm uppercase tracking-widest mb-4">IT Courses</h4><ul class="space-y-2 text-sm text-gray-400"><li><a href="../courses/digital-marketing.html" class="hover:text-indigo-400">Digital Marketing</a></li><li><a href="../courses/full-stack.html" class="hover:text-indigo-400">Full Stack Dev</a></li><li><a href="../courses/ai-ml.html" class="hover:text-indigo-400">AI & ML</a></li><li><a href="../courses/data-science.html" class="hover:text-indigo-400">Data Science</a></li><li><a href="../courses/data-analytics.html" class="hover:text-indigo-400">Data Analytics</a></li><li><a href="../courses/cloud-computing.html" class="hover:text-indigo-400">Cloud Computing</a></li></ul></div>
+      <div><h4 class="text-white font-bold text-sm uppercase tracking-widest mb-4">Company</h4><ul class="space-y-2 text-sm text-gray-400"><li><a href="../about.html" class="hover:text-white">About Us</a></li><li><a href="../blog.html" class="hover:text-white">Blog</a></li><li><a href="../contact.html" class="hover:text-white">Contact</a></li></ul><div class="mt-4 space-y-2 text-sm text-gray-400"><p class="flex items-center gap-2"><i class="fa-solid fa-envelope text-indigo-400"></i>info@keepclicks.com</p><p class="flex items-center gap-2"><i class="fa-solid fa-phone text-indigo-400"></i>+91 63794 27852</p><p class="flex items-start gap-2"><i class="fa-solid fa-location-dot text-indigo-400 mt-0.5"></i>Chennai, Tamil Nadu</p></div></div>
+    </div>
+    <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row items-center justify-between gap-3"><p class="text-gray-500 text-sm">© 2026 KeepClicks®. All rights reserved.</p><p class="text-gray-600 text-xs">IT Academy & Digital Marketing Agency</p></div>
+  </div>
+</footer>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({duration:700,once:true,offset:60});
+  window.addEventListener('load',()=>{setTimeout(()=>{document.getElementById('page-loader').classList.add('hidden');},800);});
+  window.addEventListener('scroll',()=>{document.getElementById('main-header').classList.toggle('scrolled',window.scrollY>50);});
+  document.getElementById('mob-toggle').addEventListener('click',()=>{document.getElementById('mob-menu').classList.toggle('hidden');});
+  document.querySelectorAll('.faq-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{const ans=btn.nextElementSibling;const icon=btn.querySelector('.faq-icon');ans.classList.toggle('open');icon.classList.toggle('open');});});
+</script></body></html>

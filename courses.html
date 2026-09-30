@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IT Academy Courses | KeepClicks® - Launch Your Tech Career</title>
+  <meta name="description" content="KeepClicks® Academy offers job-ready training in Digital Marketing, Full Stack, AI & ML, Data Science, Data Analytics, and Cloud Computing with 100% placement support."/>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { inter: ['Inter','sans-serif'] },
+          colors: {
+            brand: {
+              indigo: '#4f46e5',
+              purple: '#8b5cf6',
+              pink: '#ec4899',
+              cyan: '#06b6d4',
+              amber: '#f59e0b',
+              emerald: '#10b981',
+              navy: '#0a0d14',
+              slate: '#0f172a'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    * { font-family: 'Inter', sans-serif; box-sizing: border-box; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0d14; }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(#4f46e5, #ec4899); border-radius: 3px; }
+    #page-loader { position: fixed; inset: 0; background: #0a0d14; z-index: 9999; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity .6s ease; }
+    #page-loader.hidden { opacity: 0; pointer-events: none; }
+    .loader-dot { width: 12px; height: 12px; border-radius: 50%; animation: lb 1.2s ease-in-out infinite; }
+    .loader-dot:nth-child(1){ background: #4f46e5; animation-delay: 0s; }
+    .loader-dot:nth-child(2){ background: #ec4899; animation-delay: .2s; }
+    .loader-dot:nth-child(3){ background: #f59e0b; animation-delay: .4s; }
+    .loader-dot:nth-child(4){ background: #10b981; animation-delay: .6s; }
+    @keyframes lb { 0%,80%,100%{ transform: translateY(0); } 40%{ transform: translateY(-18px); } }
+    .grad-text { background: linear-gradient(135deg, #4f46e5, #8b5cf6, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .bg-grid { background-image: linear-gradient(rgba(99,102,241,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(99,102,241,.07) 1px, transparent 1px); background-size: 44px 44px; }
+    .glass { background: rgba(255,255,255,.05); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,.1); }
+    .glass-dark { background: rgba(10,13,20,.7); backdrop-filter: blur(20px); border: 1px solid rgba(99,102,241,.2); }
+    #main-header { transition: all .4s ease; }
+    #main-header.scrolled { background: rgba(10,13,20,.98)!important; backdrop-filter: blur(20px); border-bottom: 1px solid rgba(99,102,241,.2); }
+    .nav-dropdown { display: none; position: absolute; top: calc(100% + 8px); left: 50%; transform: translateX(-50%); min-width: 260px; z-index: 200; }
+    .nav-item:hover .nav-dropdown { display: block; }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height .4s ease; }
+    .faq-answer.open { max-height: 500px; }
+    .faq-icon { transition: transform .3s; }
+    .faq-icon.open { transform: rotate(45deg); }
+    .marquee-track { display: flex; width: max-content; animation: marquee 35s linear infinite; }
+    @keyframes marquee { 0%{ transform: translateX(0%); } 100%{ transform: translateX(-50%); } }
+    .course-card { transition: all .4s cubic-bezier(0.16, 1, 0.3, 1); }
+    .course-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px -15px rgba(79,70,229,0.3); }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900 overflow-x-hidden">
+
+<!-- PAGE LOADER -->
+<div id="page-loader">
+  <div class="flex flex-col items-center gap-5">
+    <div class="w-16 h-16 rounded-2xl overflow-hidden shadow-2xl" style="box-shadow:0 0 40px rgba(79,70,229,.5)">
+      <svg viewBox="0 0 100 100" class="w-full h-full">
+        <defs>
+          <linearGradient id="kg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4f46e5"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ec4899"/></linearGradient>
+          <linearGradient id="kc" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#06b6d4"/><stop offset="100%" stop-color="#3b82f6"/></linearGradient>
+        </defs>
+        <rect x="6" y="6" width="88" height="88" rx="22" fill="#0f172a"/>
+        <rect x="24" y="24" width="13" height="52" rx="6.5" fill="url(#kc)"/>
+        <path d="M45 50 L68 27 C71 24 76 26 76 31 L76 41 L57 58 Z" fill="url(#kg)"/>
+        <path d="M45 50 L57 42 L76 61 L76 71 C76 76 71 78 68 75 Z" fill="url(#kg)"/>
+        <circle cx="76" cy="22" r="5" fill="#f43f5e"/>
+      </svg>
+    </div>
+    <div class="text-xl font-black"><span class="grad-text">KeepClicks</span><span class="text-white">®</span></div>
+    <div class="flex gap-2 mt-1"><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div></div>
+  </div>
+</div>
+
+<!-- MARQUEE TICKER -->
+<div class="overflow-hidden py-2" style="background:linear-gradient(90deg,#0f172a,#1e1b4b,#0f172a)">
+  <div class="marquee-track whitespace-nowrap">
+    <span class="inline-flex items-center gap-2 px-6 text-sm text-gray-300"><i class="fa-solid fa-graduation-cap text-indigo-400"></i> IT Courses: Digital Marketing · Full Stack · AI/ML · Data Science · Data Analytics · Cloud Computing</span>
+    <span class="text-pink-400 px-3">✦</span>
+    <span class="inline-flex items-center gap-2 px-6 text-sm text-gray-300"><i class="fa-solid fa-rocket text-cyan-400"></i> Agency: SEO · SEM · SMM · SMO · Video Shoot · Video Edit · Web Dev · CRM · ERP</span>
+    <span class="text-amber-400 px-3">✦</span>
+    <span class="inline-flex items-center gap-2 px-6 text-sm text-gray-300"><i class="fa-solid fa-trophy text-amber-400"></i> 100% Practical Training · Live Client Campaigns · Guaranteed Placement Assistance</span>
+    <span class="text-emerald-400 px-3">✦</span>
+    <span class="inline-flex items-center gap-2 px-6 text-sm text-gray-300"><i class="fa-solid fa-graduation-cap text-indigo-400"></i> IT Courses: Digital Marketing · Full Stack · AI/ML · Data Science · Data Analytics · Cloud Computing</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header id="main-header" class="sticky top-0 z-50" style="background:rgba(10,13,20,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(99,102,241,.15)">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between py-4">
+    <a href="index.html" class="flex items-center gap-2.5">
+      <div class="w-10 h-10 rounded-xl overflow-hidden">
+        <svg viewBox="0 0 100 100" class="w-full h-full">
+          <defs><linearGradient id="hg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4f46e5"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ec4899"/></linearGradient><linearGradient id="hc" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#06b6d4"/><stop offset="100%" stop-color="#3b82f6"/></linearGradient></defs>
+          <rect x="6" y="6" width="88" height="88" rx="22" fill="#0f172a"/>
+          <rect x="24" y="24" width="13" height="52" rx="6.5" fill="url(#hc)"/>
+          <path d="M45 50 L68 27 C71 24 76 26 76 31 L76 41 L57 58 Z" fill="url(#hg)"/>
+          <path d="M45 50 L57 42 L76 61 L76 71 C76 76 71 78 68 75 Z" fill="url(#hg)"/>
+          <circle cx="76" cy="22" r="5" fill="#f43f5e"/>
+        </svg>
+      </div>
+      <span class="text-xl font-black text-white">keep<span class="text-indigo-400">clicks</span><span class="text-pink-400 text-xs align-top ml-0.5">®</span></span>
+    </a>
+    
+    <nav class="hidden lg:flex items-center gap-1 text-sm font-semibold text-gray-300">
+      <a href="index.html" class="px-3 py-2 rounded-lg hover:bg-white/5 hover:text-white transition-all">Home</a>
+      <a href="about.html" class="px-3 py-2 rounded-lg hover:bg-white/5 hover:text-white transition-all">About Us</a>
+      
+      <!-- Courses Dropdown (Active) -->
+      <div class="nav-item relative">
+        <a href="courses.html" class="flex items-center gap-1 px-3 py-2 rounded-lg bg-white/10 text-white transition-all">
+          Courses <i class="fa-solid fa-chevron-down text-[10px] ml-1"></i>
+        </a>
+        <div class="nav-dropdown">
+          <div class="bg-gray-900 border border-gray-700 rounded-xl shadow-2xl p-2" style="min-width:260px">
+            <a href="courses/digital-marketing.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-indigo-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-bullhorn text-indigo-400 w-4"></i>Digital Marketing</a>
+            <a href="courses/full-stack.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-indigo-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-code text-cyan-400 w-4"></i>Full Stack Dev</a>
+            <a href="courses/ai-ml.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-indigo-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-robot text-pink-400 w-4"></i>AI & ML</a>
+            <a href="courses/data-science.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-indigo-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-flask text-purple-400 w-4"></i>Data Science</a>
+            <a href="courses/data-analytics.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-indigo-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-chart-bar text-emerald-400 w-4"></i>Data Analytics</a>
+            <a href="courses/cloud-computing.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-indigo-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-cloud text-sky-400 w-4"></i>Cloud Computing</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Services Dropdown -->
+      <div class="nav-item relative">
+        <a href="services.html" class="flex items-center gap-1 px-3 py-2 rounded-lg hover:bg-white/5 hover:text-white transition-all">
+          Services <i class="fa-solid fa-chevron-down text-[10px] ml-1"></i>
+        </a>
+        <div class="nav-dropdown">
+          <div class="bg-gray-900 border border-gray-700 rounded-xl shadow-2xl p-2" style="min-width:240px">
+            <a href="services/seo.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-pink-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-magnifying-glass text-emerald-400 w-4"></i>SEO</a>
+            <a href="services/sem.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-pink-600 hover:text-white rounded-lg transition-colors"><i class="fa-brands fa-google text-amber-400 w-4"></i>SEM</a>
+            <a href="services/smm.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-pink-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-share-nodes text-blue-400 w-4"></i>SMM</a>
+            <a href="services/smo.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-pink-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-thumbs-up text-indigo-400 w-4"></i>SMO</a>
+            <a href="services/video-shoot.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-pink-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-camera text-rose-400 w-4"></i>Video Shoot</a>
+            <a href="services/video-edit.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-pink-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-film text-violet-400 w-4"></i>Video Edit</a>
+            <a href="services/website-development.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-pink-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-laptop-code text-cyan-400 w-4"></i>Website Dev</a>
+            <a href="services/crm.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-pink-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-users-gear text-purple-400 w-4"></i>CRM</a>
+            <a href="services/erp.html" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-pink-600 hover:text-white rounded-lg transition-colors"><i class="fa-solid fa-sitemap text-orange-400 w-4"></i>ERP</a>
+          </div>
+        </div>
+      </div>
+      
+      <a href="blog.html" class="px-3 py-2 rounded-lg hover:bg-white/5 hover:text-white transition-all">Blog</a>
+      <a href="contact.html" class="ml-2 px-5 py-2 rounded-full font-bold text-white transition-all hover:opacity-90" style="background:linear-gradient(135deg,#4f46e5,#ec4899)">Contact Us</a>
+    </nav>
+    <button id="mob-toggle" class="lg:hidden text-white text-xl p-2"><i class="fa-solid fa-bars"></i></button>
+  </div>
+  
+  <!-- Mobile Menu -->
+  <div id="mob-menu" class="hidden lg:hidden border-t border-gray-800 bg-gray-900 px-4 py-4 space-y-1">
+    <a href="index.html" class="block py-2 text-gray-300 hover:text-white text-sm">Home</a>
+    <a href="about.html" class="block py-2 text-gray-300 hover:text-white text-sm">About Us</a>
+    <a href="courses.html" class="block py-2 text-indigo-400 font-bold text-sm">All Courses</a>
+    <a href="services.html" class="block py-2 text-pink-400 font-bold text-sm">All Services</a>
+    <a href="blog.html" class="block py-2 text-gray-300 hover:text-white text-sm">Blog</a>
+    <a href="contact.html" class="block mt-3 py-2.5 rounded-xl text-center font-bold text-white text-sm" style="background:linear-gradient(135deg,#4f46e5,#ec4899)">Contact Us</a>
+  </div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="relative pt-24 pb-20 overflow-hidden bg-brand-navy bg-grid">
+  <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-10 right-1/4 w-96 h-96 bg-purple-600/15 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-bold uppercase tracking-wider mb-6" data-aos="fade-up">
+      <i class="fa-solid fa-graduation-cap"></i> Live Agency-Led IT Training Academy
+    </div>
+    <h1 class="text-4xl sm:text-6xl font-black text-white leading-tight mb-6" data-aos="fade-up" data-aos-delay="100">
+      Master High-Income Tech Skills with <br/>
+      <span class="grad-text">Live Agency Projects</span>
+    </h1>
+    <p class="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto mb-10 leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+      Taught by senior marketing directors and tech architects. Work with real ad budgets, production codebases, and guaranteed placement support with top hiring partners.
+    </p>
+    
+    <div class="flex flex-wrap items-center justify-center gap-4 mb-16" data-aos="fade-up" data-aos-delay="300">
+      <a href="#courses-grid" class="px-8 py-4 rounded-xl font-bold text-white shadow-lg hover:scale-105 transition-all" style="background:linear-gradient(135deg,#4f46e5,#ec4899)">
+        Explore 6 Tech Courses <i class="fa-solid fa-arrow-down ml-2"></i>
+      </a>
+      <a href="contact.html" class="px-8 py-4 rounded-xl font-bold text-gray-300 border border-gray-700 hover:bg-white/5 hover:text-white transition-all">
+        Book Free Counseling <i class="fa-solid fa-user-graduate ml-2"></i>
+      </a>
+    </div>
+
+    <!-- Floating Stats -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="400">
+      <div class="glass p-5 rounded-2xl text-center">
+        <div class="text-3xl font-black text-indigo-400">500+</div>
+        <div class="text-xs text-gray-400 mt-1 uppercase font-semibold">Trained & Placed</div>
+      </div>
+      <div class="glass p-5 rounded-2xl text-center">
+        <div class="text-3xl font-black text-emerald-400">98%</div>
+        <div class="text-xs text-gray-400 mt-1 uppercase font-semibold">Placement Rate</div>
+      </div>
+      <div class="glass p-5 rounded-2xl text-center">
+        <div class="text-3xl font-black text-amber-400">100%</div>
+        <div class="text-xs text-gray-400 mt-1 uppercase font-semibold">Live Client Projects</div>
+      </div>
+      <div class="glass p-5 rounded-2xl text-center">
+        <div class="text-3xl font-black text-pink-400">4.9★</div>
+        <div class="text-xs text-gray-400 mt-1 uppercase font-semibold">Student Rating</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COURSES GRID -->
+<section id="courses-grid" class="py-24 bg-white relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-xs font-bold uppercase tracking-widest text-indigo-600 bg-indigo-50 px-3.5 py-1.5 rounded-full border border-indigo-100">Curriculum</span>
+      <h2 class="text-3xl sm:text-5xl font-black text-slate-900 mt-4 mb-4">6 Career-Defining IT Programs</h2>
+      <p class="text-slate-600 text-lg">Industry-verified syllabi updated quarterly to meet the latest global tech standards.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- 1. Digital Marketing -->
+      <div class="course-card bg-slate-50 border border-slate-200/80 rounded-2xl p-8 flex flex-col justify-between" data-aos="fade-up">
+        <div>
+          <div class="flex items-center justify-between mb-6">
+            <div class="w-14 h-14 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-2xl shadow-sm">
+              <i class="fa-solid fa-bullhorn"></i>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800 border border-amber-200">Bestseller</span>
+          </div>
+          <div class="flex items-center gap-3 text-xs text-slate-500 mb-2">
+            <span><i class="fa-regular fa-clock mr-1 text-indigo-600"></i>3 Months</span>
+            <span>•</span>
+            <span><i class="fa-solid fa-laptop mr-1 text-indigo-600"></i>Online & Classroom</span>
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-3">Digital Marketing Masterclass</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-6">Master SEO, Google Search & P-Max Ads, Meta Advertising, SMM, and Conversion Funnels on live agency accounts.</p>
+          <div class="space-y-2 mb-8 text-xs text-slate-700">
+            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Real Ad Budget Handling (₹50k+)</div>
+            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Google, Meta & HubSpot Certifications</div>
+            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Salary: ₹3.5 LPA – ₹9.0 LPA</div>
+          </div>
+        </div>
+        <a href="courses/digital-marketing.html" class="inline-flex items-center justify-between w-full px-5 py-3 rounded-xl text-white font-bold text-sm transition-all shadow-sm" style="background:linear-gradient(135deg,#4f46e5,#ec4899)">
+          <span>View Syllabus & Details</span>
+          <i class="fa-solid fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+
+      <!-- 2. Full Stack Dev -->
+      <div class="course-card bg-slate-50 border border-slate-200/80 rounded-2xl p-8 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+        <div>
+          <div class="flex items-center justify-between mb-6">
+            <div class="w-14 h-14 rounded-2xl bg-cyan-100 text-cyan-600 flex items-center justify-center text-2xl shadow-sm">
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-cyan-100 text-cyan-800 border border-cyan-200">High Demand</span>
+          </div>
+          <div class="flex items-center gap-3 text-xs text-slate-500 mb-2">
+            <span><i class="fa-regular fa-clock mr-1 text-cyan-600"></i>6 Months</span>
+            <span>•</span>
+            <span><i class="fa-solid fa-laptop mr-1 text-cyan-600"></i>MERN & Next.js</span>
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-3">Full Stack Web Development</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-6">Build end-to-end scalable web applications using React, Node.js, Express, MongoDB, Tailwind, and AWS cloud deployment.</p>
+          <div class="space-y-2 mb-8 text-xs text-slate-700">
+            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> 5 Production-Grade Capstones</div>
+            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Git, Postman & CI/CD Pipeline Prep</div>
+            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Salary: ₹4.5 LPA – ₹14.0 LPA</div>
+          </div>
+        </div>
+        <a href="courses/full-stack.html" class="inline-flex items-center justify-between w-full px-5 py-3 rounded-xl text-white font-bold text-sm transition-all shadow-sm" style="background:linear-gradient(135deg,#06b6d4,#4f46e5)">
+          <span>View Syllabus & Details</span>
+          <i class="fa-solid fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+
+      <!-- 3. AI & ML -->
+      <div class="course-card bg-slate-50 border border-slate-200/80 rounded-2xl p-8 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+        <div>
+          <div class="flex items-center justify-between mb-6">
+            <div class="w-14 h-14 rounded-2xl bg-pink-100 text-pink-600 flex items-center justify-center text-2xl shadow-sm">
+              <i class="fa-solid fa-robot"></i>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-pink-100 text-pink-800 border border-pink-200">Future Proof</span>
+          </div>
+          <div class="flex items-center gap-3 text-xs text-slate-500 mb-2">
+            <span><i class="fa-regular fa-clock mr-1 text-pink-600"></i>6 Months</span>
+            <span>•</span>
+            <span><i class="fa-solid fa-laptop mr-1 text-pink-600"></i>GenAI & Deep Learning</span>
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-3">AI & Machine Learning</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-6">Train deep neural networks, computer vision models, and natural language transformers with TensorFlow, PyTorch & LLMs.</p>
+          <div class="space-y-2 mb-8 text-xs text-slate-700">
+            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> LLM Fine-Tuning & Prompt Engineering</div>
+            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> OpenCV, HuggingFace & PyTorch</div>
+            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Salary: ₹7.0 LPA – ₹22.0 LPA</div>
+          </div>
+        </div>
+        <a href="courses/ai-ml.html" class="inline-flex items-center justify-between w-full px-5 py-3 rounded-xl text-white font-bold text-sm transition-all shadow-sm" style="background:linear-gradient(135deg,#ec4899,#8b5cf6)">
+          <span>View Syllabus & Details</span>
+          <i class="fa-solid fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+
+      <!-- 4. Data Science -->
+      <div class="course-card bg-slate-50 border border-slate-200/80 rounded-2xl p-8 flex flex-col justify-between" data-aos="fade-up">
+        <div>
+          <div class="flex items-center justify-between mb-6">
+            <div class="w-14 h-14 rounded-2xl bg-purple-100 text-purple-600 flex items-center justify-center text-2xl shadow-sm">
+              <i class="fa-solid fa-flask"></i>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-purple-100 text-purple-800 border border-purple-200">High Growth</span>
+          </div>
+          <div class="flex items-center gap-3 text-xs text-slate-500 mb-2">
+            <span><i class="fa-regular fa-clock mr-1 text-purple-600"></i>5 Months</span>
+            <span>•</span>
+            <span><i class="fa-solid fa-laptop mr-1 text-purple-600"></i>Predictive Modeling</span>
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-3">Data Science Professional</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-6">Convert messy real-world datasets into predictive algorithms using Python, NumPy, Pandas, Scikit-learn, and statistical modeling.</p>
+          <div class="space-y-2 mb-8 text-xs text-slate-700">
+            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Advanced Statistics & Predictive ML</div>
+            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Kaggle Competitions & Portfolio</div>
+            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Salary: ₹6.0 LPA – ₹18.0 LPA</div>
+          </div>
+        </div>
+        <a href="courses/data-science.html" class="inline-flex items-center justify-between w-full px-5 py-3 rounded-xl text-white font-bold text-sm transition-all shadow-sm" style="background:linear-gradient(135deg,#8b5cf6,#4f46e5)">
+          <span>View Syllabus & Details</span>
+          <i class="fa-solid fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+
+      <!-- 5. Data Analytics -->
+      <div class="course-card bg-slate-50 border border-slate-200/80 rounded-2xl p-8 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+        <div>
+          <div class="flex items-center justify-between mb-6">
+            <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl shadow-sm">
+              <i class="fa-solid fa-chart-bar"></i>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-200">Fast Entry</span>
+          </div>
+          <div class="flex items-center gap-3 text-xs text-slate-500 mb-2">
+            <span><i class="fa-regular fa-clock mr-1 text-emerald-600"></i>4 Months</span>
+            <span>•</span>
+            <span><i class="fa-solid fa-laptop mr-1 text-emerald-600"></i>BI & Dashboards</span>
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-3">Data Analytics & BI</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-6">Master Advanced Excel, Complex SQL queries, Power BI DAX expressions, and Tableau dashboards to drive executive business decisions.</p>
+          <div class="space-y-2 mb-8 text-xs text-slate-700">
+            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Live Power BI & Tableau Dashboards</div>
+            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Complex SQL & Database Analytics</div>
+            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Salary: ₹4.5 LPA – ₹12.0 LPA</div>
+          </div>
+        </div>
+        <a href="courses/data-analytics.html" class="inline-flex items-center justify-between w-full px-5 py-3 rounded-xl text-white font-bold text-sm transition-all shadow-sm" style="background:linear-gradient(135deg,#10b981,#06b6d4)">
+          <span>View Syllabus & Details</span>
+          <i class="fa-solid fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+
+      <!-- 6. Cloud Computing -->
+      <div class="course-card bg-slate-50 border border-slate-200/80 rounded-2xl p-8 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+        <div>
+          <div class="flex items-center justify-between mb-6">
+            <div class="w-14 h-14 rounded-2xl bg-sky-100 text-sky-600 flex items-center justify-center text-2xl shadow-sm">
+              <i class="fa-solid fa-cloud"></i>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-sky-100 text-sky-800 border border-sky-200">DevOps & Cloud</span>
+          </div>
+          <div class="flex items-center gap-3 text-xs text-slate-500 mb-2">
+            <span><i class="fa-regular fa-clock mr-1 text-sky-600"></i>4 Months</span>
+            <span>•</span>
+            <span><i class="fa-solid fa-laptop mr-1 text-sky-600"></i>AWS, Azure & DevOps</span>
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-3">Cloud Computing & DevOps</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-6">Architect resilient enterprise cloud environments across AWS and Microsoft Azure with Docker, Kubernetes, and Terraform CI/CD automation.</p>
+          <div class="space-y-2 mb-8 text-xs text-slate-700">
+            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> AWS Solutions Architect Exam Prep</div>
+            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Docker Containers & Kubernetes Clusters</div>
+            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Salary: ₹6.0 LPA – ₹19.0 LPA</div>
+          </div>
+        </div>
+        <a href="courses/cloud-computing.html" class="inline-flex items-center justify-between w-full px-5 py-3 rounded-xl text-white font-bold text-sm transition-all shadow-sm" style="background:linear-gradient(135deg,#0284c7,#4f46e5)">
+          <span>View Syllabus & Details</span>
+          <i class="fa-solid fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- THE ACADEMY ADVANTAGE -->
+<section class="py-20 bg-brand-navy text-white relative bg-grid">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-xs font-bold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 px-3.5 py-1.5 rounded-full border border-indigo-500/20">The KeepClicks Difference</span>
+      <h2 class="text-3xl sm:text-5xl font-black mt-4 mb-4">Why Learn With KeepClicks Academy?</h2>
+      <p class="text-gray-400">Traditional institutes teach textbook theory. We train you directly on live agency campaigns and production codebases.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div class="glass p-6 rounded-2xl text-center" data-aos="fade-up">
+        <div class="w-12 h-12 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-xl mx-auto mb-4">
+          <i class="fa-solid fa-briefcase"></i>
+        </div>
+        <h4 class="text-lg font-bold text-white mb-2">100% Live Agency Projects</h4>
+        <p class="text-gray-400 text-xs leading-relaxed">Spend real budgets, deploy live cloud clusters, and push real code to GitHub repositories.</p>
+      </div>
+      <div class="glass p-6 rounded-2xl text-center" data-aos="fade-up" data-aos-delay="100">
+        <div class="w-12 h-12 rounded-xl bg-pink-500/20 text-pink-400 flex items-center justify-center text-xl mx-auto mb-4">
+          <i class="fa-solid fa-chalkboard-user"></i>
+        </div>
+        <h4 class="text-lg font-bold text-white mb-2">Practicing Mentors</h4>
+        <p class="text-gray-400 text-xs leading-relaxed">No textbook professors. Learn from tech architects and marketing heads running live accounts.</p>
+      </div>
+      <div class="glass p-6 rounded-2xl text-center" data-aos="fade-up" data-aos-delay="200">
+        <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl mx-auto mb-4">
+          <i class="fa-solid fa-id-card-clip"></i>
+        </div>
+        <h4 class="text-lg font-bold text-white mb-2">Placement Assurance</h4>
+        <p class="text-gray-400 text-xs leading-relaxed">Resume building, LinkedIn optimization, mock interviews, and access to 100+ hiring partners.</p>
+      </div>
+      <div class="glass p-6 rounded-2xl text-center" data-aos="fade-up" data-aos-delay="300">
+        <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl mx-auto mb-4">
+          <i class="fa-solid fa-award"></i>
+        </div>
+        <h4 class="text-lg font-bold text-white mb-2">Global Certifications</h4>
+        <p class="text-gray-400 text-xs leading-relaxed">Earn verified KeepClicks credentials plus direct prep for Google, AWS, Meta and Microsoft certs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="py-20 bg-slate-50">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <span class="text-xs font-bold uppercase tracking-widest text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">Admissions FAQ</span>
+      <h2 class="text-3xl font-black text-slate-900 mt-3">Frequently Asked Questions</h2>
+    </div>
+
+    <div class="space-y-4">
+      <div class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+        <button class="faq-btn w-full p-5 text-left font-bold text-slate-900 flex justify-between items-center">
+          <span>Are classes available both online and in classroom?</span>
+          <i class="faq-icon fa-solid fa-plus text-indigo-600"></i>
+        </button>
+        <div class="faq-answer px-5 pb-5 text-slate-600 text-sm">
+          Yes! We offer live interactive online batches as well as offline classroom sessions at our Chennai training hub, with recordings provided for all lectures.
+        </div>
+      </div>
+
+      <div class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+        <button class="faq-btn w-full p-5 text-left font-bold text-slate-900 flex justify-between items-center">
+          <span>Do I need a computer science degree to enroll?</span>
+          <i class="faq-icon fa-solid fa-plus text-indigo-600"></i>
+        </button>
+        <div class="faq-answer px-5 pb-5 text-slate-600 text-sm">
+          Not at all! Over 40% of our successful alumni come from non-IT backgrounds (B.Com, BBA, Arts, Mechanical). All courses start with zero-assumption fundamentals.
+        </div>
+      </div>
+
+      <div class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+        <button class="faq-btn w-full p-5 text-left font-bold text-slate-900 flex justify-between items-center">
+          <span>Can I attend a free demo session before paying?</span>
+          <i class="faq-icon fa-solid fa-plus text-indigo-600"></i>
+        </button>
+        <div class="faq-answer px-5 pb-5 text-slate-600 text-sm">
+          Absolutely. Fill out the contact form or call our counselor at +91 63794 27852 to reserve your seat in an upcoming free live demo class.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="py-20 text-white text-center relative overflow-hidden" style="background:linear-gradient(135deg,#3730a3,#4f46e5,#8b5cf6)">
+  <div class="max-w-4xl mx-auto px-4 relative z-10">
+    <h2 class="text-3xl sm:text-5xl font-black mb-6">Ready to Transform Your Career?</h2>
+    <p class="text-white/80 text-lg mb-8 max-w-2xl mx-auto">Book a 1-on-1 counseling call with our career advisors to find the perfect course suited to your background and aspirations.</p>
+    <a href="contact.html" class="inline-block px-10 py-4 bg-white text-slate-950 font-black rounded-full shadow-2xl hover:scale-105 transition-all text-base">
+      Book Free Career Counseling <i class="fa-solid fa-arrow-right ml-2 text-indigo-600"></i>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#0a0d14;border-top:1px solid rgba(99,102,241,.2)" class="pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+      <div class="lg:col-span-2">
+        <a href="index.html" class="flex items-center gap-2.5 mb-4">
+          <div class="w-10 h-10 rounded-xl overflow-hidden"><svg viewBox="0 0 100 100" class="w-full h-full"><defs><linearGradient id="fg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4f46e5"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ec4899"/></linearGradient><linearGradient id="fc" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#06b6d4"/><stop offset="100%" stop-color="#3b82f6"/></linearGradient></defs><rect x="6" y="6" width="88" height="88" rx="22" fill="#0f172a"/><rect x="24" y="24" width="13" height="52" rx="6.5" fill="url(#fc)"/><path d="M45 50 L68 27 C71 24 76 26 76 31 L76 41 L57 58 Z" fill="url(#fg)"/><path d="M45 50 L57 42 L76 61 L76 71 C76 76 71 78 68 75 Z" fill="url(#fg)"/><circle cx="76" cy="22" r="5" fill="#f43f5e"/></svg></div>
+          <span class="text-xl font-black text-white">keep<span class="text-indigo-400">clicks</span><span class="text-pink-400 text-xs">®</span></span>
+        </a>
+        <p class="text-gray-400 text-sm leading-relaxed mb-4">Your gateway to tech careers & digital growth. IT Academy + Digital Marketing Agency under one roof.</p>
+        <div class="flex gap-3">
+          <a href="#" class="w-9 h-9 rounded-full bg-gray-800 hover:bg-indigo-600 flex items-center justify-center text-gray-400 hover:text-white transition-all"><i class="fa-brands fa-instagram text-sm"></i></a>
+          <a href="#" class="w-9 h-9 rounded-full bg-gray-800 hover:bg-blue-700 flex items-center justify-center text-gray-400 hover:text-white transition-all"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+          <a href="#" class="w-9 h-9 rounded-full bg-gray-800 hover:bg-red-600 flex items-center justify-center text-gray-400 hover:text-white transition-all"><i class="fa-brands fa-youtube text-sm"></i></a>
+          <a href="#" class="w-9 h-9 rounded-full bg-gray-800 hover:bg-sky-500 flex items-center justify-center text-gray-400 hover:text-white transition-all"><i class="fa-brands fa-twitter text-sm"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="text-white font-bold text-sm uppercase tracking-widest mb-4">IT Courses</h4>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li><a href="courses/digital-marketing.html" class="hover:text-indigo-400 transition-colors">Digital Marketing</a></li>
+          <li><a href="courses/full-stack.html" class="hover:text-indigo-400 transition-colors">Full Stack Dev</a></li>
+          <li><a href="courses/ai-ml.html" class="hover:text-indigo-400 transition-colors">AI & ML</a></li>
+          <li><a href="courses/data-science.html" class="hover:text-indigo-400 transition-colors">Data Science</a></li>
+          <li><a href="courses/data-analytics.html" class="hover:text-indigo-400 transition-colors">Data Analytics</a></li>
+          <li><a href="courses/cloud-computing.html" class="hover:text-indigo-400 transition-colors">Cloud Computing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold text-sm uppercase tracking-widest mb-4">Agency Services</h4>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li><a href="services/seo.html" class="hover:text-pink-400 transition-colors">SEO</a></li>
+          <li><a href="services/sem.html" class="hover:text-pink-400 transition-colors">SEM</a></li>
+          <li><a href="services/smm.html" class="hover:text-pink-400 transition-colors">SMM</a></li>
+          <li><a href="services/smo.html" class="hover:text-pink-400 transition-colors">SMO</a></li>
+          <li><a href="services/video-shoot.html" class="hover:text-pink-400 transition-colors">Video Shoot</a></li>
+          <li><a href="services/video-edit.html" class="hover:text-pink-400 transition-colors">Video Edit</a></li>
+          <li><a href="services/website-development.html" class="hover:text-pink-400 transition-colors">Website Dev</a></li>
+          <li><a href="services/crm.html" class="hover:text-pink-400 transition-colors">CRM</a></li>
+          <li><a href="services/erp.html" class="hover:text-pink-400 transition-colors">ERP</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold text-sm uppercase tracking-widest mb-4">Company</h4>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="courses.html" class="text-indigo-400 font-bold transition-colors">Courses</a></li>
+          <li><a href="services.html" class="hover:text-white transition-colors">Services</a></li>
+          <li><a href="blog.html" class="hover:text-white transition-colors">Blog</a></li>
+          <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+        </ul>
+        <div class="mt-4 space-y-1 text-sm text-gray-400">
+          <p class="flex items-center gap-2"><i class="fa-solid fa-envelope text-indigo-400"></i> info@keepclicks.com</p>
+          <p class="flex items-center gap-2"><i class="fa-solid fa-phone text-indigo-400"></i> +91 63794 27852</p>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
+      <p class="text-gray-500 text-sm">© 2026 KeepClicks®. All rights reserved.</p>
+      <p class="text-gray-600 text-xs">IT Academy & Digital Marketing Agency · Chennai, India</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 700, once: true, offset: 60 });
+  window.addEventListener('load', () => { setTimeout(() => { document.getElementById('page-loader').classList.add('hidden'); }, 800); });
+  window.addEventListener('scroll', () => { document.getElementById('main-header').classList.toggle('scrolled', window.scrollY > 50); });
+  document.getElementById('mob-toggle').addEventListener('click', () => { document.getElementById('mob-menu').classList.toggle('hidden'); });
+  document.querySelectorAll('.faq-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const ans = btn.nextElementSibling;
+      const icon = btn.querySelector('.faq-icon');
+      ans.classList.toggle('open');
+      icon.classList.toggle('open');
+    });
+  });
+</script>
+</body>
+</html>

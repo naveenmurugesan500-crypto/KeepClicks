@@ -261,47 +261,44 @@
 
     <!-- Desktop Nav -->
     <nav class="hidden lg:flex items-center gap-1">
+      <a href="index.html" class="px-3 py-2 text-white font-medium text-sm rounded-lg bg-white/10 transition-all">Home</a>
+      <a href="about.html" class="px-3 py-2 text-gray-300 hover:text-white text-sm font-medium rounded-lg hover:bg-white/5 transition-all">About Us</a>
 
       <!-- IT Courses Dropdown -->
       <div class="nav-item relative group">
-        <button class="flex items-center gap-1.5 px-4 py-2 text-gray-300 hover:text-white text-sm font-medium rounded-lg hover:bg-white/5 transition-all">
-          <i class="fa-solid fa-graduation-cap text-brand-indigo"></i> IT Courses
+        <a href="courses.html" class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white text-sm font-medium rounded-lg hover:bg-white/5 transition-all">
+          <i class="fa-solid fa-graduation-cap text-brand-indigo"></i> Courses
           <i class="fa-solid fa-chevron-down text-xs opacity-60 group-hover:rotate-180 transition-transform duration-200"></i>
-        </button>
+        </a>
         <div class="nav-dropdown">
           <div class="glass-dark rounded-2xl overflow-hidden shadow-2xl p-2" style="min-width:280px;box-shadow:0 20px 60px rgba(0,0,0,0.5),0 0 0 1px rgba(99,102,241,0.2)">
-            <div class="px-3 py-2 text-xs font-bold text-brand-indigo uppercase tracking-widest mb-1">Academy Courses</div>
+            <div class="px-3 py-2 text-xs font-bold text-brand-indigo uppercase tracking-widest mb-1 flex justify-between items-center">
+              <span>Academy Programs</span>
+              <a href="courses.html" class="text-[10px] text-brand-pink hover:underline lowercase font-normal">view all →</a>
+            </div>
             <a href="courses/digital-marketing.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 transition group/item">
               <span class="w-8 h-8 rounded-lg flex items-center justify-center text-sm" style="background:linear-gradient(135deg,#4f46e5,#ec4899)"><i class="fa-solid fa-bullhorn text-white"></i></span>
               <div><div class="text-sm font-semibold text-white">Digital Marketing</div><div class="text-xs text-gray-400">3 Months · SEO, SEM, SMM</div></div>
             </a>
             <a href="courses/full-stack.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 transition">
               <span class="w-8 h-8 rounded-lg flex items-center justify-center text-sm" style="background:linear-gradient(135deg,#06b6d4,#4f46e5)"><i class="fa-solid fa-layer-group text-white"></i></span>
-              <div><div class="text-sm font-semibold text-white">Full Stack Development</div><div class="text-xs text-gray-400">6 Months · React, Node, MongoDB</div></div>
-            </a>
-            <a href="courses/java.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 transition">
-              <span class="w-8 h-8 rounded-lg flex items-center justify-center text-sm" style="background:linear-gradient(135deg,#f59e0b,#ef4444)"><i class="fa-brands fa-java text-white"></i></span>
-              <div><div class="text-sm font-semibold text-white">Java Programming</div><div class="text-xs text-gray-400">4 Months · Spring Boot, Hibernate</div></div>
-            </a>
-            <a href="courses/python.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 transition">
-              <span class="w-8 h-8 rounded-lg flex items-center justify-center text-sm" style="background:linear-gradient(135deg,#10b981,#06b6d4)"><i class="fa-brands fa-python text-white"></i></span>
-              <div><div class="text-sm font-semibold text-white">Python Programming</div><div class="text-xs text-gray-400">3 Months · Django, Flask, APIs</div></div>
-            </a>
-            <a href="courses/data-science.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 transition">
-              <span class="w-8 h-8 rounded-lg flex items-center justify-center text-sm" style="background:linear-gradient(135deg,#8b5cf6,#ec4899)"><i class="fa-solid fa-chart-scatter text-white"></i></span>
-              <div><div class="text-sm font-semibold text-white">Data Science</div><div class="text-xs text-gray-400">5 Months · ML, Pandas, NumPy</div></div>
-            </a>
-            <a href="courses/data-analytics.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 transition">
-              <span class="w-8 h-8 rounded-lg flex items-center justify-center text-sm" style="background:linear-gradient(135deg,#f59e0b,#8b5cf6)"><i class="fa-solid fa-chart-bar text-white"></i></span>
-              <div><div class="text-sm font-semibold text-white">Data Analytics</div><div class="text-xs text-gray-400">4 Months · Power BI, Tableau</div></div>
-            </a>
-            <a href="courses/cloud-computing.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 transition">
-              <span class="w-8 h-8 rounded-lg flex items-center justify-center text-sm" style="background:linear-gradient(135deg,#06b6d4,#10b981)"><i class="fa-solid fa-cloud text-white"></i></span>
-              <div><div class="text-sm font-semibold text-white">Cloud Computing</div><div class="text-xs text-gray-400">4 Months · AWS, Azure, GCP</div></div>
+              <div><div class="text-sm font-semibold text-white">Full Stack Development</div><div class="text-xs text-gray-400">6 Months · React, Node, Cloud</div></div>
             </a>
             <a href="courses/ai-ml.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 transition">
               <span class="w-8 h-8 rounded-lg flex items-center justify-center text-sm" style="background:linear-gradient(135deg,#ec4899,#f59e0b)"><i class="fa-solid fa-robot text-white"></i></span>
-              <div><div class="text-sm font-semibold text-white">AI & Machine Learning</div><div class="text-xs text-gray-400">6 Months · TensorFlow, NLP</div></div>
+              <div><div class="text-sm font-semibold text-white">AI & Machine Learning</div><div class="text-xs text-gray-400">6 Months · TensorFlow, NLP, LLMs</div></div>
+            </a>
+            <a href="courses/data-science.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 transition">
+              <span class="w-8 h-8 rounded-lg flex items-center justify-center text-sm" style="background:linear-gradient(135deg,#8b5cf6,#ec4899)"><i class="fa-solid fa-flask text-white"></i></span>
+              <div><div class="text-sm font-semibold text-white">Data Science</div><div class="text-xs text-gray-400">5 Months · ML, Pandas, Python</div></div>
+            </a>
+            <a href="courses/data-analytics.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 transition">
+              <span class="w-8 h-8 rounded-lg flex items-center justify-center text-sm" style="background:linear-gradient(135deg,#10b981,#06b6d4)"><i class="fa-solid fa-chart-bar text-white"></i></span>
+              <div><div class="text-sm font-semibold text-white">Data Analytics</div><div class="text-xs text-gray-400">4 Months · Power BI, Tableau, SQL</div></div>
+            </a>
+            <a href="courses/cloud-computing.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 transition">
+              <span class="w-8 h-8 rounded-lg flex items-center justify-center text-sm" style="background:linear-gradient(135deg,#0284c7,#10b981)"><i class="fa-solid fa-cloud text-white"></i></span>
+              <div><div class="text-sm font-semibold text-white">Cloud Computing</div><div class="text-xs text-gray-400">4 Months · AWS, Azure, DevOps</div></div>
             </a>
           </div>
         </div>
@@ -309,52 +306,63 @@
 
       <!-- Agency Services Dropdown -->
       <div class="nav-item relative group">
-        <button class="flex items-center gap-1.5 px-4 py-2 text-gray-300 hover:text-white text-sm font-medium rounded-lg hover:bg-white/5 transition-all">
-          <i class="fa-solid fa-briefcase text-brand-pink"></i> Agency Services
+        <a href="services.html" class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white text-sm font-medium rounded-lg hover:bg-white/5 transition-all">
+          <i class="fa-solid fa-briefcase text-brand-pink"></i> Services
           <i class="fa-solid fa-chevron-down text-xs opacity-60 group-hover:rotate-180 transition-transform duration-200"></i>
-        </button>
+        </a>
         <div class="nav-dropdown">
           <div class="glass-dark rounded-2xl overflow-hidden shadow-2xl p-2" style="min-width:280px;box-shadow:0 20px 60px rgba(0,0,0,0.5),0 0 0 1px rgba(236,72,153,0.2)">
-            <div class="px-3 py-2 text-xs font-bold text-brand-pink uppercase tracking-widest mb-1">Agency Services</div>
-            <a href="services/seo.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 transition">
-              <span class="w-8 h-8 rounded-lg flex items-center justify-center text-sm" style="background:linear-gradient(135deg,#10b981,#06b6d4)"><i class="fa-brands fa-google text-white"></i></span>
-              <div><div class="text-sm font-semibold text-white">SEO</div><div class="text-xs text-gray-400">Search Engine Optimization</div></div>
+            <div class="px-3 py-2 text-xs font-bold text-brand-pink uppercase tracking-widest mb-1 flex justify-between items-center">
+              <span>Agency Services</span>
+              <a href="services.html" class="text-[10px] text-brand-indigo hover:underline lowercase font-normal">view all →</a>
+            </div>
+            <a href="services/seo.html" class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-white/5 transition">
+              <span class="w-7 h-7 rounded-lg flex items-center justify-center text-xs" style="background:linear-gradient(135deg,#10b981,#06b6d4)"><i class="fa-solid fa-magnifying-glass text-white"></i></span>
+              <div><div class="text-sm font-semibold text-white">SEO</div><div class="text-[11px] text-gray-400">Search Engine Optimization</div></div>
             </a>
-            <a href="services/smm.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 transition">
-              <span class="w-8 h-8 rounded-lg flex items-center justify-center text-sm" style="background:linear-gradient(135deg,#4f46e5,#ec4899)"><i class="fa-solid fa-share-nodes text-white"></i></span>
-              <div><div class="text-sm font-semibold text-white">SMM</div><div class="text-xs text-gray-400">Social Media Marketing</div></div>
+            <a href="services/sem.html" class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-white/5 transition">
+              <span class="w-7 h-7 rounded-lg flex items-center justify-center text-xs" style="background:linear-gradient(135deg,#f59e0b,#ef4444)"><i class="fa-brands fa-google text-white"></i></span>
+              <div><div class="text-sm font-semibold text-white">SEM</div><div class="text-[11px] text-gray-400">Search Engine Marketing</div></div>
             </a>
-            <a href="services/smo.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 transition">
-              <span class="w-8 h-8 rounded-lg flex items-center justify-center text-sm" style="background:linear-gradient(135deg,#8b5cf6,#06b6d4)"><i class="fa-solid fa-arrows-rotate text-white"></i></span>
-              <div><div class="text-sm font-semibold text-white">SMO</div><div class="text-xs text-gray-400">Social Media Optimization</div></div>
+            <a href="services/smm.html" class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-white/5 transition">
+              <span class="w-7 h-7 rounded-lg flex items-center justify-center text-xs" style="background:linear-gradient(135deg,#4f46e5,#ec4899)"><i class="fa-solid fa-share-nodes text-white"></i></span>
+              <div><div class="text-sm font-semibold text-white">SMM</div><div class="text-[11px] text-gray-400">Social Media Marketing</div></div>
             </a>
-            <a href="services/website-development.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 transition">
-              <span class="w-8 h-8 rounded-lg flex items-center justify-center text-sm" style="background:linear-gradient(135deg,#06b6d4,#4f46e5)"><i class="fa-solid fa-globe text-white"></i></span>
-              <div><div class="text-sm font-semibold text-white">Website Development</div><div class="text-xs text-gray-400">Fast, beautiful websites</div></div>
+            <a href="services/smo.html" class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-white/5 transition">
+              <span class="w-7 h-7 rounded-lg flex items-center justify-center text-xs" style="background:linear-gradient(135deg,#8b5cf6,#06b6d4)"><i class="fa-solid fa-thumbs-up text-white"></i></span>
+              <div><div class="text-sm font-semibold text-white">SMO</div><div class="text-[11px] text-gray-400">Social Media Optimization</div></div>
             </a>
-            <a href="services/sem.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 transition">
-              <span class="w-8 h-8 rounded-lg flex items-center justify-center text-sm" style="background:linear-gradient(135deg,#f59e0b,#ef4444)"><i class="fa-solid fa-ad text-white"></i></span>
-              <div><div class="text-sm font-semibold text-white">SEM</div><div class="text-xs text-gray-400">Search Engine Marketing</div></div>
+            <a href="services/video-shoot.html" class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-white/5 transition">
+              <span class="w-7 h-7 rounded-lg flex items-center justify-center text-xs" style="background:linear-gradient(135deg,#f43f5e,#ec4899)"><i class="fa-solid fa-camera text-white"></i></span>
+              <div><div class="text-sm font-semibold text-white">Video Shoot</div><div class="text-[11px] text-gray-400">Studio & On-Location Films</div></div>
             </a>
-            <a href="services/crm.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 transition">
-              <span class="w-8 h-8 rounded-lg flex items-center justify-center text-sm" style="background:linear-gradient(135deg,#10b981,#4f46e5)"><i class="fa-solid fa-users text-white"></i></span>
-              <div><div class="text-sm font-semibold text-white">CRM</div><div class="text-xs text-gray-400">Customer Relationship Management</div></div>
+            <a href="services/video-edit.html" class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-white/5 transition">
+              <span class="w-7 h-7 rounded-lg flex items-center justify-center text-xs" style="background:linear-gradient(135deg,#7c3aed,#4f46e5)"><i class="fa-solid fa-film text-white"></i></span>
+              <div><div class="text-sm font-semibold text-white">Video Edit</div><div class="text-[11px] text-gray-400">Reels, Motion & Post-Production</div></div>
             </a>
-            <a href="services/erp.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 transition">
-              <span class="w-8 h-8 rounded-lg flex items-center justify-center text-sm" style="background:linear-gradient(135deg,#ec4899,#8b5cf6)"><i class="fa-solid fa-network-wired text-white"></i></span>
-              <div><div class="text-sm font-semibold text-white">ERP</div><div class="text-xs text-gray-400">Enterprise Resource Planning</div></div>
+            <a href="services/website-development.html" class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-white/5 transition">
+              <span class="w-7 h-7 rounded-lg flex items-center justify-center text-xs" style="background:linear-gradient(135deg,#06b6d4,#4f46e5)"><i class="fa-solid fa-laptop-code text-white"></i></span>
+              <div><div class="text-sm font-semibold text-white">Website Development</div><div class="text-[11px] text-gray-400">Fast, High-Converting Web Apps</div></div>
+            </a>
+            <a href="services/crm.html" class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-white/5 transition">
+              <span class="w-7 h-7 rounded-lg flex items-center justify-center text-xs" style="background:linear-gradient(135deg,#8b5cf6,#4f46e5)"><i class="fa-solid fa-users-gear text-white"></i></span>
+              <div><div class="text-sm font-semibold text-white">CRM</div><div class="text-[11px] text-gray-400">Sales & Pipeline Automation</div></div>
+            </a>
+            <a href="services/erp.html" class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-white/5 transition">
+              <span class="w-7 h-7 rounded-lg flex items-center justify-center text-xs" style="background:linear-gradient(135deg,#ea580c,#f59e0b)"><i class="fa-solid fa-sitemap text-white"></i></span>
+              <div><div class="text-sm font-semibold text-white">ERP</div><div class="text-[11px] text-gray-400">Enterprise Operations Software</div></div>
             </a>
           </div>
         </div>
       </div>
 
-      <a href="#about" class="px-4 py-2 text-gray-300 hover:text-white text-sm font-medium rounded-lg hover:bg-white/5 transition-all">About</a>
-      <a href="#career" class="px-4 py-2 text-gray-300 hover:text-white text-sm font-medium rounded-lg hover:bg-white/5 transition-all">Career</a>
+      <a href="blog.html" class="px-3 py-2 text-gray-300 hover:text-white text-sm font-medium rounded-lg hover:bg-white/5 transition-all">Blog</a>
+      <a href="contact.html" class="px-3 py-2 text-gray-300 hover:text-white text-sm font-medium rounded-lg hover:bg-white/5 transition-all">Contact Us</a>
     </nav>
 
     <div class="hidden lg:flex items-center gap-3">
-      <a href="#contact" class="px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg" style="background:linear-gradient(135deg,#4f46e5,#ec4899);box-shadow:0 4px 20px rgba(79,70,229,0.35)">
-        Contact Us <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+      <a href="contact.html" class="px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg" style="background:linear-gradient(135deg,#4f46e5,#ec4899);box-shadow:0 4px 20px rgba(79,70,229,0.35)">
+        Get Started <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
       </a>
     </div>
 
@@ -369,29 +377,37 @@
   <!-- Mobile Menu -->
   <div id="mobile-menu" class="lg:hidden hidden mt-3 pb-4 border-t border-white/10 pt-4">
     <div class="flex flex-col gap-1 max-h-[80vh] overflow-y-auto">
-      <div class="text-xs font-bold text-brand-indigo uppercase tracking-widest px-3 py-2">IT Academy Courses</div>
-      <a href="courses/digital-marketing.html" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-white/5 text-gray-300 hover:text-white text-sm transition" onclick="closeMobileMenu()"><i class="fa-solid fa-bullhorn text-brand-pink w-4"></i> Digital Marketing</a>
-      <a href="courses/full-stack.html" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-white/5 text-gray-300 hover:text-white text-sm transition" onclick="closeMobileMenu()"><i class="fa-solid fa-layer-group text-brand-cyan w-4"></i> Full Stack Development</a>
-      <a href="courses/java.html" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-white/5 text-gray-300 hover:text-white text-sm transition" onclick="closeMobileMenu()"><i class="fa-brands fa-java text-brand-amber w-4"></i> Java Programming</a>
-      <a href="courses/python.html" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-white/5 text-gray-300 hover:text-white text-sm transition" onclick="closeMobileMenu()"><i class="fa-brands fa-python text-brand-emerald w-4"></i> Python Programming</a>
-      <a href="courses/data-science.html" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-white/5 text-gray-300 hover:text-white text-sm transition" onclick="closeMobileMenu()"><i class="fa-solid fa-brain text-brand-purple w-4"></i> Data Science</a>
-      <a href="courses/data-analytics.html" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-white/5 text-gray-300 hover:text-white text-sm transition" onclick="closeMobileMenu()"><i class="fa-solid fa-chart-bar text-brand-amber w-4"></i> Data Analytics</a>
-      <a href="courses/cloud-computing.html" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-white/5 text-gray-300 hover:text-white text-sm transition" onclick="closeMobileMenu()"><i class="fa-solid fa-cloud text-brand-cyan w-4"></i> Cloud Computing</a>
-      <a href="courses/ai-ml.html" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-white/5 text-gray-300 hover:text-white text-sm transition" onclick="closeMobileMenu()"><i class="fa-solid fa-robot text-brand-pink w-4"></i> AI & Machine Learning</a>
-      <div class="border-t border-white/10 mt-2 pt-2">
-        <div class="text-xs font-bold text-brand-pink uppercase tracking-widest px-3 py-2">Agency Services</div>
-        <a href="services/seo.html" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-white/5 text-gray-300 hover:text-white text-sm transition" onclick="closeMobileMenu()"><i class="fa-brands fa-google text-brand-emerald w-4"></i> SEO</a>
-        <a href="services/smm.html" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-white/5 text-gray-300 hover:text-white text-sm transition" onclick="closeMobileMenu()"><i class="fa-solid fa-share-nodes text-brand-indigo w-4"></i> SMM</a>
-        <a href="services/smo.html" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-white/5 text-gray-300 hover:text-white text-sm transition" onclick="closeMobileMenu()"><i class="fa-solid fa-arrows-rotate text-brand-purple w-4"></i> SMO</a>
-        <a href="services/website-development.html" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-white/5 text-gray-300 hover:text-white text-sm transition" onclick="closeMobileMenu()"><i class="fa-solid fa-globe text-brand-cyan w-4"></i> Website Development</a>
-        <a href="services/sem.html" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-white/5 text-gray-300 hover:text-white text-sm transition" onclick="closeMobileMenu()"><i class="fa-solid fa-ad text-brand-amber w-4"></i> SEM</a>
-        <a href="services/crm.html" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-white/5 text-gray-300 hover:text-white text-sm transition" onclick="closeMobileMenu()"><i class="fa-solid fa-users text-brand-emerald w-4"></i> CRM</a>
-        <a href="services/erp.html" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-white/5 text-gray-300 hover:text-white text-sm transition" onclick="closeMobileMenu()"><i class="fa-solid fa-network-wired text-brand-pink w-4"></i> ERP</a>
+      <div class="flex justify-between items-center px-3 py-2">
+        <span class="text-xs font-bold text-brand-indigo uppercase tracking-widest">IT Academy Courses</span>
+        <a href="courses.html" class="text-xs text-brand-pink font-semibold">View All →</a>
       </div>
+      <a href="courses/digital-marketing.html" class="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-white/5 text-gray-300 hover:text-white text-sm transition" onclick="closeMobileMenu()"><i class="fa-solid fa-bullhorn text-brand-pink w-4"></i> Digital Marketing</a>
+      <a href="courses/full-stack.html" class="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-white/5 text-gray-300 hover:text-white text-sm transition" onclick="closeMobileMenu()"><i class="fa-solid fa-layer-group text-brand-cyan w-4"></i> Full Stack Development</a>
+      <a href="courses/ai-ml.html" class="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-white/5 text-gray-300 hover:text-white text-sm transition" onclick="closeMobileMenu()"><i class="fa-solid fa-robot text-brand-pink w-4"></i> AI & Machine Learning</a>
+      <a href="courses/data-science.html" class="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-white/5 text-gray-300 hover:text-white text-sm transition" onclick="closeMobileMenu()"><i class="fa-solid fa-brain text-brand-purple w-4"></i> Data Science</a>
+      <a href="courses/data-analytics.html" class="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-white/5 text-gray-300 hover:text-white text-sm transition" onclick="closeMobileMenu()"><i class="fa-solid fa-chart-bar text-brand-amber w-4"></i> Data Analytics</a>
+      <a href="courses/cloud-computing.html" class="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-white/5 text-gray-300 hover:text-white text-sm transition" onclick="closeMobileMenu()"><i class="fa-solid fa-cloud text-brand-cyan w-4"></i> Cloud Computing</a>
+
+      <div class="border-t border-white/10 mt-2 pt-2">
+        <div class="flex justify-between items-center px-3 py-2">
+          <span class="text-xs font-bold text-brand-pink uppercase tracking-widest">Agency Services</span>
+          <a href="services.html" class="text-xs text-brand-indigo font-semibold">View All →</a>
+        </div>
+        <a href="services/seo.html" class="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-white/5 text-gray-300 hover:text-white text-sm transition" onclick="closeMobileMenu()"><i class="fa-solid fa-magnifying-glass text-brand-emerald w-4"></i> SEO</a>
+        <a href="services/sem.html" class="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-white/5 text-gray-300 hover:text-white text-sm transition" onclick="closeMobileMenu()"><i class="fa-brands fa-google text-brand-amber w-4"></i> SEM</a>
+        <a href="services/smm.html" class="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-white/5 text-gray-300 hover:text-white text-sm transition" onclick="closeMobileMenu()"><i class="fa-solid fa-share-nodes text-brand-indigo w-4"></i> SMM</a>
+        <a href="services/smo.html" class="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-white/5 text-gray-300 hover:text-white text-sm transition" onclick="closeMobileMenu()"><i class="fa-solid fa-thumbs-up text-brand-purple w-4"></i> SMO</a>
+        <a href="services/video-shoot.html" class="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-white/5 text-gray-300 hover:text-white text-sm transition" onclick="closeMobileMenu()"><i class="fa-solid fa-camera text-rose-400 w-4"></i> Video Shoot</a>
+        <a href="services/video-edit.html" class="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-white/5 text-gray-300 hover:text-white text-sm transition" onclick="closeMobileMenu()"><i class="fa-solid fa-film text-violet-400 w-4"></i> Video Edit</a>
+        <a href="services/website-development.html" class="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-white/5 text-gray-300 hover:text-white text-sm transition" onclick="closeMobileMenu()"><i class="fa-solid fa-laptop-code text-brand-cyan w-4"></i> Website Development</a>
+        <a href="services/crm.html" class="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-white/5 text-gray-300 hover:text-white text-sm transition" onclick="closeMobileMenu()"><i class="fa-solid fa-users text-brand-emerald w-4"></i> CRM</a>
+        <a href="services/erp.html" class="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-white/5 text-gray-300 hover:text-white text-sm transition" onclick="closeMobileMenu()"><i class="fa-solid fa-network-wired text-brand-pink w-4"></i> ERP</a>
+      </div>
+
       <div class="border-t border-white/10 mt-2 pt-2 flex flex-col gap-1">
-        <a href="#about" class="px-3 py-2.5 text-gray-300 hover:text-white text-sm transition" onclick="closeMobileMenu()">About</a>
-        <a href="#career" class="px-3 py-2.5 text-gray-300 hover:text-white text-sm transition" onclick="closeMobileMenu()">Career</a>
-        <a href="#contact" class="mt-2 mx-3 py-3 rounded-xl text-sm font-semibold text-white text-center transition" style="background:linear-gradient(135deg,#4f46e5,#ec4899)" onclick="closeMobileMenu()">Contact Us</a>
+        <a href="about.html" class="px-3 py-2 text-gray-300 hover:text-white text-sm transition" onclick="closeMobileMenu()">About Us</a>
+        <a href="blog.html" class="px-3 py-2 text-gray-300 hover:text-white text-sm transition" onclick="closeMobileMenu()">Blog</a>
+        <a href="contact.html" class="mt-2 mx-3 py-3 rounded-xl text-sm font-semibold text-white text-center transition" style="background:linear-gradient(135deg,#4f46e5,#ec4899)" onclick="closeMobileMenu()">Contact Us</a>
       </div>
     </div>
   </div>
@@ -596,10 +612,10 @@
       <h2 class="text-4xl md:text-5xl font-black text-gray-900 mb-4">
         KeepClicks Academy —<br/><span class="grad-text">Launch Your Tech Career</span>
       </h2>
-      <p class="text-gray-500 text-lg max-w-2xl mx-auto">8 industry-focused courses with live projects, expert mentors, and 100% practical training to make you job-ready.</p>
+      <p class="text-gray-500 text-lg max-w-2xl mx-auto">6 industry-focused courses with live projects, expert mentors, and 100% practical training to make you job-ready.</p>
     </div>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       <!-- Course 1: Digital Marketing -->
       <div class="course-card bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 transition-all duration-300 flex flex-col" data-aos="fade-up" data-aos-delay="0">
         <div class="h-2" style="background:linear-gradient(90deg,#4f46e5,#ec4899)"></div>
@@ -610,14 +626,15 @@
           <h3 class="text-lg font-bold text-gray-900 mb-1">Digital Marketing</h3>
           <div class="flex items-center gap-2 mb-4">
             <span class="text-xs font-semibold px-2.5 py-1 rounded-full" style="background:rgba(79,70,229,0.1);color:#4f46e5"><i class="fa-regular fa-clock mr-1"></i>3 Months</span>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-600"><i class="fa-solid fa-certificate mr-1"></i>Certified</span>
           </div>
           <ul class="space-y-2 flex-1 mb-5">
             <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-indigo text-xs"></i> SEO &amp; SEM Fundamentals</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-indigo text-xs"></i> Social Media Marketing (SMM)</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-indigo text-xs"></i> Meta &amp; Google Ads</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-indigo text-xs"></i> Content &amp; Email Marketing</li>
+            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-indigo text-xs"></i> Social Media Marketing (SMM &amp; SMO)</li>
+            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-indigo text-xs"></i> Meta Ads, Google Ads &amp; YouTube</li>
+            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-indigo text-xs"></i> Content, Email &amp; Analytics</li>
           </ul>
-          <a href="#contact" class="block w-full py-2.5 rounded-xl text-sm font-semibold text-center text-white transition-all hover:scale-105" style="background:linear-gradient(135deg,#4f46e5,#ec4899)">Enroll Now</a>
+          <a href="courses/digital-marketing.html" class="block w-full py-2.5 rounded-xl text-sm font-semibold text-center text-white transition-all hover:scale-105" style="background:linear-gradient(135deg,#4f46e5,#ec4899)">Explore Course &amp; Enroll <i class="fa-solid fa-arrow-right text-xs ml-1"></i></a>
         </div>
       </div>
 
@@ -628,63 +645,44 @@
           <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-xl" style="background:linear-gradient(135deg,#06b6d4,#4f46e5)">
             <i class="fa-solid fa-layer-group text-white"></i>
           </div>
-          <h3 class="text-lg font-bold text-gray-900 mb-1">Full Stack Dev</h3>
+          <h3 class="text-lg font-bold text-gray-900 mb-1">Full Stack Development</h3>
           <div class="flex items-center gap-2 mb-4">
             <span class="text-xs font-semibold px-2.5 py-1 rounded-full" style="background:rgba(6,182,212,0.1);color:#0891b2"><i class="fa-regular fa-clock mr-1"></i>6 Months</span>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-600"><i class="fa-solid fa-briefcase mr-1"></i>Placement</span>
           </div>
           <ul class="space-y-2 flex-1 mb-5">
-            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-cyan text-xs"></i> HTML, CSS &amp; JavaScript</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-cyan text-xs"></i> React.js &amp; Next.js</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-cyan text-xs"></i> Node.js &amp; Express</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-cyan text-xs"></i> MongoDB &amp; REST APIs</li>
+            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-cyan text-xs"></i> HTML5, CSS3 &amp; Modern JavaScript</li>
+            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-cyan text-xs"></i> React.js, Tailwind &amp; Next.js</li>
+            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-cyan text-xs"></i> Node.js, Express &amp; REST APIs</li>
+            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-cyan text-xs"></i> MongoDB, MySQL &amp; Cloud Deploy</li>
           </ul>
-          <a href="#contact" class="block w-full py-2.5 rounded-xl text-sm font-semibold text-center text-white transition-all hover:scale-105" style="background:linear-gradient(135deg,#06b6d4,#4f46e5)">Enroll Now</a>
+          <a href="courses/full-stack.html" class="block w-full py-2.5 rounded-xl text-sm font-semibold text-center text-white transition-all hover:scale-105" style="background:linear-gradient(135deg,#06b6d4,#4f46e5)">Explore Course &amp; Enroll <i class="fa-solid fa-arrow-right text-xs ml-1"></i></a>
         </div>
       </div>
 
-      <!-- Course 3: Java -->
+      <!-- Course 3: AI & Machine Learning -->
       <div class="course-card bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 transition-all duration-300 flex flex-col" data-aos="fade-up" data-aos-delay="100">
-        <div class="h-2" style="background:linear-gradient(90deg,#f59e0b,#ef4444)"></div>
+        <div class="h-2" style="background:linear-gradient(90deg,#ec4899,#f59e0b)"></div>
         <div class="p-6 flex flex-col flex-1">
-          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-xl" style="background:linear-gradient(135deg,#f59e0b,#ef4444)">
-            <i class="fa-brands fa-java text-white"></i>
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-xl" style="background:linear-gradient(135deg,#ec4899,#f59e0b)">
+            <i class="fa-solid fa-robot text-white"></i>
           </div>
-          <h3 class="text-lg font-bold text-gray-900 mb-1">Java Programming</h3>
+          <h3 class="text-lg font-bold text-gray-900 mb-1">AI &amp; Machine Learning</h3>
           <div class="flex items-center gap-2 mb-4">
-            <span class="text-xs font-semibold px-2.5 py-1 rounded-full" style="background:rgba(245,158,11,0.1);color:#d97706"><i class="fa-regular fa-clock mr-1"></i>4 Months</span>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full" style="background:rgba(236,72,153,0.1);color:#be185d"><i class="fa-regular fa-clock mr-1"></i>6 Months</span>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-600"><i class="fa-solid fa-fire mr-1"></i>Trending</span>
           </div>
           <ul class="space-y-2 flex-1 mb-5">
-            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-amber text-xs"></i> Core Java &amp; OOPs</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-amber text-xs"></i> Spring Boot Framework</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-amber text-xs"></i> Hibernate &amp; JPA</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-amber text-xs"></i> MySQL &amp; Database Design</li>
+            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-pink text-xs"></i> Python, Math &amp; ML Foundations</li>
+            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-pink text-xs"></i> TensorFlow, PyTorch &amp; Deep Learning</li>
+            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-pink text-xs"></i> Natural Language Processing &amp; LLMs</li>
+            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-pink text-xs"></i> Computer Vision &amp; Generative AI</li>
           </ul>
-          <a href="#contact" class="block w-full py-2.5 rounded-xl text-sm font-semibold text-center text-white transition-all hover:scale-105" style="background:linear-gradient(135deg,#f59e0b,#ef4444)">Enroll Now</a>
+          <a href="courses/ai-ml.html" class="block w-full py-2.5 rounded-xl text-sm font-semibold text-center text-white transition-all hover:scale-105" style="background:linear-gradient(135deg,#ec4899,#f59e0b)">Explore Course &amp; Enroll <i class="fa-solid fa-arrow-right text-xs ml-1"></i></a>
         </div>
       </div>
 
-      <!-- Course 4: Python -->
-      <div class="course-card bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 transition-all duration-300 flex flex-col" data-aos="fade-up" data-aos-delay="150">
-        <div class="h-2" style="background:linear-gradient(90deg,#10b981,#06b6d4)"></div>
-        <div class="p-6 flex flex-col flex-1">
-          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-xl" style="background:linear-gradient(135deg,#10b981,#06b6d4)">
-            <i class="fa-brands fa-python text-white"></i>
-          </div>
-          <h3 class="text-lg font-bold text-gray-900 mb-1">Python Programming</h3>
-          <div class="flex items-center gap-2 mb-4">
-            <span class="text-xs font-semibold px-2.5 py-1 rounded-full" style="background:rgba(16,185,129,0.1);color:#059669"><i class="fa-regular fa-clock mr-1"></i>3 Months</span>
-          </div>
-          <ul class="space-y-2 flex-1 mb-5">
-            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-emerald text-xs"></i> Python Basics &amp; OOP</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-emerald text-xs"></i> Django Framework</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-emerald text-xs"></i> Flask &amp; REST APIs</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-emerald text-xs"></i> Web Scraping &amp; Automation</li>
-          </ul>
-          <a href="#contact" class="block w-full py-2.5 rounded-xl text-sm font-semibold text-center text-white transition-all hover:scale-105" style="background:linear-gradient(135deg,#10b981,#06b6d4)">Enroll Now</a>
-        </div>
-      </div>
-
-      <!-- Course 5: Data Science -->
+      <!-- Course 4: Data Science -->
       <div class="course-card bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 transition-all duration-300 flex flex-col" data-aos="fade-up" data-aos-delay="0">
         <div class="h-2" style="background:linear-gradient(90deg,#8b5cf6,#ec4899)"></div>
         <div class="p-6 flex flex-col flex-1">
@@ -694,18 +692,19 @@
           <h3 class="text-lg font-bold text-gray-900 mb-1">Data Science</h3>
           <div class="flex items-center gap-2 mb-4">
             <span class="text-xs font-semibold px-2.5 py-1 rounded-full" style="background:rgba(139,92,246,0.1);color:#7c3aed"><i class="fa-regular fa-clock mr-1"></i>5 Months</span>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-600"><i class="fa-solid fa-certificate mr-1"></i>Certified</span>
           </div>
           <ul class="space-y-2 flex-1 mb-5">
-            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-purple text-xs"></i> NumPy &amp; Pandas</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-purple text-xs"></i> ML Algorithms</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-purple text-xs"></i> Data Visualization</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-purple text-xs"></i> Statistical Analysis</li>
+            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-purple text-xs"></i> Python, NumPy, Pandas &amp; Seaborn</li>
+            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-purple text-xs"></i> Applied Statistics &amp; Probability</li>
+            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-purple text-xs"></i> Scikit-Learn Machine Learning Models</li>
+            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-purple text-xs"></i> End-to-End Capstone Data Projects</li>
           </ul>
-          <a href="#contact" class="block w-full py-2.5 rounded-xl text-sm font-semibold text-center text-white transition-all hover:scale-105" style="background:linear-gradient(135deg,#8b5cf6,#ec4899)">Enroll Now</a>
+          <a href="courses/data-science.html" class="block w-full py-2.5 rounded-xl text-sm font-semibold text-center text-white transition-all hover:scale-105" style="background:linear-gradient(135deg,#8b5cf6,#ec4899)">Explore Course &amp; Enroll <i class="fa-solid fa-arrow-right text-xs ml-1"></i></a>
         </div>
       </div>
 
-      <!-- Course 6: Data Analytics -->
+      <!-- Course 5: Data Analytics -->
       <div class="course-card bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 transition-all duration-300 flex flex-col" data-aos="fade-up" data-aos-delay="50">
         <div class="h-2" style="background:linear-gradient(90deg,#f59e0b,#8b5cf6)"></div>
         <div class="p-6 flex flex-col flex-1">
@@ -715,18 +714,19 @@
           <h3 class="text-lg font-bold text-gray-900 mb-1">Data Analytics</h3>
           <div class="flex items-center gap-2 mb-4">
             <span class="text-xs font-semibold px-2.5 py-1 rounded-full" style="background:rgba(245,158,11,0.1);color:#d97706"><i class="fa-regular fa-clock mr-1"></i>4 Months</span>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-600"><i class="fa-solid fa-briefcase mr-1"></i>Placement</span>
           </div>
           <ul class="space-y-2 flex-1 mb-5">
-            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-amber text-xs"></i> Advanced Excel &amp; SQL</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-amber text-xs"></i> Power BI Dashboards</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-amber text-xs"></i> Tableau Visualization</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-amber text-xs"></i> Business Intelligence</li>
+            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-amber text-xs"></i> Advanced Excel (VLOOKUP, Pivot, Macros)</li>
+            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-amber text-xs"></i> SQL Queries, Joins, Indexing &amp; Views</li>
+            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-amber text-xs"></i> Power BI DAX &amp; Interactive Dashboards</li>
+            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-amber text-xs"></i> Tableau Storytelling &amp; Business Intel</li>
           </ul>
-          <a href="#contact" class="block w-full py-2.5 rounded-xl text-sm font-semibold text-center text-white transition-all hover:scale-105" style="background:linear-gradient(135deg,#f59e0b,#8b5cf6)">Enroll Now</a>
+          <a href="courses/data-analytics.html" class="block w-full py-2.5 rounded-xl text-sm font-semibold text-center text-white transition-all hover:scale-105" style="background:linear-gradient(135deg,#f59e0b,#8b5cf6)">Explore Course &amp; Enroll <i class="fa-solid fa-arrow-right text-xs ml-1"></i></a>
         </div>
       </div>
 
-      <!-- Course 7: Cloud Computing -->
+      <!-- Course 6: Cloud Computing -->
       <div class="course-card bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 transition-all duration-300 flex flex-col" data-aos="fade-up" data-aos-delay="100">
         <div class="h-2" style="background:linear-gradient(90deg,#06b6d4,#10b981)"></div>
         <div class="p-6 flex flex-col flex-1">
@@ -736,35 +736,15 @@
           <h3 class="text-lg font-bold text-gray-900 mb-1">Cloud Computing</h3>
           <div class="flex items-center gap-2 mb-4">
             <span class="text-xs font-semibold px-2.5 py-1 rounded-full" style="background:rgba(6,182,212,0.1);color:#0891b2"><i class="fa-regular fa-clock mr-1"></i>4 Months</span>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-600"><i class="fa-solid fa-shield-halved mr-1"></i>AWS / Azure</span>
           </div>
           <ul class="space-y-2 flex-1 mb-5">
-            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-cyan text-xs"></i> AWS &amp; Cloud Architecture</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-cyan text-xs"></i> Microsoft Azure</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-cyan text-xs"></i> Google Cloud Platform</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-cyan text-xs"></i> DevOps &amp; CI/CD</li>
+            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-cyan text-xs"></i> AWS Architecture (EC2, S3, RDS, Lambda)</li>
+            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-cyan text-xs"></i> Microsoft Azure &amp; Google Cloud Basics</li>
+            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-cyan text-xs"></i> Docker, Kubernetes &amp; Containerization</li>
+            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-cyan text-xs"></i> DevOps CI/CD Pipelines &amp; Terraform</li>
           </ul>
-          <a href="#contact" class="block w-full py-2.5 rounded-xl text-sm font-semibold text-center text-white transition-all hover:scale-105" style="background:linear-gradient(135deg,#06b6d4,#10b981)">Enroll Now</a>
-        </div>
-      </div>
-
-      <!-- Course 8: AI & ML -->
-      <div class="course-card bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 transition-all duration-300 flex flex-col" data-aos="fade-up" data-aos-delay="150">
-        <div class="h-2" style="background:linear-gradient(90deg,#ec4899,#f59e0b)"></div>
-        <div class="p-6 flex flex-col flex-1">
-          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-xl" style="background:linear-gradient(135deg,#ec4899,#f59e0b)">
-            <i class="fa-solid fa-robot text-white"></i>
-          </div>
-          <h3 class="text-lg font-bold text-gray-900 mb-1">AI &amp; Machine Learning</h3>
-          <div class="flex items-center gap-2 mb-4">
-            <span class="text-xs font-semibold px-2.5 py-1 rounded-full" style="background:rgba(236,72,153,0.1);color:#be185d"><i class="fa-regular fa-clock mr-1"></i>6 Months</span>
-          </div>
-          <ul class="space-y-2 flex-1 mb-5">
-            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-pink text-xs"></i> TensorFlow &amp; PyTorch</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-pink text-xs"></i> Natural Language Processing</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-pink text-xs"></i> Computer Vision</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600"><i class="fa-solid fa-circle-dot text-brand-pink text-xs"></i> Deep Learning &amp; Neural Nets</li>
-          </ul>
-          <a href="#contact" class="block w-full py-2.5 rounded-xl text-sm font-semibold text-center text-white transition-all hover:scale-105" style="background:linear-gradient(135deg,#ec4899,#f59e0b)">Enroll Now</a>
+          <a href="courses/cloud-computing.html" class="block w-full py-2.5 rounded-xl text-sm font-semibold text-center text-white transition-all hover:scale-105" style="background:linear-gradient(135deg,#06b6d4,#10b981)">Explore Course &amp; Enroll <i class="fa-solid fa-arrow-right text-xs ml-1"></i></a>
         </div>
       </div>
     </div>
@@ -858,21 +838,39 @@
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
       <!-- Service 1: SEO -->
-      <div class="service-card glass rounded-2xl p-7 transition-all duration-300 group relative overflow-hidden" data-aos="fade-up" data-aos-delay="0">
+      <div class="service-card glass rounded-2xl p-7 transition-all duration-300 group relative overflow-hidden flex flex-col justify-between" data-aos="fade-up" data-aos-delay="0">
         <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style="background:linear-gradient(135deg,rgba(16,185,129,0.05),rgba(6,182,212,0.05))"></div>
         <div class="relative z-10">
           <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 text-2xl group-hover:scale-110 transition-transform" style="background:linear-gradient(135deg,#10b981,#06b6d4)">
-            <i class="fa-brands fa-google text-white"></i>
+            <i class="fa-solid fa-magnifying-glass text-white"></i>
           </div>
           <div class="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-1">SEO</div>
           <h3 class="text-xl font-bold text-white mb-3">Search Engine Optimization</h3>
-          <p class="text-gray-400 text-sm leading-relaxed mb-5">Rank higher on Google, get found by the right audience, and dominate search results for your industry keywords.</p>
-          <a href="#contact" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all hover:scale-105" style="background:linear-gradient(135deg,#10b981,#06b6d4)">Get Started <i class="fa-solid fa-arrow-right text-xs"></i></a>
+          <p class="text-gray-400 text-sm leading-relaxed mb-5">Rank higher on Google, get found by high-intent customers, and dominate competitive search keywords with proven organic SEO.</p>
+        </div>
+        <div class="relative z-10 pt-2">
+          <a href="services/seo.html" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all hover:scale-105" style="background:linear-gradient(135deg,#10b981,#06b6d4)">Learn More &amp; Start <i class="fa-solid fa-arrow-right text-xs"></i></a>
         </div>
       </div>
 
-      <!-- Service 2: SMM -->
-      <div class="service-card glass rounded-2xl p-7 transition-all duration-300 group relative overflow-hidden" data-aos="fade-up" data-aos-delay="80">
+      <!-- Service 2: SEM -->
+      <div class="service-card glass rounded-2xl p-7 transition-all duration-300 group relative overflow-hidden flex flex-col justify-between" data-aos="fade-up" data-aos-delay="50">
+        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style="background:linear-gradient(135deg,rgba(245,158,11,0.05),rgba(239,68,68,0.05))"></div>
+        <div class="relative z-10">
+          <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 text-2xl group-hover:scale-110 transition-transform" style="background:linear-gradient(135deg,#f59e0b,#ef4444)">
+            <i class="fa-brands fa-google text-white"></i>
+          </div>
+          <div class="text-xs font-bold uppercase tracking-widest text-amber-400 mb-1">SEM</div>
+          <h3 class="text-xl font-bold text-white mb-3">Search Engine Marketing</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-5">Google Search, Display, and Performance Max ad campaigns engineered for immediate traffic, qualified buyer leads, and high ROAS.</p>
+        </div>
+        <div class="relative z-10 pt-2">
+          <a href="services/sem.html" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all hover:scale-105" style="background:linear-gradient(135deg,#f59e0b,#ef4444)">Learn More &amp; Start <i class="fa-solid fa-arrow-right text-xs"></i></a>
+        </div>
+      </div>
+
+      <!-- Service 3: SMM -->
+      <div class="service-card glass rounded-2xl p-7 transition-all duration-300 group relative overflow-hidden flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
         <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style="background:linear-gradient(135deg,rgba(79,70,229,0.05),rgba(236,72,153,0.05))"></div>
         <div class="relative z-10">
           <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 text-2xl group-hover:scale-110 transition-transform" style="background:linear-gradient(135deg,#4f46e5,#ec4899)">
@@ -880,78 +878,106 @@
           </div>
           <div class="text-xs font-bold uppercase tracking-widest text-indigo-400 mb-1">SMM</div>
           <h3 class="text-xl font-bold text-white mb-3">Social Media Marketing</h3>
-          <p class="text-gray-400 text-sm leading-relaxed mb-5">Viral campaigns, brand storytelling, and audience growth strategies that make your brand impossible to ignore.</p>
-          <a href="#contact" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all hover:scale-105" style="background:linear-gradient(135deg,#4f46e5,#ec4899)">Get Started <i class="fa-solid fa-arrow-right text-xs"></i></a>
+          <p class="text-gray-400 text-sm leading-relaxed mb-5">Viral campaigns, Meta ad funnels, content calendars, and targeted audience growth that build lasting customer loyalty.</p>
+        </div>
+        <div class="relative z-10 pt-2">
+          <a href="services/smm.html" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all hover:scale-105" style="background:linear-gradient(135deg,#4f46e5,#ec4899)">Learn More &amp; Start <i class="fa-solid fa-arrow-right text-xs"></i></a>
         </div>
       </div>
 
-      <!-- Service 3: SMO -->
-      <div class="service-card glass rounded-2xl p-7 transition-all duration-300 group relative overflow-hidden" data-aos="fade-up" data-aos-delay="160">
+      <!-- Service 4: SMO -->
+      <div class="service-card glass rounded-2xl p-7 transition-all duration-300 group relative overflow-hidden flex flex-col justify-between" data-aos="fade-up" data-aos-delay="0">
         <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style="background:linear-gradient(135deg,rgba(139,92,246,0.05),rgba(6,182,212,0.05))"></div>
         <div class="relative z-10">
           <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 text-2xl group-hover:scale-110 transition-transform" style="background:linear-gradient(135deg,#8b5cf6,#06b6d4)">
-            <i class="fa-solid fa-arrows-rotate text-white"></i>
+            <i class="fa-solid fa-thumbs-up text-white"></i>
           </div>
           <div class="text-xs font-bold uppercase tracking-widest text-purple-400 mb-1">SMO</div>
           <h3 class="text-xl font-bold text-white mb-3">Social Media Optimization</h3>
-          <p class="text-gray-400 text-sm leading-relaxed mb-5">Optimize your social profiles for maximum engagement, discoverability, and consistent brand positioning.</p>
-          <a href="#contact" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all hover:scale-105" style="background:linear-gradient(135deg,#8b5cf6,#06b6d4)">Get Started <i class="fa-solid fa-arrow-right text-xs"></i></a>
+          <p class="text-gray-400 text-sm leading-relaxed mb-5">Complete profile overhauls, keyword-rich bio design, algorithmic alignment, and community engagement tactics.</p>
+        </div>
+        <div class="relative z-10 pt-2">
+          <a href="services/smo.html" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all hover:scale-105" style="background:linear-gradient(135deg,#8b5cf6,#06b6d4)">Learn More &amp; Start <i class="fa-solid fa-arrow-right text-xs"></i></a>
         </div>
       </div>
 
-      <!-- Service 4: Web Dev -->
-      <div class="service-card glass rounded-2xl p-7 transition-all duration-300 group relative overflow-hidden" data-aos="fade-up" data-aos-delay="0">
+      <!-- Service 5: Video Shoot -->
+      <div class="service-card glass rounded-2xl p-7 transition-all duration-300 group relative overflow-hidden flex flex-col justify-between" data-aos="fade-up" data-aos-delay="50">
+        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style="background:linear-gradient(135deg,rgba(244,63,94,0.05),rgba(236,72,153,0.05))"></div>
+        <div class="relative z-10">
+          <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 text-2xl group-hover:scale-110 transition-transform" style="background:linear-gradient(135deg,#f43f5e,#ec4899)">
+            <i class="fa-solid fa-camera text-white"></i>
+          </div>
+          <div class="text-xs font-bold uppercase tracking-widest text-rose-400 mb-1">Video Shoot</div>
+          <h3 class="text-xl font-bold text-white mb-3">Professional Video Shoot</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-5">Cinema 4K/6K cameras, cinematic multi-point lighting, multi-cam podcasts, brand films, and ad shoots on location or in-studio.</p>
+        </div>
+        <div class="relative z-10 pt-2">
+          <a href="services/video-shoot.html" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all hover:scale-105" style="background:linear-gradient(135deg,#f43f5e,#ec4899)">Learn More &amp; Start <i class="fa-solid fa-arrow-right text-xs"></i></a>
+        </div>
+      </div>
+
+      <!-- Service 6: Video Edit -->
+      <div class="service-card glass rounded-2xl p-7 transition-all duration-300 group relative overflow-hidden flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style="background:linear-gradient(135deg,rgba(139,92,246,0.05),rgba(79,70,229,0.05))"></div>
+        <div class="relative z-10">
+          <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 text-2xl group-hover:scale-110 transition-transform" style="background:linear-gradient(135deg,#8b5cf6,#4f46e5)">
+            <i class="fa-solid fa-film text-white"></i>
+          </div>
+          <div class="text-xs font-bold uppercase tracking-widest text-violet-400 mb-1">Video Edit</div>
+          <h3 class="text-xl font-bold text-white mb-3">Post-Production &amp; Editing</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-5">High-retention Reels, YouTube long-form, motion graphics, DaVinci color grading, and commercial ad edits that boost watch time.</p>
+        </div>
+        <div class="relative z-10 pt-2">
+          <a href="services/video-edit.html" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all hover:scale-105" style="background:linear-gradient(135deg,#8b5cf6,#4f46e5)">Learn More &amp; Start <i class="fa-solid fa-arrow-right text-xs"></i></a>
+        </div>
+      </div>
+
+      <!-- Service 7: Web Dev -->
+      <div class="service-card glass rounded-2xl p-7 transition-all duration-300 group relative overflow-hidden flex flex-col justify-between" data-aos="fade-up" data-aos-delay="0">
         <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style="background:linear-gradient(135deg,rgba(6,182,212,0.05),rgba(79,70,229,0.05))"></div>
         <div class="relative z-10">
           <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 text-2xl group-hover:scale-110 transition-transform" style="background:linear-gradient(135deg,#06b6d4,#4f46e5)">
-            <i class="fa-solid fa-globe text-white"></i>
+            <i class="fa-solid fa-laptop-code text-white"></i>
           </div>
           <div class="text-xs font-bold uppercase tracking-widest text-cyan-400 mb-1">Web Development</div>
           <h3 class="text-xl font-bold text-white mb-3">Website Development</h3>
-          <p class="text-gray-400 text-sm leading-relaxed mb-5">Fast, beautiful, conversion-focused websites built to attract visitors and turn them into loyal customers.</p>
-          <a href="#contact" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all hover:scale-105" style="background:linear-gradient(135deg,#06b6d4,#4f46e5)">Get Started <i class="fa-solid fa-arrow-right text-xs"></i></a>
+          <p class="text-gray-400 text-sm leading-relaxed mb-5">Ultra-fast, mobile-responsive, conversion-optimized business websites, custom web apps, and Shopify/WooCommerce e-commerce stores.</p>
+        </div>
+        <div class="relative z-10 pt-2">
+          <a href="services/website-development.html" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all hover:scale-105" style="background:linear-gradient(135deg,#06b6d4,#4f46e5)">Learn More &amp; Start <i class="fa-solid fa-arrow-right text-xs"></i></a>
         </div>
       </div>
 
-      <!-- Service 5: SEM -->
-      <div class="service-card glass rounded-2xl p-7 transition-all duration-300 group relative overflow-hidden" data-aos="fade-up" data-aos-delay="80">
-        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style="background:linear-gradient(135deg,rgba(245,158,11,0.05),rgba(239,68,68,0.05))"></div>
-        <div class="relative z-10">
-          <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 text-2xl group-hover:scale-110 transition-transform" style="background:linear-gradient(135deg,#f59e0b,#ef4444)">
-            <i class="fa-solid fa-chart-line text-white"></i>
-          </div>
-          <div class="text-xs font-bold uppercase tracking-widest text-amber-400 mb-1">SEM</div>
-          <h3 class="text-xl font-bold text-white mb-3">Search Engine Marketing</h3>
-          <p class="text-gray-400 text-sm leading-relaxed mb-5">Google &amp; Meta paid ad campaigns engineered for instant traffic, qualified leads, and measurable ROI.</p>
-          <a href="#contact" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all hover:scale-105" style="background:linear-gradient(135deg,#f59e0b,#ef4444)">Get Started <i class="fa-solid fa-arrow-right text-xs"></i></a>
-        </div>
-      </div>
-
-      <!-- Service 6: CRM -->
-      <div class="service-card glass rounded-2xl p-7 transition-all duration-300 group relative overflow-hidden" data-aos="fade-up" data-aos-delay="160">
+      <!-- Service 8: CRM -->
+      <div class="service-card glass rounded-2xl p-7 transition-all duration-300 group relative overflow-hidden flex flex-col justify-between" data-aos="fade-up" data-aos-delay="50">
         <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style="background:linear-gradient(135deg,rgba(16,185,129,0.05),rgba(79,70,229,0.05))"></div>
         <div class="relative z-10">
           <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 text-2xl group-hover:scale-110 transition-transform" style="background:linear-gradient(135deg,#10b981,#4f46e5)">
-            <i class="fa-solid fa-users text-white"></i>
+            <i class="fa-solid fa-users-gear text-white"></i>
           </div>
           <div class="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-1">CRM</div>
           <h3 class="text-xl font-bold text-white mb-3">Customer Relationship Mgmt</h3>
-          <p class="text-gray-400 text-sm leading-relaxed mb-5">Manage customer relationships effectively, boost retention rates, and nurture leads through your sales funnel.</p>
-          <a href="#contact" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all hover:scale-105" style="background:linear-gradient(135deg,#10b981,#4f46e5)">Get Started <i class="fa-solid fa-arrow-right text-xs"></i></a>
+          <p class="text-gray-400 text-sm leading-relaxed mb-5">Custom HubSpot, Zoho &amp; Salesforce implementations, sales pipeline automation, automated follow-ups, and customer analytics.</p>
+        </div>
+        <div class="relative z-10 pt-2">
+          <a href="services/crm.html" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all hover:scale-105" style="background:linear-gradient(135deg,#10b981,#4f46e5)">Learn More &amp; Start <i class="fa-solid fa-arrow-right text-xs"></i></a>
         </div>
       </div>
 
-      <!-- Service 7: ERP — centered -->
-      <div class="service-card glass rounded-2xl p-7 transition-all duration-300 group relative overflow-hidden lg:col-start-2" data-aos="fade-up" data-aos-delay="80">
+      <!-- Service 9: ERP -->
+      <div class="service-card glass rounded-2xl p-7 transition-all duration-300 group relative overflow-hidden flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
         <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style="background:linear-gradient(135deg,rgba(236,72,153,0.05),rgba(139,92,246,0.05))"></div>
         <div class="relative z-10">
           <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 text-2xl group-hover:scale-110 transition-transform" style="background:linear-gradient(135deg,#ec4899,#8b5cf6)">
-            <i class="fa-solid fa-network-wired text-white"></i>
+            <i class="fa-solid fa-sitemap text-white"></i>
           </div>
           <div class="text-xs font-bold uppercase tracking-widest text-pink-400 mb-1">ERP</div>
           <h3 class="text-xl font-bold text-white mb-3">Enterprise Resource Planning</h3>
-          <p class="text-gray-400 text-sm leading-relaxed mb-5">Streamline your business operations with integrated ERP solutions for finance, HR, inventory, and beyond.</p>
-          <a href="#contact" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all hover:scale-105" style="background:linear-gradient(135deg,#ec4899,#8b5cf6)">Get Started <i class="fa-solid fa-arrow-right text-xs"></i></a>
+          <p class="text-gray-400 text-sm leading-relaxed mb-5">Odoo, ERPNext, and custom enterprise deployments integrating inventory, supply chain, accounts, billing, and HR into one source of truth.</p>
+        </div>
+        <div class="relative z-10 pt-2">
+          <a href="services/erp.html" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all hover:scale-105" style="background:linear-gradient(135deg,#ec4899,#8b5cf6)">Learn More &amp; Start <i class="fa-solid fa-arrow-right text-xs"></i></a>
         </div>
       </div>
     </div>
@@ -1508,10 +1534,10 @@
 <!-- ===================== FOOTER ===================== -->
 <footer class="py-16 px-4 md:px-8" style="background:#060810;border-top:1px solid rgba(99,102,241,0.15)">
   <div class="max-w-7xl mx-auto">
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
       <!-- Brand -->
       <div class="lg:col-span-2">
-        <a href="#home" class="flex items-center gap-2.5 mb-5">
+        <a href="index.html" class="flex items-center gap-2.5 mb-5">
           <div class="w-12 h-12 rounded-xl overflow-hidden" style="box-shadow:0 0 20px rgba(79,70,229,0.4)">
             <svg viewBox="0 0 100 100" class="w-full h-full">
               <defs>
@@ -1532,10 +1558,10 @@
           </div>
           <div>
             <span class="text-2xl font-black grad-text">KeepClicks</span><sup class="text-white text-sm opacity-60">®</sup>
-            <div class="text-xs text-gray-600 font-medium tracking-widest uppercase">Learn. Build. Grow.</div>
+            <div class="text-xs text-gray-400 font-medium tracking-widest uppercase">Learn. Build. Grow.</div>
           </div>
         </a>
-        <p class="text-gray-500 text-sm leading-relaxed mb-6 max-w-sm">Your gateway to tech careers and digital growth. IT Academy + Digital Marketing Agency — all under one powerful brand.</p>
+        <p class="text-gray-400 text-sm leading-relaxed mb-6 max-w-sm">Your gateway to tech careers and digital growth. Premium IT Academy + Performance Digital Marketing Agency under one unified brand.</p>
         <div class="flex gap-3">
           <a href="#" class="w-10 h-10 rounded-xl flex items-center justify-center text-white hover:scale-110 transition-transform text-sm" style="background:linear-gradient(135deg,#E1306C,#833AB4)"><i class="fa-brands fa-instagram"></i></a>
           <a href="#" class="w-10 h-10 rounded-xl flex items-center justify-center text-white hover:scale-110 transition-transform text-sm" style="background:#0077B5"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -1547,17 +1573,16 @@
       <!-- Academy Courses -->
       <div>
         <h4 class="font-bold text-white mb-4 flex items-center gap-2">
-          <i class="fa-solid fa-graduation-cap text-brand-indigo"></i> Academy Courses
+          <i class="fa-solid fa-graduation-cap text-brand-indigo"></i> IT Courses
         </h4>
         <ul class="space-y-2.5">
-          <li><a href="#courses" class="text-gray-500 hover:text-white text-sm transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-brand-indigo"></i>Digital Marketing</a></li>
-          <li><a href="#courses" class="text-gray-500 hover:text-white text-sm transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-brand-indigo"></i>Full Stack Development</a></li>
-          <li><a href="#courses" class="text-gray-500 hover:text-white text-sm transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-brand-indigo"></i>Java Programming</a></li>
-          <li><a href="#courses" class="text-gray-500 hover:text-white text-sm transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-brand-indigo"></i>Python Programming</a></li>
-          <li><a href="#courses" class="text-gray-500 hover:text-white text-sm transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-brand-indigo"></i>Data Science</a></li>
-          <li><a href="#courses" class="text-gray-500 hover:text-white text-sm transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-brand-indigo"></i>Data Analytics</a></li>
-          <li><a href="#courses" class="text-gray-500 hover:text-white text-sm transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-brand-indigo"></i>Cloud Computing</a></li>
-          <li><a href="#courses" class="text-gray-500 hover:text-white text-sm transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-brand-indigo"></i>AI &amp; Machine Learning</a></li>
+          <li><a href="courses/digital-marketing.html" class="text-gray-400 hover:text-white text-sm transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-brand-indigo"></i>Digital Marketing</a></li>
+          <li><a href="courses/full-stack.html" class="text-gray-400 hover:text-white text-sm transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-brand-indigo"></i>Full Stack Dev</a></li>
+          <li><a href="courses/ai-ml.html" class="text-gray-400 hover:text-white text-sm transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-brand-indigo"></i>AI &amp; ML</a></li>
+          <li><a href="courses/data-science.html" class="text-gray-400 hover:text-white text-sm transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-brand-indigo"></i>Data Science</a></li>
+          <li><a href="courses/data-analytics.html" class="text-gray-400 hover:text-white text-sm transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-brand-indigo"></i>Data Analytics</a></li>
+          <li><a href="courses/cloud-computing.html" class="text-gray-400 hover:text-white text-sm transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-brand-indigo"></i>Cloud Computing</a></li>
+          <li class="pt-1"><a href="courses.html" class="text-brand-pink font-semibold hover:underline text-xs flex items-center gap-1">All Courses Hub <i class="fa-solid fa-arrow-right text-[10px]"></i></a></li>
         </ul>
       </div>
 
@@ -1567,14 +1592,34 @@
           <i class="fa-solid fa-briefcase text-brand-pink"></i> Agency Services
         </h4>
         <ul class="space-y-2.5">
-          <li><a href="#services" class="text-gray-500 hover:text-white text-sm transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-brand-pink"></i>SEO</a></li>
-          <li><a href="#services" class="text-gray-500 hover:text-white text-sm transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-brand-pink"></i>SMM</a></li>
-          <li><a href="#services" class="text-gray-500 hover:text-white text-sm transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-brand-pink"></i>SMO</a></li>
-          <li><a href="#services" class="text-gray-500 hover:text-white text-sm transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-brand-pink"></i>Website Development</a></li>
-          <li><a href="#services" class="text-gray-500 hover:text-white text-sm transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-brand-pink"></i>SEM</a></li>
-          <li><a href="#services" class="text-gray-500 hover:text-white text-sm transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-brand-pink"></i>CRM</a></li>
-          <li><a href="#services" class="text-gray-500 hover:text-white text-sm transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-brand-pink"></i>ERP</a></li>
+          <li><a href="services/seo.html" class="text-gray-400 hover:text-white text-sm transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-brand-pink"></i>SEO Services</a></li>
+          <li><a href="services/sem.html" class="text-gray-400 hover:text-white text-sm transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-brand-pink"></i>SEM / Google Ads</a></li>
+          <li><a href="services/smm.html" class="text-gray-400 hover:text-white text-sm transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-brand-pink"></i>Social Media (SMM)</a></li>
+          <li><a href="services/smo.html" class="text-gray-400 hover:text-white text-sm transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-brand-pink"></i>Social Media (SMO)</a></li>
+          <li><a href="services/video-shoot.html" class="text-gray-400 hover:text-white text-sm transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-brand-pink"></i>Video Shoot</a></li>
+          <li><a href="services/video-edit.html" class="text-gray-400 hover:text-white text-sm transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-brand-pink"></i>Video Edit</a></li>
+          <li><a href="services/website-development.html" class="text-gray-400 hover:text-white text-sm transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-brand-pink"></i>Website Development</a></li>
+          <li><a href="services/crm.html" class="text-gray-400 hover:text-white text-sm transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-brand-pink"></i>CRM Solutions</a></li>
+          <li><a href="services/erp.html" class="text-gray-400 hover:text-white text-sm transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-brand-pink"></i>ERP Systems</a></li>
+          <li class="pt-1"><a href="services.html" class="text-brand-pink font-semibold hover:underline text-xs flex items-center gap-1">All Services Hub <i class="fa-solid fa-arrow-right text-[10px]"></i></a></li>
         </ul>
+      </div>
+
+      <!-- Company & Contact -->
+      <div>
+        <h4 class="font-bold text-white mb-4 flex items-center gap-2">
+          <i class="fa-solid fa-compass text-brand-cyan"></i> Company
+        </h4>
+        <ul class="space-y-2.5 mb-6">
+          <li><a href="about.html" class="text-gray-400 hover:text-white text-sm transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-brand-cyan"></i>About Us</a></li>
+          <li><a href="blog.html" class="text-gray-400 hover:text-white text-sm transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-brand-cyan"></i>Blog &amp; Insights</a></li>
+          <li><a href="contact.html" class="text-gray-400 hover:text-white text-sm transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-brand-cyan"></i>Contact Us</a></li>
+        </ul>
+        <div class="space-y-2 text-xs text-gray-400 border-t border-gray-800 pt-4">
+          <div class="flex items-center gap-2"><i class="fa-solid fa-envelope text-brand-indigo"></i> info@keepclicks.com</div>
+          <div class="flex items-center gap-2"><i class="fa-solid fa-phone text-brand-indigo"></i> +91 63794 27852</div>
+          <div class="flex items-start gap-2"><i class="fa-solid fa-location-dot text-brand-indigo mt-0.5"></i> Chennai, Tamil Nadu, India</div>
+        </div>
       </div>
     </div>
 
